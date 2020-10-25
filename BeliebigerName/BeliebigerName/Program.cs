@@ -14,7 +14,8 @@ namespace Cshp01cAufgabe
 	{
 		static void Main(string[] args)
 		{
-            Console.WriteLine("Dieses Programm ist nun fehlerfrei");
+			Console.WriteLine("Dieses Programm ist nun fehlerfrei");
+			Console.SetCursorPosition(0, 0);
 		}
 	}
 }
