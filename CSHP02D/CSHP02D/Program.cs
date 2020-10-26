@@ -31,6 +31,8 @@ namespace CSHP02D
             Console.Write("(10 + 8) / 2\t\t= ");
             Console.WriteLine((10 + 8) / 2);
 
+            Console.WriteLine("5 + 9\t\t= {0}", 5 + 9);
+
 
 
 
