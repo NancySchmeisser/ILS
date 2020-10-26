@@ -1,4 +1,4 @@
-﻿/* Textausgabe mit und ohne Zeilenumbruch */
+﻿/* Arithmetische Operationen */
 
 using System;
 
@@ -8,11 +8,33 @@ namespace CSHP02D
     {
         static void Main(string[] args)
         {
-            Console.Write("Dies ist ein C#-Programm,\ndas mithilfe von Escape-Sequenzen sogar Zeichen\nwie \" \" \", \" \\ \" und \" \' \",\ndie in C# eine besondere Bedeutung haben, ausgibt.");
+            Console.Write("5 + 9\t\t= ");
+            Console.WriteLine(5 + 9);
+
+            Console.Write("5 - 9\t\t= ");
+            Console.WriteLine(5 - 9);
+
+            Console.Write("5 * 9\t\t= ");
+            Console.WriteLine(5 * 9);
+
+            Console.Write("9 / 5\t\t= ");
+            Console.WriteLine(9 / 5);
+
+            Console.Write(" Rest ");
+            Console.WriteLine( 9 % 5);
+
+            Console.Write("10 + 8 /2\t\t= ");
+            Console.WriteLine(10 + 8 / 2);
+
+            //Geänderte Reihenfolge durch Klammern
+
+            Console.Write("(10 + 8) / 2\t\t= ");
+            Console.WriteLine((10 + 8) / 2);
 
 
-           
-             
+
+
+
         }
     }
 }
