@@ -8,13 +8,8 @@ namespace CSHP02D
     {
         static void Main(string[] args)
         {
-            //bitte in einer Zeile eingeben
-            Console.Write("Texztausgabe in C#, \nohne einen Zeilenumbruch\n");
-            Console.Write("Textausgabe\t in C#,");
-            Console.Write("ohne einen Zeilenumrbuch");
-            Console.WriteLine("Textausgabe\r in C#,");
-            Console.WriteLine("mit Zeilenumbruch");
-            Console.WriteLine("Anfang \"Mitte\" Ende");
+            Console.Write("Dies ist ein C#-Programm,\ndas mithilfe von Escape-Sequenzen sogar Zeichen\nwie \" \" \", \" \\ \" und \" \' \",\ndie in C# eine besondere Bedeutung haben, ausgibt.");
+
 
            
              
