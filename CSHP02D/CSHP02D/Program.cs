@@ -9,7 +9,7 @@ namespace CSHP02D
         static void Main(string[] args)
         {  
 
-            Console.WriteLine("5 + 9\t\t= {0}", 5 + 9);
+            Console.WriteLine($"5 + 9\t\t= { 5 + 9}");
             Console.WriteLine("5 - 9\t\t= {0}", 5 -9);
             Console.WriteLine("5 * 9\t\t= {0}", 5 * 9);
 
@@ -21,7 +21,10 @@ namespace CSHP02D
             // Geänderte Reihenfolge durch Klammern
 
             Console.WriteLine("(10 + 8) / 2\t\t= {0}", (10 + 8) / 2);
-            Console.WriteLine("9 / 5 ergibt als Rest {1} und als Ergebnis {0}", 9 / 5, 9 % 5);           
+            Console.WriteLine("9 / 5 ergibt als Rest {1} und als Ergebnis {0}", 9 / 5, 9 % 5);
+
+            Console.WriteLine("5 + 4 ist {0} und 4 + 5 ist {0}", 5 + 4);
+
         }
     }
 }
