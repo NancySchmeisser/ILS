@@ -21,8 +21,7 @@ namespace CSHP02D
             // Geänderte Reihenfolge durch Klammern
 
             Console.WriteLine("(10 + 8) / 2\t\t= {0}", (10 + 8) / 2);
-            
-            
+            Console.WriteLine("9 / 5 ergibt als Rest {1} und als Ergebnis {0}", 9 / 5, 9 % 5);           
         }
     }
 }
