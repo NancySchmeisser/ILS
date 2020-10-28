@@ -36,9 +36,6 @@ namespace CSHP02D_3._2_Variablen
             //Ausgaben nach dem Tausch
             Console.WriteLine("zahl1 hat jetzt den Wert {0}", zahl1);
             Console.WriteLine("zahl2 hat jetzt den Wert {0}", zahl2);
-
-
-
         }
     }
 }
