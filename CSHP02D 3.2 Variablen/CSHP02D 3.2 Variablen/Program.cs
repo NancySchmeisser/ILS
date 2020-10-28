@@ -15,7 +15,7 @@ namespace CSHP02D_3._2_Variablen
             //1. Ausgabe
             Console.WriteLine("zahl hat den Wert {0}", zahl);
             //2. Ausgabe
-            Console.WriteLine("zahl hat den Wert {0}", zahl);
+            Console.WriteLine($"zahl hat den Wert {zahl}");
             //2. Zuweisung
             zahl = 22;
             Console.WriteLine("zahl hat jetzt den Wert {0}", zahl);
