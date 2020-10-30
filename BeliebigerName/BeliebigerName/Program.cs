@@ -14,8 +14,9 @@ namespace Cshp01cAufgabe
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Dieses Programm ist nun fehlerfrei");
-			Console.SetCursorPosition(0, 0);
+			Console.WriteLine("Die Rechnung (((20 * 4) % 3 + 8) * 10 + 8) / 2 hat den Wert {0}", (((20 * 4) % 3 + 8) * 10 + 8) / 2);
+
+
 		}
 	}
 }
