@@ -7,7 +7,7 @@ namespace Datentypen_4._1
         static void Main(string[] args)
         {
             //Vereinbarung der Variablen
-            byte byteVariable = 1;
+            byte byteVariable = 255;
             sbyte sbyteVariable = 1;
             short int16Variable = 1;
             ushort uInt16Variable = 1;
@@ -17,7 +17,7 @@ namespace Datentypen_4._1
             ulong uInt64Variable = 1;
 
             //Ausgabe der Tabelle
-            //bitte jeweils in einer Zeitle eingeben
+            //bitte jeweils in einer Zeile eingeben
             Console.WriteLine("{0}\tvon {1} bis {2}",
                 byteVariable.GetType(), byte.MinValue, byte.MaxValue);
             Console.WriteLine("{0}\tvon {1} bis {2}",
@@ -35,6 +35,13 @@ namespace Datentypen_4._1
             Console.WriteLine("{0}\tvon {1} bis {2}",
                 uInt64Variable.GetType(), ulong.MinValue, ulong.MaxValue);
 
+            //bitte in einer Zeile eingeben
+            Console.WriteLine("Die Variable hat den Wert: {0}", byteVariable);
+            //jetzt erhöhen wir den Wert um 1 über den
+            //Inkrement Operator
+            byteVariable++;
+            //bitte in einer Zeile angeben
+            Console.WriteLine("255 + 1 ist gleich {0}????", byteVariable);
         }
     }
 }
