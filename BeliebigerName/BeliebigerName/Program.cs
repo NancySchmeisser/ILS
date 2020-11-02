@@ -1,22 +1,20 @@
-﻿/* #################################
-Einsendeaufgabe 1.1
-#################################*/
-
+﻿
+/* Die Gleitkommatypen von C# */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-namespace Cshp01cAufgabe
+
+
+namespace CSHP02D.4.3
 {
 	class Program
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Die Rechnung (((20 * 4) % 3 + 8) * 10 + 8) / 2 hat den Wert {0}", (((20 * 4) % 3 + 8) * 10 + 8) / 2);
+		//Vereinbarung der Variablen
+		float floatVariable;
+		double doubleVariable;
 
-
+		//Ausgabe von Gleitkommazahlen mit Standardeinstellungen
 		}
 	}
 }
