@@ -16,6 +16,9 @@ namespace Datentypen_4._1
             long int64Variable = 1;
             ulong uInt64Variable = 1;
 
+            float float32Variable = 1;
+            double double64Variable = 1;
+
             //Ausgabe der Tabelle
             //bitte jeweils in einer Zeile eingeben
             Console.WriteLine("{0}\tvon {1} bis {2}",
@@ -34,6 +37,13 @@ namespace Datentypen_4._1
                 int64Variable.GetType(), long.MinValue, long.MaxValue);
             Console.WriteLine("{0}\tvon {1} bis {2}",
                 uInt64Variable.GetType(), ulong.MinValue, ulong.MaxValue);
+
+            Console.WriteLine("{0}\tvon {1} bis {2}",
+                float32Variable.GetType(), float.MinValue, float.MaxValue);
+            Console.WriteLine("{0}\tvon {1} bis {2}",
+                double64Variable.GetType(), double.MinValue, double.MaxValue);
+
+
 
             //bitte in einer Zeile eingeben
             Console.WriteLine("Die Variable hat den Wert: {0}", byteVariable);
