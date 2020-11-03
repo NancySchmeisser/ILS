@@ -34,10 +34,9 @@ namespace Gleitkommazahlen
             Console.WriteLine("Als float: {0:G18}", floatVariable);
             Console.WriteLine("Als double: {0:G18}", doubleVariable);
             //jetzt verändert sich die Genauigkeit der Nachkommastellen
-            floatVariable = 1001.33333333333333333333F;
-            Console.WriteLine("Als float: {0:G18}", floatVariable);
-            Console.WriteLine("Große Zahlen (10000000000) : {0:N0}", floatVariable);
-            Console.WriteLine("Große Zahlen (10000000000) : {0,20:N0}", floatVariable);
+
+            floatVariable = 1.23456789F;
+            Console.WriteLine("Als float: {0:G10}", floatVariable);
         }
     }
 }
