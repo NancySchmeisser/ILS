@@ -1,57 +1,41 @@
 ﻿using System;
 
-namespace Datentypen_4._1
+namespace Gleitkommazahlen
 {
     class Program
     {
         static void Main(string[] args)
         {
             //Vereinbarung der Variablen
-            byte byteVariable = 255;
-            sbyte sbyteVariable = 1;
-            short int16Variable = 1;
-            ushort uInt16Variable = 1;
-            int int32Variable = 1;
-            uint uInt32Variable = 1;
-            long int64Variable = 1;
-            ulong uInt64Variable = 1;
+            float floatVariable;
+            double doubleVariable;
 
-            float float32Variable = 1;
-            double double64Variable = 1;
+            //Ausgabe von Gleitkommazahlen mit Standardeinstellungen
 
-            //Ausgabe der Tabelle
+            Console.WriteLine("Ausgabe von Gleitkommazahlen:");
+            Console.WriteLine("Standardeinstellungen");
+            Console.WriteLine("=============================");
+            floatVariable = 10000000000;
             //bitte jeweils in einer Zeile eingeben
-            Console.WriteLine("{0}\tvon {1} bis {2}",
-                byteVariable.GetType(), byte.MinValue, byte.MaxValue);
-            Console.WriteLine("{0}\tvon {1} bis {2}",
-               sbyteVariable.GetType(), sbyte.MinValue, sbyte.MaxValue);
-            Console.WriteLine("{0}\tvon {1} bis {2}",
-                int16Variable.GetType(), short.MinValue, short.MaxValue);
-            Console.WriteLine("{0}\tvon {1} bis {2}",
-                uInt16Variable.GetType(), ushort.MinValue, ushort.MaxValue);
-            Console.WriteLine("{0}\tvon {1} bis {2}",
-                int32Variable.GetType(), int.MinValue, int.MaxValue);
-            Console.WriteLine("{0}\tvon {1} bis {2}",
-                uInt32Variable.GetType(), uint.MinValue, uint.MaxValue);
-            Console.WriteLine("{0}\tvon {1} bis {2}",
-                int64Variable.GetType(), long.MinValue, long.MaxValue);
-            Console.WriteLine("{0}\tvon {1} bis {2}",
-                uInt64Variable.GetType(), ulong.MinValue, ulong.MaxValue);
-
-            Console.WriteLine("{0}\tvon {1} bis {2}",
-                float32Variable.GetType(), float.MinValue, float.MaxValue);
-            Console.WriteLine("{0}\tvon {1} bis {2}",
-                double64Variable.GetType(), double.MinValue, double.MaxValue);
-
-
-
+            Console.WriteLine("Große Zahlen (10000000000): {0}", floatVariable);
+            Console.WriteLine("Kommazahlen (1.33333333333333333333)");
+            floatVariable = 1.33333333333333333333F;
+            Console.WriteLine("Als float: {0}", floatVariable);
+            doubleVariable = 1.33333333333333333333;
+            Console.WriteLine("Als double : {0}", doubleVariable);
+            //Ausgabe von Gleitkommazahlen mit geänderten Einstellungen
+            Console.WriteLine("\n\n18 Stellen");
+            Console.WriteLine("=============================");
+            floatVariable = 10000000000;
             //bitte in einer Zeile eingeben
-            Console.WriteLine("Die Variable hat den Wert: {0}", byteVariable);
-            //jetzt erhöhen wir den Wert um 1 über den
-            //Inkrement Operator
-            byteVariable++;
-            //bitte in einer Zeile angeben
-            Console.WriteLine("255 + 1 ist gleich {0}????", byteVariable);
+            Console.WriteLine("Große Zahlen (10000000000):{0:G18}", floatVariable);
+            Console.WriteLine("Kommazahlen (1.33333333333333333333)");
+            floatVariable = 1.33333333333333333333F;
+            Console.WriteLine("Als float: {0:G18}", floatVariable);
+            Console.WriteLine("Als double: {0:G18}", doubleVariable);
+            //jetzt verändert sich die Genauigkeit der Nachkommastellen
+            floatVariable = 1001.33333333333333333333F;
+            Console.WriteLine("Als float: {0:G18}", floatVariable);
         }
     }
 }
