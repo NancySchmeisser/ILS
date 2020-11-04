@@ -21,7 +21,6 @@ namespace Variablen_5._2
             //byteZahl = intZahl;
 
 
-
         }
     }
 }
