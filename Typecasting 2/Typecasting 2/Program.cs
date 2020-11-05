@@ -37,8 +37,6 @@ namespace Typecasting_5._3
             //bitte in einer Zeile eingeben
             Console.WriteLine("(double)  (int / int) = {0}", doubleVariable3);
 
-
-
         }
     }
 }
