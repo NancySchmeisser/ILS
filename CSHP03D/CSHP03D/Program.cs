@@ -22,7 +22,7 @@ namespace CSHP03D
             Console.WriteLine("{0} == {1} \t{2}", zahl1, zahl2,
             zahl1 == zahl2);
 
-            Console.WriteLine("{0} !d= {1} \t{2}", zahl1, zahl2,
+            Console.WriteLine("{0} != {1} \t{2}", zahl1, zahl2,
             zahl1 != zahl2);
         }
     }
