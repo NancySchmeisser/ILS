@@ -24,16 +24,19 @@ namespace CSHP03D_2._5
             switch (essenWahl)
             {
                 //der case-Zweig für a
+                case 'A':
                 case 'a':
                     Console.WriteLine("Sie haben Azad gewählt!");
                     Console.WriteLine("Davon wirst du garantiert fett!");
                     break;
                 //der case-Zweig für b
+                case 'B':
                 case 'b':
                     Console.WriteLine("Sie haben Maykels gewählt!");
                     Console.WriteLine("Da gibt es durchaus auch was Leichtes, dauert aber!");
                     break;
                 //der case-Zweig für c
+                case 'C':
                 case 'c':
                     Console.WriteLine("Sie haben Chinese gewählt!");
                     Console.WriteLine("Hattest du gestern erst, aber was solls!");
