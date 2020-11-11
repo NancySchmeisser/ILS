@@ -17,8 +17,11 @@ namespace CSHP03D_2._1
 
             //die Verzweigung
             if (zahl > 5)
-            
+            {
+
                 Console.WriteLine("Sie haben eine Zahl größer als 5 eingegeben");
+                Console.WriteLine("Die Differenz zwischen {0} und 5 ist {1}.", zahl, zahl - 5);
+            }
                 Console.WriteLine("Die Zahl war {0}.", zahl);
             
         }
