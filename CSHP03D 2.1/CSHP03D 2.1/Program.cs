@@ -15,14 +15,17 @@ namespace CSHP03D_2._1
             Console.Write("Bitte geben Sie eine Zahl ein: ");
             zahl = Convert.ToInt32(Console.ReadLine());
 
-            //die Verzweigung, mit else
-            if (zahl > 5)
+            
+            if (zahl == 5)
             
 
-                Console.WriteLine("Sie haben eine Zahl größer als 5 eingegeben.");
+                Console.WriteLine("Sie haben die 5 eingegeben.");
                else
-                    Console.WriteLine("Sie haben eine Zahl kleiner als 5 oder 5 eingegeben.");
-                Console.WriteLine("Die Zahl war {0}.", zahl);     
+                if (zahl < 5)
+                    Console.WriteLine("Sie haben eine Zahl kleiner als 5 eingegeben."); 
+                else
+                Console.WriteLine("Sie haben eine Zahl größer als 5 eingegeben");
+            Console.WriteLine("Die Zahl war {0}.", zahl);
         }
     }
 }
