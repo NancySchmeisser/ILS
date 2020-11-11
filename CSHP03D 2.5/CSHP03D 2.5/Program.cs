@@ -13,9 +13,9 @@ namespace CSHP03D_2._5
             char essenWahl;
 
             Console.WriteLine("Sie haben folgende Auswahl: \n");
-            Console.WriteLine("a Azad");
-            Console.WriteLine("b Maykels");
-            Console.WriteLine("c irgendein Chinese \n");
+            Console.WriteLine("a Schweineschnitzel");
+            Console.WriteLine("b Wiener Schnitzel");
+          
             Console.Write("Was möchten Sie essen? ");
 
             essenWahl = Convert.ToChar(Console.Read());
