@@ -10,22 +10,24 @@ namespace CSHP03D_2._1
     {
         static void Main(string[] args)
         {
-            int zahl;
+            int x, y;
 
-            Console.Write("Bitte geben Sie eine Zahl ein: ");
-            zahl = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Bitte geben Sie X ein: ");
+            x = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Bitte geben Sie Y ein: ");
+            y = Convert.ToInt32(Console.ReadLine());
 
+
+            if (x > y)
             
-            if (zahl == 5)
-            
 
-                Console.WriteLine("Sie haben die 5 eingegeben.");
+                Console.WriteLine("X ist größer als Y.");
                else
-                if (zahl < 5)
-                    Console.WriteLine("Sie haben eine Zahl kleiner als 5 eingegeben."); 
+                if (x < y)
+                    Console.WriteLine("X ist kleiner als Y."); 
                 else
-                Console.WriteLine("Sie haben eine Zahl größer als 5 eingegeben");
-            Console.WriteLine("Die Zahl war {0}.", zahl);
+                Console.WriteLine("X ist gleich Y");
+            Console.WriteLine("Die Zahlen waren {0} und {1}.", x, y);
         }
     }
 }
