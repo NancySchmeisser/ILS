@@ -15,12 +15,11 @@ namespace CSHP03D_3._1
 
             do
             {
-                Console.Write("Bitte geben Sie einen Wert größer als 10 ein.");
-                schleifenVariable = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Die Variable hat jetzt den Wert {0}", schleifenVariable);
+                schleifenVariable++;
             }
             while (schleifenVariable <= 10);
-            Console.WriteLine("Danke.");
-            }
-        }
-    }
+         }
+     }
+ }
 
