@@ -13,12 +13,14 @@ namespace CSHP03D_3._1
         {
             int schleifenVariable = 0;
 
-            //die Schleife
-            while (schleifenVariable <= 10) ;
+            do
             {
-                Console.WriteLine("Die Variable hat jetzt den Wert {0}", schleifenVariable);
-                schleifenVariable++;
+                Console.Write("Bitte geben Sie einen Wert gröößer als 10 ein.");
+                schleifenVariable = Convert.ToInt32(Console.ReadLine());
+            }
+            while (schleifenVariable >= 10);
+            Console.WriteLine("Danke.");
             }
         }
     }
-}
+
