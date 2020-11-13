@@ -20,12 +20,15 @@ namespace CSHP03D_3._10
                 Console.WriteLine("Geben sie die Zahl {0} ein", schleifenVariable);
             eingabe = Convert.ToInt32(Console.ReadLine());
 
-            schleifenVariable++;
-            if (eingabe == 0)
-                continue;
-            quadrat = eingabe * eingabe;
-            Console.WriteLine("Das Quadrat der Zahl ist {0}", quadrat);
+            
+                if (eingabe != 0)
+                {
+                    quadrat = eingabe * eingabe;
+                    Console.WriteLine("Das Quadrat der Zahl ist {0}", quadrat);
+                }
+                schleifenVariable++;
             }
+
         
          Console.WriteLine("Das Einlesen ist beendet.");   
         }
