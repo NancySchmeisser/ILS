@@ -10,15 +10,25 @@ namespace CSHP03D_3._10
     {
         static void Main(string[] args)
         {
-            int schleifenVariable = 10;
+            int i, k;
+            bool flagVariable = true;
+            i = 0;
+            k = 0;
 
 
-
-            while (schleifenVariable <= 20)
+            while (i <= 5 && (flagVariable == true))
             {
-                Console.WriteLine("{0}", schleifenVariable);
-                schleifenVariable++;
+                Console.Write("Geben Sie eine 1 zum Abbruch ein.");
+                k = Convert.ToInt32(Console.ReadLine());
+                if (k == 1)
+                    flagVariable = false;
+                else
+                {
+                    i++;
+                }
+              
             }
+            Console.WriteLine("Schleife beendet.");
         }
     }
 }
