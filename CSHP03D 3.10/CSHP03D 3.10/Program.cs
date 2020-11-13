@@ -10,27 +10,15 @@ namespace CSHP03D_3._10
     {
         static void Main(string[] args)
         {
-            int quadrat, schleifenVariable, eingabe;
+            int schleifenVariable = 10;
 
-            quadrat = 0;
-            schleifenVariable = 1;
 
-            while (schleifenVariable <= 10) 
-            { 
-                Console.WriteLine("Geben sie die Zahl {0} ein", schleifenVariable);
-            eingabe = Convert.ToInt32(Console.ReadLine());
 
-            
-                if (eingabe != 0)
-                {
-                    quadrat = eingabe * eingabe;
-                    Console.WriteLine("Das Quadrat der Zahl ist {0}", quadrat);
-                }
+            while (schleifenVariable <= 20)
+            {
+                Console.WriteLine("{0}", schleifenVariable);
                 schleifenVariable++;
             }
-
-        
-         Console.WriteLine("Das Einlesen ist beendet.");   
         }
     }
 }
