@@ -10,8 +10,8 @@ namespace CSHP03D_3._5
     {
         static void Main(string[] args)
         {
-            int i;
-            for (i = 0; i <= 10; i++)
+          
+            for (int i = 0; i <= 10; i++)
                 Console.WriteLine("Die Variable hat jetzt den Wert {0}", i);
         }
     }
