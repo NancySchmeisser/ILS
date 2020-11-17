@@ -4,12 +4,15 @@ namespace CSHP03D_code_4._4
 {
     class Program
     {
-        static char Eingabe()
+        static int Eingabe()
         {
-            int einVariable;
-            Console.Write("Geben Sie eine Zahl ein: ");
+            int einVariable; einVariable2;
+            Console.Write("Geben Sie die Zahl 1 ein: ");
             einVariable = Convert.ToInt32(Console.ReadLine());
-            return einVariable;
+
+            Console.Write("Geben Sie die Zahl 2 ein: ");
+            einVariable = Convert.ToInt32(Console.ReadLine());
+            return (einVariable, einVariable2);
         }
         static void Main(string[] args)
         {
