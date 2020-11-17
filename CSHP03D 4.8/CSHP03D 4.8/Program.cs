@@ -7,7 +7,7 @@ namespace CSHP03D_4._8
     {
         static int Summe (int x, int y, int z )
         {
-            
+
             return (x + y + z);
         }
         static void Main (String[] args)
