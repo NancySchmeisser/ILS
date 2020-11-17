@@ -4,20 +4,24 @@ namespace CSHP03D_4._8
 {
     class Program
     {
-       static int Quadrat (int zahl)
+       static int Summe (int x, int y )
         {
-            int ergebnis;
-            ergebnis = zahl * zahl;
-            return ergebnis;
+            
+            return (x + y);
         }
         static void Main (String[] args)
         {
-            int einVariable;
+            int einVariable1, einVariable2;
 
-            Console.Write("Geben Sie eine Zahl ein: ");
-            einVariable = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Geben Sie die erste Zahl ein: ");
+            einVariable1 = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Das Quadrat der Zahl {0} ist {1}.", einVariable, Quadrat(einVariable));
+            Console.Write("Geben Sie die zweite Zahl ein: ");
+            einVariable2 = Convert.ToInt32(Console.ReadLine());
+
+
+
+            Console.WriteLine("Die Summe der beiden Zahlen ist {0}", Summe(einVariable1, einVariable2));
         }
     }
 }
