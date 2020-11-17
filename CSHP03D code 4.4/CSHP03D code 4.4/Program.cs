@@ -7,7 +7,7 @@ namespace CSHP03D_code_4._4
         static (int, int) Eingabe()
         {
             int einVariable1, einVariable2;
-
+           
             Console.Write("Geben Sie Zahl 1 ein: ");
             einVariable1 = Convert.ToInt32(Console.ReadLine());
 
