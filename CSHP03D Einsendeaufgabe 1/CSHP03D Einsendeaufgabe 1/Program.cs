@@ -11,33 +11,26 @@ namespace CSHP03D_Einsendeaufgabe_1
     {
         static void Main(string[] args)
         {
-
             int jahresZahl;
-            bool flagVariable = false;
-
+            bool istSchaltjahr = false;
 
             Console.Write("Geben Sie eine Jahreszahl ein: ");
             jahresZahl = Convert.ToInt32(Console.ReadLine());
 
-            if ((jahresZahl % 4 != 0))
-                flagVariable = false;
+            if (jahresZahl % 4 == 0)
+                istSchaltjahr = true;
 
-            else if ((jahresZahl % 4 == 0) && (jahresZahl % 100 != 0))
-                flagVariable = true;
+            if (jahresZahl % 100 == 0)
+                istSchaltjahr = false;
 
-
-            else if ((jahresZahl % 4 == 0) && (jahresZahl % 100 == 0) && (jahresZahl % 400 != 0))
-                flagVariable = false;
-
-            else Console.WriteLine("Wert ist nicht gültig"); 
+            if (jahresZahl % 400 == 0)
+                istSchaltjahr = true;
 
 
-            if (jahresZahl == 0)
-                flagVariable = false;
-            else
-            {
+            if (istSchaltjahr == true)
                 Console.WriteLine("Das Jahr {0} IST ein Schaltjahr!", jahresZahl);
-            }
+            else
+                Console.WriteLine("Das Jahr {0} ist KEIN Schaltjahr!", jahresZahl);
         }
     }
 }
