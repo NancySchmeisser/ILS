@@ -6,26 +6,27 @@ namespace CSHP04D_3._2
     {
         static void Main(string[] args)
         {
-            string zKette1 = " Rätsel ";
+            string zKette;
+            char zeichen;
+            int index = 0;
+            int zaehler = 0;
 
-            Console.WriteLine(zKette1);
-            zKette1 = zKette1.Trim();
-            Console.WriteLine(zKette1);
+            Console.Write("Bitte geben Sie eine Zeichenkette ein: ");
+            zKette = Console.ReadLine();
 
-            zKette1 = zKette1.Trim('R', 'l');
-            Console.WriteLine(zKette1);
+            Console.Write("Nach welchem Zeichen soll gewsucht werden? ");
+            zeichen = Convert.ToChar(Console.Read());
 
-            zKette1 = zKette1.Insert(0, "R");
-            Console.WriteLine(zKette1);
+            index = zKette.IndexOf(zeichen);
 
-            zKette1 = zKette1.Insert(zKette1.Length, "l");
-            Console.WriteLine(zKette1);
+            while (index >= 0)
+            {
+                index++;
+                zaehler++;
+                index = zKette.IndexOf(zeichen, index);
+             }
 
-            zKette1 = zKette1.ToUpper();
-            Console.WriteLine(zKette1);
-
-            zKette1 = zKette1.ToLower();
-            Console.WriteLine(zKette1);
+            Console.WriteLine("\nIn der Zeichenkette {0} komt {1} {2} Mal vor.", zKette, zeichen, zaehler);
 
 
         }
