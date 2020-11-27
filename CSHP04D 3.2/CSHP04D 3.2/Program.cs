@@ -6,19 +6,28 @@ namespace CSHP04D_3._2
     {
         static void Main(string[] args)
         {
-            string zKette2;
-            string zKette1 = "Rätsel";
+            string zKette1 = " Rätsel ";
 
-            do
-            {
-                Console.Write("Raten Sie. Wie heißt das Wort? ");
-                zKette2 = Console.ReadLine();
-            } while (zKette2 == String.Empty);
+            Console.WriteLine(zKette1);
+            zKette1 = zKette1.Trim();
+            Console.WriteLine(zKette1);
 
-            if (zKette1 == zKette2)
-                Console.WriteLine("Sie haben richtig geraten.");
-            else
-                Console.WriteLine("Leider falsch");
+            zKette1 = zKette1.Trim('R', 'l');
+            Console.WriteLine(zKette1);
+
+            zKette1 = zKette1.Insert(0, "R");
+            Console.WriteLine(zKette1);
+
+            zKette1 = zKette1.Insert(zKette1.Length, "l");
+            Console.WriteLine(zKette1);
+
+            zKette1 = zKette1.ToUpper();
+            Console.WriteLine(zKette1);
+
+            zKette1 = zKette1.ToLower();
+            Console.WriteLine(zKette1);
+
+
         }
     }
 }
