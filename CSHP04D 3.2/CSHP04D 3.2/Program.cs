@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace CSHP04D_3._2
 {
@@ -6,29 +7,14 @@ namespace CSHP04D_3._2
     {
         static void Main(string[] args)
         {
-            string zKette;
-            char zeichen;
-            int index = 0;
-            int zaehler = 0;
+            StringBuilder zKette = new StringBuilder("Rätsel");
+            Console.WriteLine("{0}", zKette);
 
-            Console.Write("Bitte geben Sie eine Zeichenkette ein: ");
-            zKette = Console.ReadLine();
+            zKette.Append("haft ist manches Mal das Programmieren.");
+            Console.WriteLine("{0}", zKette);
 
-            Console.Write("Nach welchem Zeichen soll gewsucht werden? ");
-            zeichen = Convert.ToChar(Console.Read());
-
-            index = zKette.IndexOf(zeichen);
-
-            while (index >= 0)
-            {
-                index++;
-                zaehler++;
-                index = zKette.IndexOf(zeichen, index);
-             }
-
-            Console.WriteLine("\nIn der Zeichenkette {0} komt {1} {2} Mal vor.", zKette, zeichen, zaehler);
-
-
+            zKette[0] = 'A';
+            Console.WriteLine("{0}", zKette);
         }
     }
 }
