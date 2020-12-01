@@ -4,12 +4,13 @@ Einsendeaufgabe 4
 
 
 using System;
+using System.Linq;
 
 namespace CSHP04D_Einsendeaufgabe
 {
     class Program
     {
-
+        static Kiste[] lagerraum = new Kiste[2];
         struct Kiste
         {
             public int Hoehe;
@@ -19,7 +20,7 @@ namespace CSHP04D_Einsendeaufgabe
             public int Volumen;
         }
         
-        static Kiste Eingeben(int kistenNummer)
+        static Kiste NeueKiste(int kistenNummer)
         {
             Kiste aKiste;
 
@@ -42,9 +43,11 @@ namespace CSHP04D_Einsendeaufgabe
 
         }
 
-        static void Loeschen(int kistenNummer)
+        static void Loeschen()
         {
-            Console.WriteLine("Geben Sie die Nummer der Kiste ein, die sie löschen wollen (1-75): ");
+            Console.WriteLine("Geben Sie die Nummer der Kiste ein, die sie löschen wollen (  ): ");
+            int löschKiste = Convert.ToInt32(Console.ReadLine());
+            lagerraum[löschKiste - 1].Nummer = 0;
         }
 
         static void Aendern(int kistenNummer)
@@ -68,7 +71,7 @@ namespace CSHP04D_Einsendeaufgabe
 
         static void Main(string[] args)
         {
-            Kiste[] lagerraum = new Kiste[75];
+
             int auswahl = 0;
 
             do
@@ -91,11 +94,18 @@ namespace CSHP04D_Einsendeaufgabe
                 {
                     case 1:
                         Console.WriteLine("1");
-                        Eingeben(1);
+                        for (int i = 0; i < lagerraum.Length; i++)
+                        {
+                            if (lagerraum[i].Nummer == 0) 
+                            {
+                                lagerraum[i] = NeueKiste(i + 1);
+                                break;
+                            }
+                        }
                         break;
                     case 2:
                         Console.WriteLine("2");
-                        Loeschen(1);
+                        Loeschen();
                         break;
                     case 3:
                         Console.WriteLine("3");
