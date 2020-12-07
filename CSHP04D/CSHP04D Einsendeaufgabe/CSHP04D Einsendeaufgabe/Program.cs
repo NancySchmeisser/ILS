@@ -4,13 +4,11 @@ Einsendeaufgabe 4
 
 
 using System;
-using System.Linq;
 
 namespace CSHP04D_Einsendeaufgabe
 {
     class Program
     {
-
         struct Kiste
         {
             public int Hoehe;
@@ -19,6 +17,25 @@ namespace CSHP04D_Einsendeaufgabe
             public int Nummer;
             public int Volumen;
         }
+
+
+        private static bool KisteAktiv(int kistennummer, Kiste[] lagerraum)
+        {
+            if (kistennummer < 1 || kistennummer > 75)
+            {
+                Console.WriteLine("Bitte geben sie eine Zahl zwischen 1 und 75 ein");
+                return false;
+            }
+
+            if (lagerraum[kistennummer - 1].Nummer == 0)
+            {
+                Console.WriteLine("Diese Kiste existiert nicht");
+                return false;
+            }
+
+            return true;
+        }
+
 
         static Kiste NeueKiste(int kistenNummer)
         {
@@ -43,70 +60,36 @@ namespace CSHP04D_Einsendeaufgabe
 
         }
 
-
-
-
         static void Loeschen(Kiste[] lagerraum)
         {
             Console.WriteLine("Geben Sie die Nummer der Kiste ein, die sie löschen wollen (1-75): ");
             int löschKiste = Convert.ToInt32(Console.ReadLine());
 
-            if (löschKiste < 1 || löschKiste > 75)
-            {
-                Console.WriteLine("Bitte geben sie eine Zahl zwischen 1 und 75 ein");
-                return;
-            }
-
-            if (lagerraum[löschKiste - 1].Nummer == 0)
-            {
-                Console.WriteLine("Diese Kiste existiert nicht");
-                return;
-            }
+            if (!KisteAktiv(löschKiste, lagerraum)) return;
 
             lagerraum[löschKiste - 1].Nummer = 0;
             Console.WriteLine("Die Kiste Nummer {0} wurde gelöscht \n", löschKiste);
         }
 
-
-
+      
 
         static void Aendern(Kiste[] lagerraum)
         {
             Console.WriteLine("Geben Sie die Nummer der Kiste ein, die sie ändern wollen (1-75): ");
             int aenderKiste = Convert.ToInt32(Console.ReadLine());
-            if (aenderKiste < 1 || aenderKiste > 75)
-            {
-                Console.WriteLine("Bitte geben sie eine Zahl zwischen 1 und 75 ein");
-                return;
-            }
+            if (!KisteAktiv(aenderKiste, lagerraum)) return;
 
-            if (lagerraum[aenderKiste - 1].Nummer == 0)
-            {
-                Console.WriteLine("Diese Kiste existiert nicht");
-                return;
-            }
             lagerraum[aenderKiste - 1] = NeueKiste(aenderKiste);
         }
-
-
 
 
         static void Anzeigen(Kiste[] lagerraum)
         {
             Console.WriteLine("Geben Sie die Nummer der Kiste ein, die sie anzeigen wollen (1-75): ");
             int anzeigeKiste = Convert.ToInt32(Console.ReadLine());
-            if (anzeigeKiste < 1 || anzeigeKiste > 75)
-            {
-                Console.WriteLine("Bitte geben sie eine Zahl zwischen 1 und 75 ein");
-                return;
-            }
+            if (!KisteAktiv(anzeigeKiste, lagerraum)) return;
             var aKiste = lagerraum[anzeigeKiste - 1];
-            if (aKiste.Nummer == 0)
-                Console.WriteLine("Diese Kiste existiert nicht");
-            else
-                Console.WriteLine("Kistennummer: {0}, Höhe: {1}, Breite: {2}, Länge: {3}, Volumen: {4}", aKiste.Nummer, aKiste.Hoehe, aKiste.Breite, aKiste.Laenge, aKiste.Volumen);
-
-
+            Console.WriteLine("Kistennummer: {0}, Höhe: {1}, Breite: {2}, Länge: {3}, Volumen: {4}", aKiste.Nummer, aKiste.Hoehe, aKiste.Breite, aKiste.Laenge, aKiste.Volumen);
         }
 
 
@@ -160,28 +143,22 @@ namespace CSHP04D_Einsendeaufgabe
                         }
                         break;
                     case 2:
-
                         Loeschen(lagerraum);
                         break;
                     case 3:
                         Aendern(lagerraum);
                         break;
                     case 4:
-
                         Anzeigen(lagerraum);
                         break;
                     case 5:
-
                         Auflisten(lagerraum);
                         break;
                     case 6:
-
-
                         break;
                     default:
                         Console.WriteLine("Ihre Auswahl ist nicht gültig");
                         break;
-
                 }
             }
             while (auswahl != 6);

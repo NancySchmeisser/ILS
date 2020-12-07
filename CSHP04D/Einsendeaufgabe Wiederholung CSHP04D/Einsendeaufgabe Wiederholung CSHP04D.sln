@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Einsendeaufgabe Wiederholung CSHP04D", "Einsendeaufgabe Wiederholung CSHP04D\Einsendeaufgabe Wiederholung CSHP04D.csproj", "{BCB3FF56-C476-4625-8EDD-05B74774970C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BCB3FF56-C476-4625-8EDD-05B74774970C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCB3FF56-C476-4625-8EDD-05B74774970C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCB3FF56-C476-4625-8EDD-05B74774970C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCB3FF56-C476-4625-8EDD-05B74774970C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8491D7DC-668E-4BEC-94E9-1F1CAD9EA2F6}
+	EndGlobalSection
+EndGlobal
