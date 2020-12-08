@@ -4,7 +4,7 @@ namespace CSHP05D
 {
     class Autoklasse
     {
-        int geschwindigkeit;
+        static int geschwindigkeit;
 
 
 
