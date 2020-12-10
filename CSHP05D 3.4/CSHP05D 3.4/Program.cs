@@ -10,7 +10,7 @@ namespace CSHP05D_3._4
 
         public void ZeichenketteAendern(string zeichenkette)
         {
-            zeichenkette = zeichenkette + " geändert";
+            this.zeichenkette = zeichenkette + " geändert";
         }
 
         public string GetZeichenkette()
