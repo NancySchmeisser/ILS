@@ -6,18 +6,13 @@ namespace Übungen_CSHP
     {
         static void Main(string[] args)
         {
+            int zahl = 1;
 
-            for (int i = 1; i < 6; i++)
+            while (zahl <= 25)
             {
-                if(i == 5)
-                    Console.Write("{0}", i);
-                else
-                    Console.Write("{0},", i);
-
+                Console.WriteLine("{}", zahl);
+                zahl++;
             }
-
-
-
-        }
+           }
     }
 }
