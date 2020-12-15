@@ -10,7 +10,7 @@ namespace Übungen_CSHP
 
             while (zahl <= 25)
             {
-                Console.WriteLine("{}", zahl);
+                Console.WriteLine("{0}", zahl *2);
                 zahl++;
             }
            }
