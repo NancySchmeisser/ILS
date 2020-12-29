@@ -29,6 +29,18 @@ namespace Übungen_CSHP
             return ergebnis;
         }
 
+        static double Potenz(double basis, double exponent)
+        {
+            double ergebnis = 1;
+
+            for (int i = 0; i < exponent; i++)
+            {
+                ergebnis = ergebnis * basis;
+            }
+            return ergebnis;
+
+        }
+
 
         static void Main(string[] args)
         {
@@ -41,7 +53,7 @@ namespace Übungen_CSHP
             Console.WriteLine("Geben Sie die zweite Zahl ein!");
                 zahl2 = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine("Welche Rechenoperation möchten Sie durchführen? Addieren, Subtrahieren, Multiplizieren, Dividieren");
+            Console.WriteLine("Welche Rechenoperation möchten Sie durchführen? Addieren, Subtrahieren, Multiplizieren, Dividieren oder Potenzieren (^)");
             eingabe = Console.ReadLine();
             double ergebnis;
 
@@ -63,8 +75,12 @@ namespace Übungen_CSHP
                 case "/":
                     ergebnis = Dividieren(zahl1, zahl2);
                     break;
+
+                case "^":
+                    ergebnis = Potenz(zahl1, zahl2);
+                    break;
                 default:
-                    Console.WriteLine("Idiot");
+                    Console.WriteLine("Geben Sie ein gültiges Zeichen ein! (+, -, *, /, p");
                     ergebnis = 0;
                     break;
             }
