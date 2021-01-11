@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSHP05D Einsendeaufgabe 2", "CSHP05D Einsendeaufgabe 2\CSHP05D Einsendeaufgabe 2.csproj", "{513D8BBA-2230-4740-B093-CEE31BC49931}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{513D8BBA-2230-4740-B093-CEE31BC49931}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{513D8BBA-2230-4740-B093-CEE31BC49931}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{513D8BBA-2230-4740-B093-CEE31BC49931}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{513D8BBA-2230-4740-B093-CEE31BC49931}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3312C6C0-897D-4975-A52C-B1CCB7E8A12B}
+	EndGlobalSection
+EndGlobal
