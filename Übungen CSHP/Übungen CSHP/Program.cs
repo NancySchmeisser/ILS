@@ -4,31 +4,35 @@ namespace Übungen_CSHP
 {
     class TV
     {
-        public int lautstärke;
-        public int programm;
-        public bool eingeschaltet = false;
+        private int lautstärke = 0;
+        private int programm = 0;
+        private bool eingeschaltet = false;
 
        public void Anschalten()
-        {
+        { if(eingeschaltet == false)
             eingeschaltet = true;
             programm = 1;
             lautstärke = 10;
+            Console.WriteLine("Fernseher ist eingeschaltet.");
         }
 
         public void ÄndereLautstärke()
         {
-
+            if (eingeschaltet == true)
+                Console.WriteLine("Lautstärke wurde auf 20 erhöht");
         }
 
         public void ÄndereProgramm()
         {
-
+            if (eingeschaltet == true)
+                programm = 2;
+            Console.WriteLine("Es wurde auf Kanal 2 umgeschaltet");
         }
 
         public void Ausschalten()
         {
             if (eingeschaltet == true)
-                Console.WriteLine();
+                Console.WriteLine("Test Ausschalten");
         }
 
 
@@ -38,7 +42,16 @@ namespace Übungen_CSHP
     {
         static void Main(string[] args)
         {
-            
+            TV Fernseher = new TV();
+
+            Console.WriteLine("Fernseher ist ausgeschaltet");
+            Fernseher.Anschalten();
+            Console.WriteLine("Umschalten");
+            Fernseher.ÄndereProgramm();
+            Console.WriteLine("Lautstärke ändern");
+            Fernseher.ÄndereLautstärke();
+
+
 
         }
     }
