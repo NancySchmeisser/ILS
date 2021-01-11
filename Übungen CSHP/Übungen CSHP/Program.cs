@@ -6,36 +6,51 @@ namespace Übungen_CSHP
     {
         private int lautstärke = 0;
         private int programm = 0;
-        private bool eingeschaltet = false;
+        private string eingeschaltet = "aus";
 
        public void Anschalten()
-        { if(eingeschaltet == false)
-            eingeschaltet = true;
+        {
+            if (eingeschaltet == "an")
+                return;
+
+            eingeschaltet = "an";
             programm = 1;
             lautstärke = 10;
-            Console.WriteLine("Fernseher ist eingeschaltet.");
+            Console.WriteLine("Fernseher einschalten.");
         }
 
-        public void ÄndereLautstärke()
+        public void ÄndereLautstärke(int neueLautstärke)
         {
-            if (eingeschaltet == true)
-                Console.WriteLine("Lautstärke wurde auf 20 erhöht");
+            if (eingeschaltet != "an")
+                return;
+
+            lautstärke = neueLautstärke;
+            Console.WriteLine("Lautstärke wurde auf {0} erhöht", neueLautstärke);
         }
 
-        public void ÄndereProgramm()
+        public void ÄndereProgramm(int neuesProgramm)
         {
-            if (eingeschaltet == true)
-                programm = 2;
-            Console.WriteLine("Es wurde auf Kanal 2 umgeschaltet");
+            if (eingeschaltet != "an")
+                return;
+
+            programm = neuesProgramm;
+            Console.WriteLine("Es wurde auf Programm {0} umgeschaltet", neuesProgramm);
         }
 
         public void Ausschalten()
         {
-            if (eingeschaltet == true)
-                Console.WriteLine("Test Ausschalten");
+            if (eingeschaltet != "an")
+                return;
+
+            programm = 0;
+            lautstärke = 0;
+            Console.WriteLine("Fernseher wurde ausgeschaltet");
         }
 
-
+        public void Ausgeben()
+        {
+            Console.WriteLine("Der Fernseher ist {0}. Es läuft Programm {1}. Lautstärke: {2}", eingeschaltet, programm, lautstärke);
+        }
     }
 
     class Program
@@ -44,14 +59,15 @@ namespace Übungen_CSHP
         {
             TV Fernseher = new TV();
 
-            Console.WriteLine("Fernseher ist ausgeschaltet");
+            Fernseher.Ausgeben();
             Fernseher.Anschalten();
-            Console.WriteLine("Umschalten");
-            Fernseher.ÄndereProgramm();
-            Console.WriteLine("Lautstärke ändern");
-            Fernseher.ÄndereLautstärke();
-
-
+            Fernseher.Ausgeben();
+            Fernseher.ÄndereLautstärke(20);
+            Fernseher.Ausgeben();
+            Fernseher.ÄndereProgramm(2);
+            Fernseher.Ausgeben();
+            Fernseher.Ausschalten();
+            Fernseher.Ausgeben();
 
         }
     }
