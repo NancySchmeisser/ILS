@@ -6,7 +6,7 @@ namespace CSHP06D_1._1
     class Esel
     {
         int sturheit;
-        int gewicht;
+        public int gewicht;
     }
     class Program
     {
