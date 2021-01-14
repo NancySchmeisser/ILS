@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSHP05D Einsendeaufgabe 3", "CSHP05D Einsendeaufgabe 3\CSHP05D Einsendeaufgabe 3.csproj", "{6A422E34-4210-4F3B-9DB9-9A259E849C0F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A422E34-4210-4F3B-9DB9-9A259E849C0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A422E34-4210-4F3B-9DB9-9A259E849C0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A422E34-4210-4F3B-9DB9-9A259E849C0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A422E34-4210-4F3B-9DB9-9A259E849C0F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D960A19F-AD7F-4AE2-922C-EE74592E84D7}
+	EndGlobalSection
+EndGlobal

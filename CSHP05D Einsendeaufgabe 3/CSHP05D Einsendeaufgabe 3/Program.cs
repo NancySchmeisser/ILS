@@ -1,5 +1,5 @@
 ﻿/* ######################################################
-Einsendeaufgabe 5.2
+Einsendeaufgabe 5.3
 ###################################################### */
 
 
@@ -24,7 +24,6 @@ namespace CSHP05D_Einsendeaufgabe_2
             {
                 naechster = new Listenelement();
                 naechster.SetDaten(datenNeu);
-                Console.WriteLine("Daten {0} wurden eingefügt.", datenNeu);
                 return naechster;
             }
 
@@ -37,6 +36,15 @@ namespace CSHP05D_Einsendeaufgabe_2
 
             if (naechster != null)
                 naechster.Ausgeben();
+        }
+
+        public void RückwärtsAusgeben()
+        {
+
+            if (naechster != null)
+                naechster.Ausgeben();
+
+            Console.WriteLine(daten);
         }
     }
 
@@ -51,8 +59,7 @@ namespace CSHP05D_Einsendeaufgabe_2
 
             for (int element = 2; element < 4; element++)
                 listenEnde = listenEnde.Anhängen("Element " + element);
-            listenAnfang.Ausgeben();
+            listenAnfang.RückwärtsAusgeben();
         }
     }
 }
-    
