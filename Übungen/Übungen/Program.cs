@@ -33,7 +33,16 @@ namespace Übungen
             if (next != null)
                 next.Ausgeben();
         }
-   }
+
+        public void AusgebenRückwärts()
+        {
+            if (next != null)
+                next.AusgebenRückwärts();
+
+            Console.WriteLine(daten);
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
@@ -45,10 +54,9 @@ namespace Übungen
 
             for (int element = 2; element < 4; element++)
             {
-                listenEnde.Anhängen("Element " + element);
+                listenEnde = listenEnde.Anhängen("Element " + element);
                 listenAnfang.Ausgeben();
             }
-
         }
     }
 }
