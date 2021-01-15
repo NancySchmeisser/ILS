@@ -26,12 +26,9 @@ namespace CSHP06D_2._1
     {
         static void Main(string[] args)
         {
-            Sherry flasche1 = new Sherry();
-
-            flasche1.Init(10, 1);
+            Sherry flasche1 = new Sherry(10,1);
 
             flasche1.Ansehen();
-
         }
     }
 }
