@@ -9,7 +9,7 @@ namespace CSHP06D_2._1
         int liter;
 
 
-        public void Init(int alter, int liter)
+        public Sherry(int alter, int liter)
         {
             this.alter = alter;
             this.liter = liter;
