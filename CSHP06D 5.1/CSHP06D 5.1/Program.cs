@@ -27,7 +27,7 @@ namespace CSHP06D_5._1
         public void Ausgeben()
         {
             Console.WriteLine("Die Ausgabe erfolgt aus {0}", this.GetType());
-            Console.WriteLine("Der Bar ist {0} Jahre alt und wiegt {1} Kilo", alter, gewicht);
+            Console.WriteLine("Der Bär ist {0} Jahre alt und wiegt {1} Kilo", alter, gewicht);
         }
     }
 
@@ -35,9 +35,20 @@ namespace CSHP06D_5._1
     {
         int anzahlKinder;
 
-        public ElternBaer(int gewicht, int alter, int anzahlKinder : base(gewicht, alter))
+        public ElternBaer(int gewicht, int alter, int anzahlKinder) : base (gewicht, alter)
         {
             this.anzahlKinder = anzahlKinder;
+        }
+
+        public int GetAnzahlKinder()
+        {
+            return anzahlKinder;
+        }
+
+        public void Ausgeben()
+        {
+            Console.WriteLine("Die Ausgabe erfolgt aus {0}", this.GetType());
+            Console.WriteLine("Der Bär ist {0} Jahre alt, wiegt {1} Kilo und hat {2} Kinder", alter, gewicht, anzahlKinder);
         }
 
     }
@@ -46,7 +57,13 @@ namespace CSHP06D_5._1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Baer alterBaer = new Baer(200, 3);
+
+            ElternBaer papaBaer = new ElternBaer(500, 5, 20);
+
+            alterBaer.Ausgeben();
+            papaBaer.Ausgeben();
+
         }
     }
 }
