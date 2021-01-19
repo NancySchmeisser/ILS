@@ -45,7 +45,7 @@ namespace CSHP06D_5._1
             return anzahlKinder;
         }
 
-        public void Ausgeben()
+        public new void Ausgeben()
         {
             Console.WriteLine("Die Ausgabe erfolgt aus {0}", this.GetType());
             Console.WriteLine("Der Bär ist {0} Jahre alt, wiegt {1} Kilo und hat {2} Kinder", alter, gewicht, anzahlKinder);
