@@ -61,8 +61,14 @@ namespace CSHP06D_5._1
 
             ElternBaer papaBaer = new ElternBaer(500, 5, 20);
 
-            alterBaer.Ausgeben();
-            papaBaer.Ausgeben();
+            Baer testBaer;
+
+            testBaer = alterBaer;
+            testBaer.Ausgeben();
+
+            testBaer = papaBaer;
+            testBaer.Ausgeben();
+
 
         }
     }
