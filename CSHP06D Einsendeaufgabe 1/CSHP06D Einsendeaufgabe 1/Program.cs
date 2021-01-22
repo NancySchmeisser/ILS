@@ -25,7 +25,7 @@ namespace CSHP06D_Einsendeaufgabe_1
 
         public int GetGroeße()
         {
-            return größe;
+            return GetAlter();
         }
     }
 
