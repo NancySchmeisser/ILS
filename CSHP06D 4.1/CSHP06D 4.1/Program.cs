@@ -23,14 +23,12 @@ namespace CSHP06D_4._1
             return alter;
         }
 
-        public void Ausgeben()
+        public virtual void Ausgeben()
         {
-            Console.WriteLine("Die Ausgabe erfolgt aus {0}", this.GetType());
-            Console.WriteLine("Der alte Bär ist {0} Jahre alt und wiegt {1} Kilo", alter, gewicht);
+            Console.WriteLine("Die Ausgabe erfolgt aus {0} Baer ", this.GetType());
+            Console.WriteLine("Der eventuell alte oder auch nicht Bär ist {0} Jahre alt und wiegt {1} Kilo", alter, gewicht);
 
         }
-
-   
     }
 
     class ElternBaer : Baer
@@ -52,9 +50,10 @@ namespace CSHP06D_4._1
             gewicht--;
         }
 
-        public void Ausgeben()
+        public override void Ausgeben()
         {
-            Console.WriteLine("Die Ausgabe erfolgt aus {0}", this.GetType());
+            Console.WriteLine("ELTERNBAER!!!!!");
+            Console.WriteLine("Die Ausgabe erfolgt aus {0} Elternbaer", this.GetType());
             Console.WriteLine("Der alte Bär ist {0} Jahre alt und wiegt {1} Kilo und hat {2} Kinder", alter, gewicht, anzahlKinder);
 
         }
