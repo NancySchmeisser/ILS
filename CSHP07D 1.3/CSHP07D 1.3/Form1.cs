@@ -26,5 +26,10 @@ namespace CSHP07D_1._3
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
