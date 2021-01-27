@@ -16,5 +16,10 @@ namespace CSHP07D_1._3
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
