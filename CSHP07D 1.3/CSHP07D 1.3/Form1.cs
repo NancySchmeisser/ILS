@@ -21,5 +21,10 @@ namespace CSHP07D_1._3
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
