@@ -27,7 +27,16 @@ namespace Taschenrechner
             float zahl1, zahl2, ergebnis = 0;
             bool divDurchNull = false;
 
-            zahl1 = Convert.ToSingle(textBoxZahl1.Text);
+            try
+            {
+                zahl1 = Convert.ToSingle(textBoxZahl1.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Ihre Eingabe " + textBoxZahl1.Text + " war nicht gültig. ", "Fehler");
+                return;
+            }
+
             zahl2 = Convert.ToSingle(textBoxZahl2.Text);
 
 
@@ -51,14 +60,7 @@ namespace Taschenrechner
             else
                 labelAnzeige.Text = Convert.ToString(ergebnis);
 
-            try
-            {
-                zahl1 = Convert.ToSingle(textBoxZahl1.Text);
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Ihre Eingabe " + textBoxZahl1.Text + " war nicht gültig. ", "Fehler");
-            }
+
         }
     }
 }
