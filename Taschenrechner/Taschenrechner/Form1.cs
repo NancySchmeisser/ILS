@@ -44,13 +44,13 @@ namespace Taschenrechner
 
 
 
-            if (radioButtonAddition.Checked == true)
+            if (ComboBoxAuswahl.SelectedIndex == 0)
                 ergebnis = zahl1 + zahl2;
-            if (radioButtonSubtraktion.Checked == true)
+            if (ComboBoxAuswahl.SelectedIndex == 1)
                 ergebnis = zahl1 - zahl2;
-            if (radioButtonMultiplikation.Checked == true)
+            if (ComboBoxAuswahl.SelectedIndex == 2)
                 ergebnis = zahl1 * zahl2;
-            if (radioButtonDivision.Checked == true)
+            if (ComboBoxAuswahl.SelectedIndex == 3)
             {
                 if (zahl2 == 0)
                     divDurchNull = true;
@@ -66,8 +66,9 @@ namespace Taschenrechner
 
         }
 
-
-
-
+        private void Taschenrechner_Load(object sender, EventArgs e)
+        {
+            ComboBoxAuswahl.SelectedIndex = 0;
+        }
     }
 }

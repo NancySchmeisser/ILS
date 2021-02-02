@@ -39,6 +39,7 @@
             this.radioButtonDivision = new System.Windows.Forms.RadioButton();
             this.radioButtonSubtraktion = new System.Windows.Forms.RadioButton();
             this.radioButtonAddition = new System.Windows.Forms.RadioButton();
+            this.ComboBoxAuswahl = new System.Windows.Forms.ComboBox();
             this.Rechenoperation.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -153,11 +154,25 @@
             this.radioButtonAddition.Text = "Addition";
             this.radioButtonAddition.UseVisualStyleBackColor = true;
             // 
+            // ComboBoxAuswahl
+            // 
+            this.ComboBoxAuswahl.FormattingEnabled = true;
+            this.ComboBoxAuswahl.Items.AddRange(new object[] {
+            "Addition",
+            "Subtraktion",
+            "Mutliplikation",
+            "Division"});
+            this.ComboBoxAuswahl.Location = new System.Drawing.Point(172, 253);
+            this.ComboBoxAuswahl.Name = "ComboBoxAuswahl";
+            this.ComboBoxAuswahl.Size = new System.Drawing.Size(121, 21);
+            this.ComboBoxAuswahl.TabIndex = 7;
+            // 
             // Taschenrechner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(526, 344);
+            this.Controls.Add(this.ComboBoxAuswahl);
             this.Controls.Add(this.Rechenoperation);
             this.Controls.Add(this.labelAnzeige);
             this.Controls.Add(this.labelBeschreibung);
@@ -168,6 +183,7 @@
             this.MaximizeBox = false;
             this.Name = "Taschenrechner";
             this.Text = "Taschenrechner";
+            this.Load += new System.EventHandler(this.Taschenrechner_Load);
             this.Rechenoperation.ResumeLayout(false);
             this.Rechenoperation.PerformLayout();
             this.ResumeLayout(false);
@@ -188,5 +204,6 @@
         private System.Windows.Forms.RadioButton radioButtonDivision;
         private System.Windows.Forms.RadioButton radioButtonSubtraktion;
         private System.Windows.Forms.RadioButton radioButtonAddition;
+        private System.Windows.Forms.ComboBox ComboBoxAuswahl;
     }
 }
