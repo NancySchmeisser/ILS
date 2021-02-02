@@ -24,6 +24,9 @@ namespace Taschenrechner
 
         private void buttonBerechnen_Click(object sender, EventArgs e)
         {
+
+          
+
             float zahl1, zahl2, ergebnis = 0;
             bool divDurchNull = false;
 
@@ -62,5 +65,9 @@ namespace Taschenrechner
 
 
         }
+
+
+
+
     }
 }
