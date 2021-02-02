@@ -32,8 +32,6 @@
             this.buttonBeenden = new System.Windows.Forms.Button();
             this.labelBeschreibung = new System.Windows.Forms.Label();
             this.labelAnzeige = new System.Windows.Forms.Label();
-            this.textBoxZahl1 = new System.Windows.Forms.TextBox();
-            this.textBoxZahl2 = new System.Windows.Forms.TextBox();
             this.Rechenoperation = new System.Windows.Forms.GroupBox();
             this.radioButtonMultiplikation = new System.Windows.Forms.RadioButton();
             this.radioButtonDivision = new System.Windows.Forms.RadioButton();
@@ -79,24 +77,6 @@
             this.labelAnzeige.Size = new System.Drawing.Size(13, 13);
             this.labelAnzeige.TabIndex = 3;
             this.labelAnzeige.Text = "0";
-            // 
-            // textBoxZahl1
-            // 
-            this.textBoxZahl1.Location = new System.Drawing.Point(40, 33);
-            this.textBoxZahl1.Name = "textBoxZahl1";
-            this.textBoxZahl1.Size = new System.Drawing.Size(100, 20);
-            this.textBoxZahl1.TabIndex = 0;
-            this.textBoxZahl1.Text = "0";
-            this.textBoxZahl1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxZahl2
-            // 
-            this.textBoxZahl2.Location = new System.Drawing.Point(40, 59);
-            this.textBoxZahl2.Name = "textBoxZahl2";
-            this.textBoxZahl2.Size = new System.Drawing.Size(100, 20);
-            this.textBoxZahl2.TabIndex = 1;
-            this.textBoxZahl2.Text = "0";
-            this.textBoxZahl2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Rechenoperation
             // 
@@ -162,8 +142,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(321, 189);
             this.Controls.Add(this.Rechenoperation);
-            this.Controls.Add(this.textBoxZahl2);
-            this.Controls.Add(this.textBoxZahl1);
             this.Controls.Add(this.labelAnzeige);
             this.Controls.Add(this.labelBeschreibung);
             this.Controls.Add(this.buttonBeenden);
@@ -185,8 +163,6 @@
         private System.Windows.Forms.Button buttonBeenden;
         private System.Windows.Forms.Label labelBeschreibung;
         private System.Windows.Forms.Label labelAnzeige;
-        private System.Windows.Forms.TextBox textBoxZahl1;
-        private System.Windows.Forms.TextBox textBoxZahl2;
         private System.Windows.Forms.GroupBox Rechenoperation;
         private System.Windows.Forms.RadioButton radioButtonMultiplikation;
         private System.Windows.Forms.RadioButton radioButtonDivision;
