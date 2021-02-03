@@ -16,5 +16,10 @@ namespace Bildbetrachter
         {
             InitializeComponent();
         }
+
+        private void buttonBeenden_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
