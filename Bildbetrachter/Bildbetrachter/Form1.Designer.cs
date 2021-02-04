@@ -30,14 +30,14 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageEinzel = new System.Windows.Forms.TabPage();
-            this.tabPageSchau = new System.Windows.Forms.TabPage();
-            this.buttonÖffnen = new System.Windows.Forms.Button();
-            this.buttonBeenden = new System.Windows.Forms.Button();
-            this.buttonAnzeigen = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.checkBoxOptimaleGröße = new System.Windows.Forms.CheckBox();
-            this.checkBoxNeuesFenster = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.checkBoxNeuesFenster = new System.Windows.Forms.CheckBox();
+            this.checkBoxOptimaleGröße = new System.Windows.Forms.CheckBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.buttonAnzeigen = new System.Windows.Forms.Button();
+            this.buttonBeenden = new System.Windows.Forms.Button();
+            this.buttonÖffnen = new System.Windows.Forms.Button();
+            this.tabPageSchau = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPageEinzel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -73,65 +73,17 @@
             this.tabPageEinzel.Text = "Einzelbild";
             this.tabPageEinzel.UseVisualStyleBackColor = true;
             // 
-            // tabPageSchau
+            // pictureBox1
             // 
-            this.tabPageSchau.Location = new System.Drawing.Point(4, 22);
-            this.tabPageSchau.Name = "tabPageSchau";
-            this.tabPageSchau.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSchau.Size = new System.Drawing.Size(768, 400);
-            this.tabPageSchau.TabIndex = 1;
-            this.tabPageSchau.Text = "Bilderschau";
-            this.tabPageSchau.UseVisualStyleBackColor = true;
-            // 
-            // buttonÖffnen
-            // 
-            this.buttonÖffnen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonÖffnen.Location = new System.Drawing.Point(687, 35);
-            this.buttonÖffnen.Name = "buttonÖffnen";
-            this.buttonÖffnen.Size = new System.Drawing.Size(75, 23);
-            this.buttonÖffnen.TabIndex = 0;
-            this.buttonÖffnen.Text = "Öffnen";
-            this.buttonÖffnen.UseVisualStyleBackColor = true;
-            // 
-            // buttonBeenden
-            // 
-            this.buttonBeenden.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonBeenden.Location = new System.Drawing.Point(687, 64);
-            this.buttonBeenden.Name = "buttonBeenden";
-            this.buttonBeenden.Size = new System.Drawing.Size(75, 23);
-            this.buttonBeenden.TabIndex = 1;
-            this.buttonBeenden.Text = "Beenden";
-            this.buttonBeenden.UseVisualStyleBackColor = true;
-            this.buttonBeenden.Click += new System.EventHandler(this.buttonBeenden_Click);
-            // 
-            // buttonAnzeigen
-            // 
-            this.buttonAnzeigen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAnzeigen.Location = new System.Drawing.Point(687, 6);
-            this.buttonAnzeigen.Name = "buttonAnzeigen";
-            this.buttonAnzeigen.Size = new System.Drawing.Size(75, 23);
-            this.buttonAnzeigen.TabIndex = 2;
-            this.buttonAnzeigen.Text = " Anzeigen";
-            this.buttonAnzeigen.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox1.Location = new System.Drawing.Point(19, 351);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(203, 20);
-            this.textBox1.TabIndex = 3;
-            // 
-            // checkBoxOptimaleGröße
-            // 
-            this.checkBoxOptimaleGröße.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.checkBoxOptimaleGröße.AutoSize = true;
-            this.checkBoxOptimaleGröße.Location = new System.Drawing.Point(22, 377);
-            this.checkBoxOptimaleGröße.Name = "checkBoxOptimaleGröße";
-            this.checkBoxOptimaleGröße.Size = new System.Drawing.Size(99, 17);
-            this.checkBoxOptimaleGröße.TabIndex = 4;
-            this.checkBoxOptimaleGröße.Text = "Optimale Größe";
-            this.checkBoxOptimaleGröße.UseVisualStyleBackColor = true;
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(675, 339);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // checkBoxNeuesFenster
             // 
@@ -144,17 +96,66 @@
             this.checkBoxNeuesFenster.Text = "Neues Fenster";
             this.checkBoxNeuesFenster.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // checkBoxOptimaleGröße
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(675, 339);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.checkBoxOptimaleGröße.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.checkBoxOptimaleGröße.AutoSize = true;
+            this.checkBoxOptimaleGröße.Location = new System.Drawing.Point(22, 377);
+            this.checkBoxOptimaleGröße.Name = "checkBoxOptimaleGröße";
+            this.checkBoxOptimaleGröße.Size = new System.Drawing.Size(99, 17);
+            this.checkBoxOptimaleGröße.TabIndex = 4;
+            this.checkBoxOptimaleGröße.Text = "Optimale Größe";
+            this.checkBoxOptimaleGröße.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBox1.Location = new System.Drawing.Point(19, 351);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(203, 20);
+            this.textBox1.TabIndex = 3;
+            // 
+            // buttonAnzeigen
+            // 
+            this.buttonAnzeigen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAnzeigen.Location = new System.Drawing.Point(687, 6);
+            this.buttonAnzeigen.Name = "buttonAnzeigen";
+            this.buttonAnzeigen.Size = new System.Drawing.Size(75, 23);
+            this.buttonAnzeigen.TabIndex = 2;
+            this.buttonAnzeigen.Text = " Anzeigen";
+            this.buttonAnzeigen.UseVisualStyleBackColor = true;
+            this.buttonAnzeigen.Click += new System.EventHandler(this.buttonAnzeigen_Click);
+            // 
+            // buttonBeenden
+            // 
+            this.buttonBeenden.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonBeenden.Location = new System.Drawing.Point(687, 64);
+            this.buttonBeenden.Name = "buttonBeenden";
+            this.buttonBeenden.Size = new System.Drawing.Size(75, 23);
+            this.buttonBeenden.TabIndex = 1;
+            this.buttonBeenden.Text = "Beenden";
+            this.buttonBeenden.UseVisualStyleBackColor = true;
+            this.buttonBeenden.Click += new System.EventHandler(this.buttonBeenden_Click);
+            // 
+            // buttonÖffnen
+            // 
+            this.buttonÖffnen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonÖffnen.Location = new System.Drawing.Point(687, 35);
+            this.buttonÖffnen.Name = "buttonÖffnen";
+            this.buttonÖffnen.Size = new System.Drawing.Size(75, 23);
+            this.buttonÖffnen.TabIndex = 0;
+            this.buttonÖffnen.Text = "Öffnen";
+            this.buttonÖffnen.UseVisualStyleBackColor = true;
+            // 
+            // tabPageSchau
+            // 
+            this.tabPageSchau.Location = new System.Drawing.Point(4, 22);
+            this.tabPageSchau.Name = "tabPageSchau";
+            this.tabPageSchau.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageSchau.Size = new System.Drawing.Size(768, 400);
+            this.tabPageSchau.TabIndex = 1;
+            this.tabPageSchau.Text = "Bilderschau";
+            this.tabPageSchau.UseVisualStyleBackColor = true;
             // 
             // Bildbetrachter
             // 
