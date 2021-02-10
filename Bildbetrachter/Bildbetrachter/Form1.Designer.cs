@@ -38,9 +38,12 @@
             this.buttonBeenden = new System.Windows.Forms.Button();
             this.buttonÖffnen = new System.Windows.Forms.Button();
             this.tabPageSchau = new System.Windows.Forms.TabPage();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.tabControl1.SuspendLayout();
             this.tabPageEinzel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -72,6 +75,7 @@
             this.tabPageEinzel.TabIndex = 0;
             this.tabPageEinzel.Text = "Einzelbild";
             this.tabPageEinzel.UseVisualStyleBackColor = true;
+            this.tabPageEinzel.Click += new System.EventHandler(this.tabPageEinzel_Click);
             // 
             // pictureBox1
             // 
@@ -106,6 +110,7 @@
             this.checkBoxOptimaleGröße.TabIndex = 4;
             this.checkBoxOptimaleGröße.Text = "Optimale Größe";
             this.checkBoxOptimaleGröße.UseVisualStyleBackColor = true;
+            this.checkBoxOptimaleGröße.CheckedChanged += new System.EventHandler(this.checkBoxOptimaleGröße_CheckedChanged);
             // 
             // textBox1
             // 
@@ -146,6 +151,7 @@
             this.buttonÖffnen.TabIndex = 0;
             this.buttonÖffnen.Text = "Öffnen";
             this.buttonÖffnen.UseVisualStyleBackColor = true;
+            this.buttonÖffnen.Click += new System.EventHandler(this.buttonÖffnen_Click);
             // 
             // tabPageSchau
             // 
@@ -156,6 +162,16 @@
             this.tabPageSchau.TabIndex = 1;
             this.tabPageSchau.Text = "Bilderschau";
             this.tabPageSchau.UseVisualStyleBackColor = true;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // fileSystemWatcher1
+            // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.Filter = "Grafikdateien|*.bmp;*.gif;*.jpg;*.png;*.tif;*.wmf";
+            this.fileSystemWatcher1.SynchronizingObject = this;
             // 
             // Bildbetrachter
             // 
@@ -170,6 +186,7 @@
             this.tabPageEinzel.ResumeLayout(false);
             this.tabPageEinzel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -186,6 +203,8 @@
         private System.Windows.Forms.CheckBox checkBoxNeuesFenster;
         private System.Windows.Forms.CheckBox checkBoxOptimaleGröße;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.IO.FileSystemWatcher fileSystemWatcher1;
     }
 }
 
