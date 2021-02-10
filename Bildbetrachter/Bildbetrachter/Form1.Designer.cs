@@ -39,11 +39,9 @@
             this.buttonÖffnen = new System.Windows.Forms.Button();
             this.tabPageSchau = new System.Windows.Forms.TabPage();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.tabControl1.SuspendLayout();
             this.tabPageEinzel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -165,13 +163,7 @@
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // fileSystemWatcher1
-            // 
-            this.fileSystemWatcher1.EnableRaisingEvents = true;
-            this.fileSystemWatcher1.Filter = "Grafikdateien|*.bmp;*.gif;*.jpg;*.png;*.tif;*.wmf";
-            this.fileSystemWatcher1.SynchronizingObject = this;
+            this.openFileDialog1.Filter = "Grafikdateien|*.bmp;*.gif;*.jpg;*.png;*.tif;*.wmf";
             // 
             // Bildbetrachter
             // 
@@ -186,7 +178,6 @@
             this.tabPageEinzel.ResumeLayout(false);
             this.tabPageEinzel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -204,7 +195,6 @@
         private System.Windows.Forms.CheckBox checkBoxOptimaleGröße;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.IO.FileSystemWatcher fileSystemWatcher1;
     }
 }
 
