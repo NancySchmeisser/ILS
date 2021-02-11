@@ -39,9 +39,14 @@
             this.buttonÖffnen = new System.Windows.Forms.Button();
             this.tabPageSchau = new System.Windows.Forms.TabPage();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.buttonAuswaehlen = new System.Windows.Forms.Button();
+            this.buttonStarten = new System.Windows.Forms.Button();
+            this.buttonBeenden1 = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
             this.tabPageEinzel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPageSchau.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -153,6 +158,10 @@
             // 
             // tabPageSchau
             // 
+            this.tabPageSchau.Controls.Add(this.listBox1);
+            this.tabPageSchau.Controls.Add(this.buttonBeenden1);
+            this.tabPageSchau.Controls.Add(this.buttonStarten);
+            this.tabPageSchau.Controls.Add(this.buttonAuswaehlen);
             this.tabPageSchau.Location = new System.Drawing.Point(4, 22);
             this.tabPageSchau.Name = "tabPageSchau";
             this.tabPageSchau.Padding = new System.Windows.Forms.Padding(3);
@@ -164,6 +173,48 @@
             // openFileDialog1
             // 
             this.openFileDialog1.Filter = "Grafikdateien|*.bmp;*.gif;*.jpg;*.png;*.tif;*.wmf";
+            // 
+            // buttonAuswaehlen
+            // 
+            this.buttonAuswaehlen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAuswaehlen.Location = new System.Drawing.Point(669, 6);
+            this.buttonAuswaehlen.Name = "buttonAuswaehlen";
+            this.buttonAuswaehlen.Size = new System.Drawing.Size(93, 23);
+            this.buttonAuswaehlen.TabIndex = 0;
+            this.buttonAuswaehlen.Text = "Auswählen";
+            this.buttonAuswaehlen.UseVisualStyleBackColor = true;
+            // 
+            // buttonStarten
+            // 
+            this.buttonStarten.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonStarten.Location = new System.Drawing.Point(669, 35);
+            this.buttonStarten.Name = "buttonStarten";
+            this.buttonStarten.Size = new System.Drawing.Size(93, 23);
+            this.buttonStarten.TabIndex = 1;
+            this.buttonStarten.Text = "Starten";
+            this.buttonStarten.UseVisualStyleBackColor = true;
+            // 
+            // buttonBeenden1
+            // 
+            this.buttonBeenden1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonBeenden1.Location = new System.Drawing.Point(669, 64);
+            this.buttonBeenden1.Name = "buttonBeenden1";
+            this.buttonBeenden1.Size = new System.Drawing.Size(93, 23);
+            this.buttonBeenden1.TabIndex = 2;
+            this.buttonBeenden1.Text = "Beenden";
+            this.buttonBeenden1.UseVisualStyleBackColor = true;
+            this.buttonBeenden1.Click += new System.EventHandler(this.buttonBeenden_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(6, 0);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(657, 212);
+            this.listBox1.TabIndex = 3;
             // 
             // Bildbetrachter
             // 
@@ -178,6 +229,7 @@
             this.tabPageEinzel.ResumeLayout(false);
             this.tabPageEinzel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPageSchau.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -195,6 +247,10 @@
         private System.Windows.Forms.CheckBox checkBoxOptimaleGröße;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button buttonBeenden1;
+        private System.Windows.Forms.Button buttonStarten;
+        private System.Windows.Forms.Button buttonAuswaehlen;
     }
 }
 
