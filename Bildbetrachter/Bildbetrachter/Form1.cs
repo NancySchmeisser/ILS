@@ -84,7 +84,7 @@ namespace Bildbetrachter
         {
             string[] dateien = openFileDialog2.FileNames;
             foreach (string datei in dateien)
-                listBox1.Items.Add(datei);
+                listBox1.Items.Add(datei);                               
 
         }
     }                                                            

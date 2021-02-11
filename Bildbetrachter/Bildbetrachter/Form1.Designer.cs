@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageEinzel = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -44,6 +45,7 @@
             this.buttonBeenden1 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPageEinzel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -225,6 +227,10 @@
             this.openFileDialog2.Title = "Auswahl für die Bilderschau";
             this.openFileDialog2.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog2_FileOk);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            // 
             // Bildbetrachter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -261,6 +267,7 @@
         private System.Windows.Forms.Button buttonStarten;
         private System.Windows.Forms.Button buttonAuswaehlen;
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
