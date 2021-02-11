@@ -107,6 +107,24 @@ namespace Bildbetrachter
                 fensterBilderschau.Text = "Bilderschau";
                 fensterBilderschau.Show();
             }
+
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex < listBox1.Items.Count - 1)
+            {
+                listBox1.SelectedIndex++;
+                fensterBilderschau.BildLaden(listBox1.SelectedItem.ToString());
+            }
+
+            else
+            {
+                listBox1.SelectedIndex = -1;
+                timer1.Stop();
+                fensterBilderschau.Close();
+            }
         }
     }                                                            
 }
