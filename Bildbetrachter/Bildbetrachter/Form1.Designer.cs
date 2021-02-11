@@ -43,6 +43,7 @@
             this.buttonStarten = new System.Windows.Forms.Button();
             this.buttonBeenden1 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1.SuspendLayout();
             this.tabPageEinzel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -183,6 +184,7 @@
             this.buttonAuswaehlen.TabIndex = 0;
             this.buttonAuswaehlen.Text = "Auswählen";
             this.buttonAuswaehlen.UseVisualStyleBackColor = true;
+            this.buttonAuswaehlen.Click += new System.EventHandler(this.buttonAuswaehlen_Click);
             // 
             // buttonStarten
             // 
@@ -215,6 +217,13 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(657, 212);
             this.listBox1.TabIndex = 3;
+            // 
+            // openFileDialog2
+            // 
+            this.openFileDialog2.Filter = "Grafikdateien|*.bmp;*.gif;*.jpg;*.png;*.tif;*.wmf";
+            this.openFileDialog2.Multiselect = true;
+            this.openFileDialog2.Title = "Auswahl für die Bilderschau";
+            this.openFileDialog2.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog2_FileOk);
             // 
             // Bildbetrachter
             // 
@@ -251,6 +260,7 @@
         private System.Windows.Forms.Button buttonBeenden1;
         private System.Windows.Forms.Button buttonStarten;
         private System.Windows.Forms.Button buttonAuswaehlen;
+        private System.Windows.Forms.OpenFileDialog openFileDialog2;
     }
 }
 

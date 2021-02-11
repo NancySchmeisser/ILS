@@ -74,5 +74,18 @@ namespace Bildbetrachter
             pictureBox1.Load(openFileDialog1.FileName);
             buttonAnzeigen_Click(sender, e);
         }
+
+        private void buttonAuswaehlen_Click(object sender, EventArgs e)
+        {
+            openFileDialog2.ShowDialog();
+        }
+
+        private void openFileDialog2_FileOk(object sender, CancelEventArgs e)
+        {
+            string[] dateien = openFileDialog2.FileNames;
+            foreach (string datei in dateien)
+                listBox1.Items.Add(datei);
+
+        }
     }                                                            
 }
