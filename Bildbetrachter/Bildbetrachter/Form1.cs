@@ -25,13 +25,26 @@ namespace Bildbetrachter
         private void buttonAnzeigen_Click(object sender, EventArgs e)
         {
             if (textBox1.Text != String.Empty)
-                {
+            {
                 if (System.IO.File.Exists(textBox1.Text))
-                    pictureBox1.Load(textBox1.Text);
-                else
-                    MessageBox.Show("Die Datei existiert nicht!", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                {
+                    if (checkBoxNeuesFenster.Checked == true)
+                    {
+                        FormMax neuesFormular = new FormMax();
+                        neuesFormular.BildLaden(textBox1.Text);
+                        neuesFormular.ShowDialog();
+                    }
+                    else
+                    {
+                        pictureBox1.Load(textBox1.Text);
+                    }
                 }
-        }
+            }
+            else
+            {
+                MessageBox.Show("Die Datei existiert nicht!", "Fehler");
+            }
+        }        
 
         // Was tut diese Methode?
         private void tabPageEinzel_Click(object sender, EventArgs e)

@@ -43,6 +43,7 @@
             this.pictureBoxFormMax.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxFormMax.TabIndex = 0;
             this.pictureBoxFormMax.TabStop = false;
+            this.pictureBoxFormMax.Click += new System.EventHandler(this.pictureBoxFormMax_Click);
             // 
             // FormMax
             // 
