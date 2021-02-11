@@ -12,6 +12,9 @@ namespace Bildbetrachter
 {
     public partial class Bildbetrachter : Form
     {
+
+        private FormMax fensterBilderschau;
+
         public Bildbetrachter()
         {
             InitializeComponent();
@@ -86,6 +89,24 @@ namespace Bildbetrachter
             foreach (string datei in dateien)
                 listBox1.Items.Add(datei);                               
 
+        }
+
+        private void buttonStarten_Click(object sender, EventArgs e)
+        {
+            if (listBox1.Items.Count == 0)
+            {
+                MessageBox.Show("Sie müssen erst Dateien auswählen!", "Fehler");
+                return;
+            }
+
+            if (listBox1.SelectedIndex == -1)
+            {
+                listBox1.SelectedIndex = 0;
+                fensterBilderschau = new FormMax();
+                fensterBilderschau.BildLaden(listBox1.SelectedItem.ToString());
+                fensterBilderschau.Text = "Bilderschau";
+                fensterBilderschau.Show();
+            }
         }
     }                                                            
 }

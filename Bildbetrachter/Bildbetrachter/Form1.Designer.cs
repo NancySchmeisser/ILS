@@ -39,11 +39,11 @@
             this.buttonBeenden = new System.Windows.Forms.Button();
             this.buttonÖffnen = new System.Windows.Forms.Button();
             this.tabPageSchau = new System.Windows.Forms.TabPage();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.buttonAuswaehlen = new System.Windows.Forms.Button();
-            this.buttonStarten = new System.Windows.Forms.Button();
-            this.buttonBeenden1 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.buttonBeenden1 = new System.Windows.Forms.Button();
+            this.buttonStarten = new System.Windows.Forms.Button();
+            this.buttonAuswaehlen = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
@@ -173,30 +173,16 @@
             this.tabPageSchau.Text = "Bilderschau";
             this.tabPageSchau.UseVisualStyleBackColor = true;
             // 
-            // openFileDialog1
+            // listBox1
             // 
-            this.openFileDialog1.Filter = "Grafikdateien|*.bmp;*.gif;*.jpg;*.png;*.tif;*.wmf";
-            // 
-            // buttonAuswaehlen
-            // 
-            this.buttonAuswaehlen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAuswaehlen.Location = new System.Drawing.Point(669, 6);
-            this.buttonAuswaehlen.Name = "buttonAuswaehlen";
-            this.buttonAuswaehlen.Size = new System.Drawing.Size(93, 23);
-            this.buttonAuswaehlen.TabIndex = 0;
-            this.buttonAuswaehlen.Text = "Auswählen";
-            this.buttonAuswaehlen.UseVisualStyleBackColor = true;
-            this.buttonAuswaehlen.Click += new System.EventHandler(this.buttonAuswaehlen_Click);
-            // 
-            // buttonStarten
-            // 
-            this.buttonStarten.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonStarten.Location = new System.Drawing.Point(669, 35);
-            this.buttonStarten.Name = "buttonStarten";
-            this.buttonStarten.Size = new System.Drawing.Size(93, 23);
-            this.buttonStarten.TabIndex = 1;
-            this.buttonStarten.Text = "Starten";
-            this.buttonStarten.UseVisualStyleBackColor = true;
+            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(6, 0);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(657, 212);
+            this.listBox1.TabIndex = 3;
             // 
             // buttonBeenden1
             // 
@@ -209,16 +195,31 @@
             this.buttonBeenden1.UseVisualStyleBackColor = true;
             this.buttonBeenden1.Click += new System.EventHandler(this.buttonBeenden_Click);
             // 
-            // listBox1
+            // buttonStarten
             // 
-            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(6, 0);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(657, 212);
-            this.listBox1.TabIndex = 3;
+            this.buttonStarten.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonStarten.Location = new System.Drawing.Point(669, 35);
+            this.buttonStarten.Name = "buttonStarten";
+            this.buttonStarten.Size = new System.Drawing.Size(93, 23);
+            this.buttonStarten.TabIndex = 1;
+            this.buttonStarten.Text = "Starten";
+            this.buttonStarten.UseVisualStyleBackColor = true;
+            this.buttonStarten.Click += new System.EventHandler(this.buttonStarten_Click);
+            // 
+            // buttonAuswaehlen
+            // 
+            this.buttonAuswaehlen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAuswaehlen.Location = new System.Drawing.Point(669, 6);
+            this.buttonAuswaehlen.Name = "buttonAuswaehlen";
+            this.buttonAuswaehlen.Size = new System.Drawing.Size(93, 23);
+            this.buttonAuswaehlen.TabIndex = 0;
+            this.buttonAuswaehlen.Text = "Auswählen";
+            this.buttonAuswaehlen.UseVisualStyleBackColor = true;
+            this.buttonAuswaehlen.Click += new System.EventHandler(this.buttonAuswaehlen_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.Filter = "Grafikdateien|*.bmp;*.gif;*.jpg;*.png;*.tif;*.wmf";
             // 
             // openFileDialog2
             // 
