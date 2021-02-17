@@ -86,6 +86,8 @@ namespace Bildbetrachter
         private void openFileDialog2_FileOk(object sender, CancelEventArgs e)
         {
             string[] dateien = openFileDialog2.FileNames;
+            if (listBox1.Items.Count != 0)
+                listBox1.Items.Clear();
             foreach (string datei in dateien)
                 listBox1.Items.Add(datei);                               
 
@@ -105,6 +107,7 @@ namespace Bildbetrachter
                 fensterBilderschau = new FormMax();
                 fensterBilderschau.BildLaden(listBox1.SelectedItem.ToString());
                 fensterBilderschau.Text = "Bilderschau";
+                fensterBilderschau.ControlBox = false;
                 fensterBilderschau.Show();
             }
 
