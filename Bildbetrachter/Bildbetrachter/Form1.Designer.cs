@@ -81,7 +81,7 @@
             this.tabPageEinzel.TabIndex = 0;
             this.tabPageEinzel.Text = "Einzelbild";
             this.tabPageEinzel.UseVisualStyleBackColor = true;
-            this.tabPageEinzel.Click += new System.EventHandler(this.tabPageEinzel_Click);
+         
             // 
             // pictureBox1
             // 

@@ -49,11 +49,8 @@ namespace Bildbetrachter
             }
         }        
 
-        // Was tut diese Methode?
-        private void tabPageEinzel_Click(object sender, EventArgs e)
-        {
-          
-        }
+        
+      
 
         private void checkBoxOptimaleGröße_CheckedChanged(object sender, EventArgs e)
         {
@@ -129,5 +126,17 @@ namespace Bildbetrachter
                 fensterBilderschau.Close();
             }
         }
-    }                                                            
+
+        
+        private void tabPageEinzel_Enter(object sender, EventArgs e)
+        {
+            AcceptButton = buttonAnzeigen;
+        }
+
+        private void TabPageSchau_Enter(object sender, EventArgs e)
+        {
+            AcceptButton = buttonStarten;
+        }
+
+    }                       
 }
