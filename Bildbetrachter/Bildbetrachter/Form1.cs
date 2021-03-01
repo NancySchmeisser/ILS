@@ -117,6 +117,7 @@ namespace Bildbetrachter
             {
                 listBox1.SelectedIndex++;
                 fensterBilderschau.BildLaden(listBox1.SelectedItem.ToString());
+                System.Media.SystemSounds.Asterisk.Play();
             }
 
             else
@@ -137,6 +138,5 @@ namespace Bildbetrachter
         {
             AcceptButton = buttonStarten;
         }
-
     }                       
 }
