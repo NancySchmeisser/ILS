@@ -37,10 +37,7 @@ namespace Bildbetrachter
                         neuesFormular.BildLaden(textBox1.Text);
                         neuesFormular.ShowDialog();
                     }
-                    else
-                    {
-                        pictureBox1.Load(textBox1.Text);
-                    }
+                    pictureBox1.Load(textBox1.Text);
                 }
             }
             else
