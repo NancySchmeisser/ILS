@@ -81,7 +81,6 @@
             this.tabPageEinzel.TabIndex = 0;
             this.tabPageEinzel.Text = "Einzelbild";
             this.tabPageEinzel.UseVisualStyleBackColor = true;
-         
             // 
             // pictureBox1
             // 
@@ -230,7 +229,7 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 1000;
+            this.timer1.Interval = 2000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Bildbetrachter
