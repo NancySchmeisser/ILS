@@ -58,6 +58,7 @@
             this.Text = "Große Darstellung";
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormMax_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFormMax)).EndInit();
             this.ResumeLayout(false);
 

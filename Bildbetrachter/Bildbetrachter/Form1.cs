@@ -35,7 +35,9 @@ namespace Bildbetrachter
                     {
                         FormMax neuesFormular = new FormMax();
                         neuesFormular.BildLaden(textBox1.Text);
+                        neuesFormular.Text = "Große Darstellung - " + textBox1.Text;
                         neuesFormular.ShowDialog();
+                        
                     }
                     pictureBox1.Load(textBox1.Text);
                 }
@@ -100,7 +102,7 @@ namespace Bildbetrachter
                 listBox1.SelectedIndex = 0;
                 fensterBilderschau = new FormMax();
                 fensterBilderschau.BildLaden(listBox1.SelectedItem.ToString());
-                fensterBilderschau.Text = "Bilderschau";
+                fensterBilderschau.Text = "Bilderschau";  
                 fensterBilderschau.ControlBox = false;
                 fensterBilderschau.Show();
             }
