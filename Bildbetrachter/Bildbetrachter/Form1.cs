@@ -49,8 +49,6 @@ namespace Bildbetrachter
         }        
 
         
-      
-
         private void checkBoxOptimaleGröße_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxOptimaleGröße.Checked == true)
@@ -138,6 +136,11 @@ namespace Bildbetrachter
         private void TabPageSchau_Enter(object sender, EventArgs e)
         {
             AcceptButton = buttonStarten;
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            timer1.Interval = (int)numericUpDown1.Value * 1000;
         }
     }                       
 }

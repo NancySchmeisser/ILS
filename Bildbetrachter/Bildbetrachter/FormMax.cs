@@ -20,17 +20,6 @@ namespace Bildbetrachter
         public void BildLaden(string bildname)
         {
             pictureBoxFormMax.Load(bildname);
-           
-        }
-
-        private void pictureBoxFormMax_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FormMax_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
