@@ -114,7 +114,7 @@ namespace Bildbetrachter
             {
                 listBox1.SelectedIndex++;
                 fensterBilderschau.BildLaden(listBox1.SelectedItem.ToString());
-                fensterBilderschau.Text = "Bilderschau  Bild " + (listBox1.SelectedIndex + 1) + " von " + listBox1.Items.Count + listBox1.SelectedItem;
+                fensterBilderschau.Text = $"Bilderschau  Bild {listBox1.SelectedIndex + 1} von {listBox1.Items.Count} {listBox1.SelectedItem}";
 
                 System.Media.SystemSounds.Asterisk.Play();
             }
