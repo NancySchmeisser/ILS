@@ -7,9 +7,11 @@ namespace CSHP09D
         static void Main(string[] args)
         {
             int zaehler = 1;
-            while (zaehler < 10)
-                Console.WriteLine("Schelifendurchlauf {0}", zaehler);
-            
+            while (zaehler < 11)
+            {
+                Console.WriteLine("Schleifendurchlauf {0}", zaehler);
+                zaehler++;
+            }
         }
     }
 }
