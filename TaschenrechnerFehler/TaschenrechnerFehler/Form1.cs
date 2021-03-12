@@ -27,7 +27,7 @@ namespace TaschenrechnerFehler
             //die Rechenoperation ermitteln und ausführen
             if (radioButtonAddition.Checked == true)
                 ergebnis = zahl1 + zahl2;
-            if (radioButtonAddition.Checked == true)
+            if (radioButtonSubtraktion.Checked == true)
                 ergebnis = zahl1 - zahl2;
             if (radioButtonMultiplikation.Checked == true)
                 ergebnis = zahl1 * zahl2;
