@@ -22,7 +22,7 @@ namespace TaschenrechnerFehler
             float zahl1, zahl2, ergebnis = 0;
             bool divDurchNull = false;
             //die beiden Zahlen einlesen und konvertieren
-            zahl1 = Convert.ToSingle(textBoxZahl1.Text);
+            zahl1 = Convert.ToSingle(textBoxZahl1.Text); 
             zahl2 = Convert.ToSingle(textBoxZahl2.Text);
             //die Rechenoperation ermitteln und ausführen
             if (radioButtonAddition.Checked == true)

@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net40</TargetFramework>
+    <RootNamespace>CSHP09D_5._2</RootNamespace>
+  </PropertyGroup>
+
+</Project>
