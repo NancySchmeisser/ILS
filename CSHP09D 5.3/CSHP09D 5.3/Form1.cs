@@ -30,7 +30,18 @@ namespace CSHP09D_5._3
 
             catch(FormatException)  
             {
-                MessageBox.Show("Da ist etwas schief gegangen", "oh nein");
+                MessageBox.Show("Bei der Konvertierung ist etwas schief gegangen", "oh nein");
+            }
+
+            catch(DivideByZeroException)
+            {
+                MessageBox.Show("Eine Division durch null ist nicht definiert", "oh nein");
+
+            }
+
+            catch
+            {
+                MessageBox.Show("Ein anderes Problem", "oh nein");
             }
         }
     }
