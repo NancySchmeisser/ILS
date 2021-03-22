@@ -17,28 +17,36 @@ namespace CSHP09D_5._3
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        void Check(int zahl)
         {
-            int ergebnis, zahl2, zahl1 = 10;
+            if (zahl > 10)
+                throw new Exception("Die Zahl ist zu groß.");
+            if (zahl < 5)
+                throw new Exception("Die Zahl ist zu klein");
+        }
+
+        private void button_Click(object sender, EventArgs e)
+        {
+            int zahl1;
 
             try
             {
-                zahl2 = Convert.ToInt32(textBox1.Text);
-                try
+                zahl1 = Convert.ToInt32(textBox1.Text);
+                    try
                 {
-                    ergebnis = zahl1 / zahl2;
-                    MessageBox.Show("Das Ergebnis ist " + ergebnis, "Hurra");
+                    Check(zahl1);
+                    MessageBox.Show("Ihre Eingabe war " + zahl1, "Meldung");
                 }
 
-                catch (DivideByZeroException)
+                catch (Exception fehler)
                 {
-                    MessageBox.Show("Eine Division durch Null ist nicht defíniert", "Oh nein");
+                    MessageBox.Show(fehler.Message, "Oh nein");
                 }
             }
-            catch(FormatException)
-            {
-                MessageBox.Show("Ein anderes Problem", "Oh nein");
 
+            catch (FormatException)
+            {
+                MessageBox.Show("Bei der Konvertierung ist etwas schief gelaufen.", "Oh nein");
             }
         }
 
