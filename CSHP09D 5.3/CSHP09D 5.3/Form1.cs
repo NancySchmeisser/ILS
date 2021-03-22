@@ -17,32 +17,31 @@ namespace CSHP09D_5._3
             InitializeComponent();
         }
 
-        private void button_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             int ergebnis, zahl2, zahl1 = 10;
 
             try
             {
                 zahl2 = Convert.ToInt32(textBox1.Text);
-                ergebnis = zahl1 / zahl2;
-                MessageBox.Show("Das Ergebnis ist " + ergebnis, "Hurra");
+                try
+                {
+                    ergebnis = zahl1 / zahl2;
+                    MessageBox.Show("Das Ergebnis ist " + ergebnis, "Hurra");
+                }
+
+                catch (DivideByZeroException)
+                {
+                    MessageBox.Show("Eine Division durch Null ist nicht defíniert", "Oh nein");
+                }
             }
-
-            catch(FormatException)  
+            catch(FormatException)
             {
-                MessageBox.Show("Bei der Konvertierung ist etwas schief gegangen", "oh nein");
-            }
+                MessageBox.Show("Ein anderes Problem", "Oh nein");
 
-            catch(DivideByZeroException)
-            {
-                MessageBox.Show("Eine Division durch null ist nicht definiert", "oh nein");
-
-            }
-
-            catch
-            {
-                MessageBox.Show("Ein anderes Problem", "oh nein");
             }
         }
+
+        
     }
 }
