@@ -23,18 +23,18 @@ namespace CSHP09D_5._3
         {
             try
             {
-                int[] test = new int[5];
-                test[0] = 10;
+                throw new Exception("Test");
+            }
+
+            catch (Exception fehler) when (fehler.Message == "Test")
+            {
+                MessageBox.Show("Gefiltert", "oh nein");
             }
 
             catch (Exception fehler)
             {
-                MessageBox.Show(fehler.Message, "Oh nein");
-            }
+                MessageBox.Show("Ungefiltert" + fehler.Message, "oh nein");
 
-            finally
-            {
-                MessageBox.Show("Diese Meldung erscheint immer");
             }
 
         }
