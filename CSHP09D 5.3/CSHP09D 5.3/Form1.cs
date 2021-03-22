@@ -23,7 +23,7 @@ namespace CSHP09D_5._3
         {
             try
             {
-                int[] test = new int[100000000];
+                int[] test = new int[5];
                 test[0] = 10;
             }
 
