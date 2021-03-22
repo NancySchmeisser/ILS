@@ -17,32 +17,26 @@ namespace CSHP09D_5._3
             InitializeComponent();
         }
 
-        void Check(int zahl)
-        {
-            if (zahl > 10)
-                throw new Exception("Die Zahl ist zu groß.");
-            if (zahl < 5)
-                throw new Exception("Die Zahl ist zu klein");
-        }
+
 
         private void button_Click(object sender, EventArgs e)
         {
-            int zahl1;
-
             try
             {
-                zahl1 = Convert.ToInt32(textBox1.Text);
-                Check(zahl1);
-                MessageBox.Show("Ihre Eingabe war " + zahl1, "Meldung");
+                int[] test = new int[100000000];
+                test[0] = 10;
             }
+
             catch (Exception fehler)
             {
                 MessageBox.Show(fehler.Message, "Oh nein");
             }
-            
+
+            finally
+            {
+                MessageBox.Show("Diese Meldung erscheint immer");
+            }
 
         }
-
-        
     }
 }
