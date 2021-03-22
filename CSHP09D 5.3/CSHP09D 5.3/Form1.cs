@@ -32,22 +32,15 @@ namespace CSHP09D_5._3
             try
             {
                 zahl1 = Convert.ToInt32(textBox1.Text);
-                    try
-                {
-                    Check(zahl1);
-                    MessageBox.Show("Ihre Eingabe war " + zahl1, "Meldung");
-                }
-
-                catch (Exception fehler)
-                {
-                    MessageBox.Show(fehler.Message, "Oh nein");
-                }
+                Check(zahl1);
+                MessageBox.Show("Ihre Eingabe war " + zahl1, "Meldung");
             }
-
-            catch (FormatException)
+            catch (Exception fehler)
             {
-                MessageBox.Show("Bei der Konvertierung ist etwas schief gelaufen.", "Oh nein");
+                MessageBox.Show(fehler.Message, "Oh nein");
             }
+            
+
         }
 
         
