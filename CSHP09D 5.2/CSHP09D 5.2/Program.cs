@@ -17,9 +17,9 @@ namespace CSHP09D_5._2
                 ergebnis = zahl1 / zahl2;
             }
 
-            catch
+            catch (System.SystemException)
             {
-                Console.WriteLine("Es ist ein Fehler aufgetreten");
+                Console.WriteLine("Ein Fehler ist aufgetreten");
                 Console.WriteLine("Ergebnis erhält den Wert 0.");
                 ergebnis = 0;
             }
