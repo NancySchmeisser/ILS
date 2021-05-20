@@ -54,10 +54,10 @@
 
             double zahl1, zahl2 = 0;
 
-            //Prüfe ob ein Ausnahme stattfindet 
+            //Prüfvariable
             bool ausnahme = false;
 
-            //Prüfe nach eine ungültige Eingabe bzw. Konvertierungsfehler und Division durch Null  
+            //Prüfe Konvertierungsfehler und Division durch Null  
             try
             {
                 zahl2 = Convert.ToDouble(TextBoxZahl2.Text);
@@ -80,7 +80,7 @@
 
                         if (zahl1 == 0)
                         {
-                            MessageBox.Show("Zahl 1 hat einen Null Wert " + zahl1 + " Division durch Null ist nicht definiert");
+                            MessageBox.Show("Zahl 1 hat einen Null Wert: " + zahl1 + " Division durch Null ist nicht definiert");
                             TextBoxZahl1.Select();
                             ausnahme = true;
                         }
@@ -88,8 +88,8 @@
                 catch (FormatException)
                 {
 
-                    //Wenn kein Zahl eingegeben wird sondern ein Buchstabe 
-                    MessageBox.Show("Bei der Konvertierung von Zahl 1 ist ein Fehler aufgetreten " + TextBoxZahl1.Text);
+                    //Wenn ein Buchstabe eingegeben wird
+                    MessageBox.Show("Zahl 1 hat kein gültiges Format: " + TextBoxZahl1.Text + " Bitte geben sie eine Zahl ein!");
                     TextBoxZahl1.Select();
                     ausnahme = true;
                 }
@@ -97,7 +97,7 @@
             catch (FormatException)
             {
 
-                MessageBox.Show("Bei der Konvertierung von Zahl 2 ist ein Fehler aufgetreten " + zahl2);
+                MessageBox.Show("Zahl 2 hat kein gültiges Format: " + TextBoxZahl2.Text + " Bitte geben sie eine Zahl ein!");
                 TextBoxZahl2.Select();
                 ausnahme = true;
             }
