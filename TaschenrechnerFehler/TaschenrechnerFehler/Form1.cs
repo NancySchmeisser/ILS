@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace TaschenrechnerFehler
+﻿namespace TaschenrechnerFehler
 {
+    using System;
+    using System.Windows.Forms;
+
     public partial class Form1 : Form
     {
         public Form1()
@@ -19,10 +12,15 @@ namespace TaschenrechnerFehler
 
         private void ButtonBerechnen_Click(object sender, EventArgs e)
         {
+            PruefenUndBerechnen(textBoxZahl1, textBoxZahl2);
+        }
+
+        private void Berechnen()
+        {
             float zahl1, zahl2, ergebnis = 0;
             bool divDurchNull = false;
             //die beiden Zahlen einlesen und konvertieren
-            zahl1 = Convert.ToSingle(textBoxZahl1.Text); 
+            zahl1 = Convert.ToSingle(textBoxZahl1.Text);
             zahl2 = Convert.ToSingle(textBoxZahl2.Text);
             //die Rechenoperation ermitteln und ausführen
             if (radioButtonAddition.Checked == true)
@@ -51,5 +49,64 @@ namespace TaschenrechnerFehler
             Close();
         }
 
+        private void PruefenUndBerechnen(TextBox TextBoxZahl1, TextBox TextBoxZahl2)
+        {
+
+            double zahl1, zahl2 = 0;
+
+            //Prüfe ob ein Ausnahme stattfindet 
+            bool ausnahme = false;
+
+            //Prüfe nach eine ungültige Eingabe bzw. Konvertierungsfehler und Division durch Null  
+            try
+            {
+                zahl2 = Convert.ToDouble(TextBoxZahl2.Text);
+
+                //Wenn Division wird nach dem Wert geprüft 
+                if (radioButtonDivision.Checked == true)
+
+                    if (zahl2 == 0)
+                    {
+                        MessageBox.Show("Zahl 2 hat einen Null Wert " + zahl2 + " Division durch Null ist nicht definiert");
+                        TextBoxZahl2.Select();
+                        ausnahme = true;
+                    }
+
+                try
+                {
+                    zahl1 = Convert.ToDouble(TextBoxZahl1.Text);
+
+                    if (radioButtonDivision.Checked == true)
+
+                        if (zahl1 == 0)
+                        {
+                            MessageBox.Show("Zahl 1 hat einen Null Wert " + zahl1 + " Division durch Null ist nicht definiert");
+                            TextBoxZahl1.Select();
+                            ausnahme = true;
+                        }
+                }
+                catch (FormatException)
+                {
+
+                    //Wenn kein Zahl eingegeben wird sondern ein Buchstabe 
+                    MessageBox.Show("Bei der Konvertierung von Zahl 1 ist ein Fehler aufgetreten " + TextBoxZahl1.Text);
+                    TextBoxZahl1.Select();
+                    ausnahme = true;
+                }
+            }
+            catch (FormatException)
+            {
+
+                MessageBox.Show("Bei der Konvertierung von Zahl 2 ist ein Fehler aufgetreten " + zahl2);
+                TextBoxZahl2.Select();
+                ausnahme = true;
+            }
+
+
+            if (ausnahme == false)
+            {
+                Berechnen();
+            }
+        }
     }
 }
