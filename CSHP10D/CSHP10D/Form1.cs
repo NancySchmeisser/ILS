@@ -26,8 +26,12 @@ namespace CSHP10D
         {
             //einen schwarzen Stift erzeugen
             Pen stift = new Pen(Color.Black);
-            //ein Rechteck in die Zeichenfläche des Formulars zeichnen
-            e.Graphics.DrawRectangle(stift, 1, 1, 100, 100);
+            //eine Variable vom Typ Rectangle
+            Rectangle bereich;
+            //den Client-Bereich beschaffen
+            bereich = ClientRectangle;
+            //ein Rechteck in der maximalen Größe zeichnen
+            e.Graphics.DrawRectangle(stift, bereich);
         }
     }
 }
