@@ -30,6 +30,11 @@ namespace CSHP10D
             Rectangle bereich;
             //den Client-Bereich beschaffen
             bereich = ClientRectangle;
+            bereich.Width = bereich.Width - 10;
+            bereich.Height = bereich.Height - 10;
+            bereich.Location = new Point(5, 5);
+            //ein Rechteck zeichnen
+            e.Graphics.DrawRectangle(stift, 50, 50, 100, 100);
             //ein Rechteck in der maximalen Größe zeichnen
             e.Graphics.DrawRectangle(stift, bereich);
         }
