@@ -31,12 +31,15 @@ namespace CSHP10D
             //den Client-Bereich beschaffen
             bereich = ClientRectangle;
             //in einer Schleife anpassen
-            for (int durchlauf = 0; durchlauf < 22; durchlauf++);
-            bereich.Width = bereich.Width - 10;
-            bereich.Height = bereich.Height - 10;
-            bereich.Location = new Point(bereich.Location.X + 5, bereich.Location.Y + 5);
-            //ein Rechteck zeichnen
-            e.Graphics.DrawRectangle(stift, bereich);
+            for (int durchlauf = 0; durchlauf < 22; durchlauf++)
+            {
+                bereich.Width = bereich.Width - 10;
+                bereich.Height = bereich.Height - 10;
+                bereich.Location = new Point(bereich.Location.X + 5, bereich.Location.Y + 5);
+                //ein Rechteck zeichnen
+                e.Graphics.DrawRectangle(stift, bereich);
+                
+            }
         }
     }
 }

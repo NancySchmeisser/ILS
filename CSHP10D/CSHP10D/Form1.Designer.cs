@@ -33,7 +33,8 @@
             // 
             // Schließen
             // 
-            this.Schließen.Location = new System.Drawing.Point(669, 376);
+            this.Schließen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Schließen.Location = new System.Drawing.Point(397, 12);
             this.Schließen.Name = "Schließen";
             this.Schließen.Size = new System.Drawing.Size(75, 23);
             this.Schließen.TabIndex = 0;
@@ -45,7 +46,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(484, 461);
             this.Controls.Add(this.Schließen);
             this.Name = "Form1";
             this.Text = "Form1";
