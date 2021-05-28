@@ -42,8 +42,6 @@ namespace CSHP10D
                 System.Threading.Thread.Sleep(100);
                 //den Zeichenbereich löschen
                 e.Graphics.Clear(BackColor);
-
-                
             }
         }
     }
