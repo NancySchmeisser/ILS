@@ -38,6 +38,11 @@ namespace CSHP10D
                 bereich.Location = new Point(bereich.Location.X + 5, bereich.Location.Y + 5);
                 //ein Rechteck zeichnen
                 e.Graphics.DrawRectangle(stift, bereich);
+                //einen Moment warten
+                System.Threading.Thread.Sleep(100);
+                //den Zeichenbereich löschen
+                e.Graphics.Clear(BackColor);
+
                 
             }
         }
