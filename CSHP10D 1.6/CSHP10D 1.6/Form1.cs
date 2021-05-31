@@ -22,7 +22,7 @@ namespace CSHP10D_1._6
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             Pen stift = new Pen(Color.Black);
-            e.Graphics.DrawRectangle(stift, 1, 1, 10, 10);
+            e.Graphics.DrawRectangle(stift, ClientRectangle);
 
         }
 
