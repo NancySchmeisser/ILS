@@ -21,5 +21,31 @@ namespace CSHP10D_2._1
         {
             Close();
         }
+
+        private void DrawLine(object sender, EventArgs e)
+        {
+            Graphics zeichenfläche;
+            Pen stift;
+
+            zeichenfläche = CreateGraphics();
+            stift = new Pen(Color.Black);
+
+            int xMax = ClientRectangle.Right - 1;
+            int yMax = ClientRectangle.Bottom - 1;
+
+            int xPos = 0, yPos = 0;
+
+            while (yPos < yMax)
+            {
+                zeichenfläche.DrawLine(stift, 0, yPos, xMax, yPos);
+                yPos = yPos + 10;
+            }
+
+            while (xPos < xMax)
+            {
+                zeichenfläche.DrawLine(stift, xPos, 0, xPos, yMax);
+                xPos = xPos + 10;
+            }
+        }
     }
 }
