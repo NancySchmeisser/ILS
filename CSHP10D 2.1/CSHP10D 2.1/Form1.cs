@@ -41,11 +41,20 @@ namespace CSHP10D_2._1
                 yPos = yPos + 10;
             }
 
+            Brush pinsel = new SolidBrush(Color.Blue);
+
             while (xPos < xMax)
             {
                 zeichenfläche.DrawLine(stift, xPos, 0, xPos, yMax);
                 xPos = xPos + 10;
             }
+
+            xPos = (ClientSize.Width / 2) - 50;
+            yPos = (ClientSize.Height / 2) - 50;
+            zeichenfläche.FillRectangle(pinsel, xPos, yPos, 100, 100);
+
+            zeichenfläche.DrawLine(stift, 0, 0, xMax, yMax);
+            zeichenfläche.DrawLine(stift, 0, yMax, xMax, 0);
         }
     }
 }
