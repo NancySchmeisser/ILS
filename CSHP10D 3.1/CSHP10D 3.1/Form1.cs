@@ -32,7 +32,13 @@ namespace CSHP10D_3._1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            zeichenfläche = CreateGraphics();
 
+            stift = new Pen(Color.Black);
+            pinsel = new SolidBrush(Color.Blue);
+
+            stiftKopie = (Pen)(stift.Clone());
+            pinselKopie = (SolidBrush)(pinsel.Clone());
         }
     }
 }
