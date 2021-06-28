@@ -40,5 +40,36 @@ namespace CSHP10D_3._1
             stiftKopie = (Pen)(stift.Clone());
             pinselKopie = (SolidBrush)(pinsel.Clone());
         }
+
+        private void buttonEasy_Click(object sender, EventArgs e)
+        {
+            zeichenfläche.Clear(BackColor);
+            stift.Color = Color.Red;
+            zeichenfläche.DrawRectangle(stift, 10, 10, 100, 100);
+
+            stift.Color = Color.Green;
+            stift.DashStyle = System.Drawing.Drawing2D.DashStyle.DashDotDot;
+
+        }
+
+        private void buttonTexte_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonFüllen_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonVerlauf_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonEnd_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
