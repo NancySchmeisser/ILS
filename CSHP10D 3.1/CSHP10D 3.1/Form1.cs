@@ -47,13 +47,17 @@ namespace CSHP10D_3._1
             stift.Color = Color.Red;
             zeichenfläche.DrawRectangle(stift, 10, 10, 100, 100);
 
-            stift.Color = Color.Green;
-            stift.DashStyle = System.Drawing.Drawing2D.DashStyle.DashDotDot;
+            
 
         }
 
         private void buttonTexte_Click(object sender, EventArgs e)
         {
+            zeichenfläche.Clear(BackColor);           
+            stift.Color = Color.Green;
+            stift.DashStyle = System.Drawing.Drawing2D.DashStyle.DashDotDot;
+            stift.Width = 3;
+            zeichenfläche.DrawLine(stift, 0, 120, 100, 120);
 
         }
 
