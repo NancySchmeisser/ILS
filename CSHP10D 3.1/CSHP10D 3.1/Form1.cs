@@ -69,7 +69,7 @@ namespace CSHP10D_3._1
             zeichenfläche.Clear(BackColor);
             try
             {
-                Bitmap bild = (Bitmap)Image.FromFile("C:\\Users\\user\\Downloads\\cshp10d_tn_dateien (1)\\cshp10d_tn_dateien\\cshp10d_beispiele.zip\\cshp10d_beispiele\\smiley.bmp");
+                Bitmap bild = (Bitmap)Image.FromFile("C:\\beispiele\\smiley.bmp");
                 TextureBrush grafikPinsel = new TextureBrush(bild);
                 grafikPinsel.WrapMode = System.Drawing.Drawing2D.WrapMode.Tile;
                 zeichenfläche.FillRectangle(grafikPinsel, 10, 10, 240, 240);
