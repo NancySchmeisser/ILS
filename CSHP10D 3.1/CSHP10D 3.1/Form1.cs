@@ -46,18 +46,28 @@ namespace CSHP10D_3._1
             zeichenfläche.Clear(BackColor);
             stift.Color = Color.Red;
             zeichenfläche.DrawRectangle(stift, 10, 10, 100, 100);
+            zeichenfläche.Clear(BackColor);
+            stift.Color = Color.Green;
+            stift.DashStyle = System.Drawing.Drawing2D.DashStyle.DashDotDot;
+            stift.Width = 3;
+            zeichenfläche.DrawLine(stift, 0, 120, 100, 120);
+            stift.Color = Color.Blue;
+            stift.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+            stift.Width = 10;
+            zeichenfläche.DrawLine(stift, 0, 160, 100, 160);
+            pinsel.Color = Color.Red;
+            zeichenfläche.FillRectangle(pinsel, 150, 10, 90, 90);
+            System.Drawing.Drawing2D.HatchBrush musterPinsel = new System.Drawing.Drawing2D.HatchBrush(System.Drawing.Drawing2D.HatchStyle.Cross, Color.Blue, Color.Green);
+            zeichenfläche.FillRectangle(musterPinsel, 150, 110, 90, 90);
 
-            
+
+
 
         }
 
         private void buttonTexte_Click(object sender, EventArgs e)
         {
-            zeichenfläche.Clear(BackColor);           
-            stift.Color = Color.Green;
-            stift.DashStyle = System.Drawing.Drawing2D.DashStyle.DashDotDot;
-            stift.Width = 3;
-            zeichenfläche.DrawLine(stift, 0, 120, 100, 120);
+           
 
         }
 
