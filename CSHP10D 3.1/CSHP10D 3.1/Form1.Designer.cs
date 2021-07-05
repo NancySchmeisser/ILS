@@ -30,7 +30,7 @@
         {
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonEasy = new System.Windows.Forms.Button();
-            this.buttonEnd = new System.Windows.Forms.Button();
+            this.buttonEnden = new System.Windows.Forms.Button();
             this.buttonFüllen = new System.Windows.Forms.Button();
             this.buttonVerlauf = new System.Windows.Forms.Button();
             this.buttonTexte = new System.Windows.Forms.Button();
@@ -57,15 +57,15 @@
             this.buttonEasy.UseVisualStyleBackColor = true;
             this.buttonEasy.Click += new System.EventHandler(this.buttonEasy_Click);
             // 
-            // buttonEnd
+            // buttonEnden
             // 
-            this.buttonEnd.Location = new System.Drawing.Point(497, 54);
-            this.buttonEnd.Name = "buttonEnd";
-            this.buttonEnd.Size = new System.Drawing.Size(75, 23);
-            this.buttonEnd.TabIndex = 2;
-            this.buttonEnd.Text = "Mit Enden";
-            this.buttonEnd.UseVisualStyleBackColor = true;
-            this.buttonEnd.Click += new System.EventHandler(this.buttonEnd_Click);
+            this.buttonEnden.Location = new System.Drawing.Point(497, 54);
+            this.buttonEnden.Name = "buttonEnden";
+            this.buttonEnden.Size = new System.Drawing.Size(75, 23);
+            this.buttonEnden.TabIndex = 2;
+            this.buttonEnden.Text = "Mit Enden";
+            this.buttonEnden.UseVisualStyleBackColor = true;
+            this.buttonEnden.Click += new System.EventHandler(this.buttonEnden_Click);
             // 
             // buttonFüllen
             // 
@@ -115,7 +115,7 @@
             this.Controls.Add(this.buttonTexte);
             this.Controls.Add(this.buttonVerlauf);
             this.Controls.Add(this.buttonFüllen);
-            this.Controls.Add(this.buttonEnd);
+            this.Controls.Add(this.buttonEnden);
             this.Controls.Add(this.buttonEasy);
             this.Controls.Add(this.buttonClose);
             this.Name = "Form1";
@@ -129,7 +129,7 @@
 
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.Button buttonEasy;
-        private System.Windows.Forms.Button buttonEnd;
+        private System.Windows.Forms.Button buttonEnden;
         private System.Windows.Forms.Button buttonFüllen;
         private System.Windows.Forms.Button buttonVerlauf;
         private System.Windows.Forms.Button buttonTexte;

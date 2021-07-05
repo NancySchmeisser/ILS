@@ -80,9 +80,21 @@ namespace CSHP10D_3._1
 
         }
 
-        private void buttonEnd_Click(object sender, EventArgs e)
+
+        private void buttonEnden_Click(object sender, EventArgs e)
         {
-            
+            zeichenfläche.Clear(BackColor);
+            stift.Color = Color.Red;
+            stift.StartCap = System.Drawing.Drawing2D.LineCap.DiamondAnchor;
+            stift.EndCap = System.Drawing.Drawing2D.LineCap.ArrowAnchor;
+            stift.Width = 5;
+            zeichenfläche.DrawLine(stift, 10, 120, 100, 120);
+            stift.Color = Color.Blue;
+            stift.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+            stift.StartCap = System.Drawing.Drawing2D.LineCap.SquareAnchor;
+            stift.EndCap = System.Drawing.Drawing2D.LineCap.RoundAnchor;
+            zeichenfläche.DrawLine(stift, 10, 140, 100, 140);
+
         }
     }
 }
