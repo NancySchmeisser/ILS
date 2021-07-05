@@ -66,7 +66,19 @@ namespace CSHP10D_3._1
 
         private void buttonTexte_Click(object sender, EventArgs e)
         {
-           
+            zeichenfläche.Clear(BackColor);
+            try
+            {
+                Bitmap bild = (Bitmap)(Image.FromFile("c:\\beispiele\\smiley.bmp"));
+                TextureBrush grafikPinsel = new TextureBrush(bild);
+                grafikPinsel.WrapMode = System.Drawing.Drawing2D.WrapMode.Tile;
+                zeichenfläche.FillRectangle(grafikPinsel, 10, 10, 240, 240);
+            }
+            catch(System.IO.FileNotFoundException)
+            {
+                MessageBox.Show("Die Datei ist nicht vorhanden");
+            }
+            
 
         }
 
