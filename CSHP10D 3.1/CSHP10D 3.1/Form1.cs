@@ -66,9 +66,14 @@ namespace CSHP10D_3._1
 
         private void buttonTexte_Click(object sender, EventArgs e)
         {
+            Rectangle bereich;
+            zeichenfläche.Clear(BackColor);
             Font schrift = new Font("Arial", 12);
-            zeichenfläche.DrawString("Ich stehe auf der Zeichenfläche", schrift, pinsel, new Point(20, 20));
-            
+            bereich = ClientRectangle;
+            bereich.Width = 100;
+            bereich.Height = 200;
+            bereich.Location = new Point(100, 100);
+            zeichenfläche.DrawString("Ich stehe in einem Rechteck", schrift, pinsel, bereich);
 
         }
 
