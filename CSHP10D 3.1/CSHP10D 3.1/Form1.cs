@@ -89,7 +89,14 @@ namespace CSHP10D_3._1
 
         private void buttonVerlauf_Click(object sender, EventArgs e)
         {
-
+            zeichenfläche.Clear(BackColor);
+            System.Drawing.Drawing2D.LinearGradientBrush verlaufPinsel = new System.Drawing.Drawing2D.LinearGradientBrush(new Point(10, 10), new Point(300, 300), Color.Red, Color.Blue);
+            zeichenfläche.FillRectangle(verlaufPinsel, 10, 10, 50, 50);
+            zeichenfläche.FillEllipse(verlaufPinsel, 10, 60, 50, 50);
+            zeichenfläche.FillRectangle(verlaufPinsel, 70, 10, 200, 200);
+            stift.Brush = verlaufPinsel;
+            stift.Width = 10;
+            zeichenfläche.DrawLine(stift, 10, 250, 270, 250);
         }
 
 
