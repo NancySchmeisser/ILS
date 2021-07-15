@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,7 +52,7 @@
             this.buttonStart = new System.Windows.Forms.Button();
             this.buttonBeenden = new System.Windows.Forms.Button();
             this.buttonLoeschen = new System.Windows.Forms.Button();
-            this.comboBox5.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLinieStaerke)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -68,20 +68,20 @@
             this.panel1.Size = new System.Drawing.Size(300, 300);
             this.panel1.TabIndex = 0;
             // 
-            // comboBox5
+            // groupBox1
             // 
-            this.comboBox5.Controls.Add(this.label3);
-            this.comboBox5.Controls.Add(this.label2);
-            this.comboBox5.Controls.Add(this.label1);
-            this.comboBox5.Controls.Add(this.listBoxLinieStil);
-            this.comboBox5.Controls.Add(this.numericUpDownLinieStaerke);
-            this.comboBox5.Controls.Add(this.comboBoxLinieFarbe);
-            this.comboBox5.Location = new System.Drawing.Point(372, 13);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(200, 100);
-            this.comboBox5.TabIndex = 1;
-            this.comboBox5.TabStop = false;
-            this.comboBox5.Text = "Linie";
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.listBoxLinieStil);
+            this.groupBox1.Controls.Add(this.numericUpDownLinieStaerke);
+            this.groupBox1.Controls.Add(this.comboBoxLinieFarbe);
+            this.groupBox1.Location = new System.Drawing.Point(372, 13);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 100);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Linie";
             // 
             // label3
             // 
@@ -145,6 +145,10 @@
             // comboBoxLinieFarbe
             // 
             this.comboBoxLinieFarbe.FormattingEnabled = true;
+            this.comboBoxLinieFarbe.Items.AddRange(new object[] {
+            "Rot",
+            "Blau",
+            "Grün"});
             this.comboBoxLinieFarbe.Location = new System.Drawing.Point(73, 11);
             this.comboBoxLinieFarbe.Name = "comboBoxLinieFarbe";
             this.comboBoxLinieFarbe.Size = new System.Drawing.Size(121, 21);
@@ -318,6 +322,7 @@
             this.buttonLoeschen.TabIndex = 7;
             this.buttonLoeschen.Text = "Löschen";
             this.buttonLoeschen.UseVisualStyleBackColor = true;
+            this.buttonLoeschen.Click += new System.EventHandler(this.buttonLoeschen_Click);
             // 
             // EineSpielerei
             // 
@@ -330,13 +335,13 @@
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.comboBox5);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Name = "EineSpielerei";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.EineSpielerei_Load);
-            this.comboBox5.ResumeLayout(false);
-            this.comboBox5.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLinieStaerke)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -351,7 +356,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.GroupBox comboBox5;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListBox listBoxLinieStil;
         private System.Windows.Forms.NumericUpDown numericUpDownLinieStaerke;

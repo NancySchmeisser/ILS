@@ -27,9 +27,14 @@ namespace CSHP10D_4._1
             zeichenflaeche = panel1.CreateGraphics();
         }
 
-        private void buttonBeenden_Click(object sender, EventArgs e)
+        private void buttonLoeschen_Click(object sender, EventArgs e)
         {
             zeichenflaeche.Clear(panel1.BackColor);
+        }
+
+        private void buttonBeenden_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
