@@ -35,7 +35,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.listBoxLinieStil = new System.Windows.Forms.ListBox();
             this.numericUpDownLinieStaerke = new System.Windows.Forms.NumericUpDown();
-            this.comboBoxLinieFarbe = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.listBoxHintergrundMuster = new System.Windows.Forms.ListBox();
@@ -52,6 +51,8 @@
             this.buttonStart = new System.Windows.Forms.Button();
             this.buttonBeenden = new System.Windows.Forms.Button();
             this.buttonLoeschen = new System.Windows.Forms.Button();
+            this.panelLinieFarbeVorschau = new System.Windows.Forms.Panel();
+            this.buttonLinieFarbe = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLinieStaerke)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -70,12 +71,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonLinieFarbe);
+            this.groupBox1.Controls.Add(this.panelLinieFarbeVorschau);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.listBoxLinieStil);
             this.groupBox1.Controls.Add(this.numericUpDownLinieStaerke);
-            this.groupBox1.Controls.Add(this.comboBoxLinieFarbe);
             this.groupBox1.Location = new System.Drawing.Point(372, 13);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 100);
@@ -141,18 +143,6 @@
             0,
             0,
             0});
-            // 
-            // comboBoxLinieFarbe
-            // 
-            this.comboBoxLinieFarbe.FormattingEnabled = true;
-            this.comboBoxLinieFarbe.Items.AddRange(new object[] {
-            "Rot",
-            "Blau",
-            "Grün"});
-            this.comboBoxLinieFarbe.Location = new System.Drawing.Point(73, 11);
-            this.comboBoxLinieFarbe.Name = "comboBoxLinieFarbe";
-            this.comboBoxLinieFarbe.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxLinieFarbe.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -325,6 +315,22 @@
             this.buttonLoeschen.UseVisualStyleBackColor = true;
             this.buttonLoeschen.Click += new System.EventHandler(this.buttonLoeschen_Click);
             // 
+            // panelLinieFarbeVorschau
+            // 
+            this.panelLinieFarbeVorschau.Location = new System.Drawing.Point(94, 11);
+            this.panelLinieFarbeVorschau.Name = "panelLinieFarbeVorschau";
+            this.panelLinieFarbeVorschau.Size = new System.Drawing.Size(47, 21);
+            this.panelLinieFarbeVorschau.TabIndex = 8;
+            // 
+            // buttonLinieFarbe
+            // 
+            this.buttonLinieFarbe.Location = new System.Drawing.Point(147, 9);
+            this.buttonLinieFarbe.Name = "buttonLinieFarbe";
+            this.buttonLinieFarbe.Size = new System.Drawing.Size(43, 23);
+            this.buttonLinieFarbe.TabIndex = 0;
+            this.buttonLinieFarbe.Text = "...";
+            this.buttonLinieFarbe.UseVisualStyleBackColor = true;
+            // 
             // EineSpielerei
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,7 +367,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListBox listBoxLinieStil;
         private System.Windows.Forms.NumericUpDown numericUpDownLinieStaerke;
-        private System.Windows.Forms.ComboBox comboBoxLinieFarbe;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -380,6 +385,8 @@
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.Button buttonBeenden;
         private System.Windows.Forms.Button buttonLoeschen;
+        private System.Windows.Forms.Panel panelLinieFarbeVorschau;
+        private System.Windows.Forms.Button buttonLinieFarbe;
     }
 }
 
