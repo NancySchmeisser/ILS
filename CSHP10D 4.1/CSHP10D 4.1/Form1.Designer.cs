@@ -308,6 +308,7 @@
             this.buttonBeenden.TabIndex = 6;
             this.buttonBeenden.Text = "Beenden";
             this.buttonBeenden.UseVisualStyleBackColor = true;
+            this.buttonBeenden.Click += new System.EventHandler(this.buttonBeenden_Click);
             // 
             // buttonLoeschen
             // 
