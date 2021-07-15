@@ -303,6 +303,7 @@
             this.buttonStart.TabIndex = 5;
             this.buttonStart.Text = "Los geht´s";
             this.buttonStart.UseVisualStyleBackColor = true;
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 
             // buttonBeenden
             // 
