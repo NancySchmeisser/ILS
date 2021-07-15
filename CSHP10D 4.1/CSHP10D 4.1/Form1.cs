@@ -12,9 +12,19 @@ namespace CSHP10D_4._1
 {
     public partial class EineSpielerei : Form
     {
+        private Graphics zeichenflaeche;
+
         public EineSpielerei()
         {
             InitializeComponent();
+        }
+
+        private void EineSpielerei_Load(object sender, EventArgs e)
+        {
+            comboBoxHintergrundFarbe.SelectedIndex = 0;
+            comboBoxLinieFarbe.SelectedIndex = 0;
+
+            zeichenflaeche = panel1.CreateGraphics();
         }
     }
 }
