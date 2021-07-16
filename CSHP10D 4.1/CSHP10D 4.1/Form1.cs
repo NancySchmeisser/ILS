@@ -43,7 +43,7 @@ namespace CSHP10D_4._1
         {
             int groesse = 0;
             Pen stift = new Pen(linienfarbe);
-            SolidBrush pinsel = new SolidBrush(linienfarbe);
+            SolidBrush pinsel = new SolidBrush(hintergrundfarbe);
 
             stift.Width = Convert.ToInt32(numericUpDownLinieStaerke.Value);
 
