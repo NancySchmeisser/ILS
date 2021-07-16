@@ -14,6 +14,7 @@ namespace CSHP10D_4._1
     {
         private Graphics zeichenflaeche;
         private Color linienfarbe;
+        private Color hintergrundfarbe;
 
         public EineSpielerei()
         {
@@ -23,6 +24,7 @@ namespace CSHP10D_4._1
         private void EineSpielerei_Load(object sender, EventArgs e)
         {
             linienfarbe = Color.Black;
+            hintergrundfarbe = Color.Black;
            
             zeichenflaeche = panel1.CreateGraphics();
         }
@@ -40,40 +42,8 @@ namespace CSHP10D_4._1
         private void buttonStart_Click(object sender, EventArgs e)
         {
             int groesse = 0;
-            Pen stift = new Pen(Color.Black);
-            SolidBrush pinsel = new SolidBrush(Color.Black);
-
-            switch (comboBoxLinieFarbe.SelectedIndex)
-            {
-                case 0:
-                    stift.Color = Color.Black;
-                    break;
-                case 1:
-                    stift.Color = Color.Red;
-                    break;
-                case 2:
-                    stift.Color = Color.Blue;
-                    break;
-                case 3:
-                    stift.Color = Color.Green;
-                    break;
-            }
-
-            switch (comboBoxHintergrundFarbe.SelectedIndex)
-            {
-                case 0:
-                    pinsel.Color = Color.Black;
-                    break;
-                case 1:
-                    pinsel.Color = Color.Red;
-                    break;
-                case 2:
-                    pinsel.Color = Color.Blue;
-                    break;
-                case 3:
-                    pinsel.Color = Color.Green;
-                    break;
-            }
+            Pen stift = new Pen(linienfarbe);
+            SolidBrush pinsel = new SolidBrush(linienfarbe);
 
             stift.Width = Convert.ToInt32(numericUpDownLinieStaerke.Value);
 
@@ -120,6 +90,16 @@ namespace CSHP10D_4._1
             {
                 panelLinieFarbeVorschau.BackColor = colorDialog1.Color;
                 linienfarbe = colorDialog1.Color;
+            }
+        }
+
+        private void buttonHintergrundFarbe_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                panelHintergrundFarbeVorschau.BackColor = colorDialog1.Color;
+                hintergrundfarbe = colorDialog1.Color;
+                radioButtonHintergrundFarbe.Checked = true;
             }
         }
     }

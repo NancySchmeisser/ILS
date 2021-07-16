@@ -41,7 +41,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.listBoxHintergrundMuster = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBoxHintergrundFarbe = new System.Windows.Forms.ComboBox();
             this.radioButtonHintergrundMuster = new System.Windows.Forms.RadioButton();
             this.radioButtonHintergrundFarbe = new System.Windows.Forms.RadioButton();
             this.radioButtonHintergrundOhne = new System.Windows.Forms.RadioButton();
@@ -54,6 +53,8 @@
             this.buttonBeenden = new System.Windows.Forms.Button();
             this.buttonLoeschen = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.panelHintergrundFarbeVorschau = new System.Windows.Forms.Panel();
+            this.buttonHintergrundFarbe = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLinieStaerke)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -165,10 +166,11 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.buttonHintergrundFarbe);
+            this.groupBox2.Controls.Add(this.panelHintergrundFarbeVorschau);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.listBoxHintergrundMuster);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.comboBoxHintergrundFarbe);
             this.groupBox2.Controls.Add(this.radioButtonHintergrundMuster);
             this.groupBox2.Controls.Add(this.radioButtonHintergrundFarbe);
             this.groupBox2.Controls.Add(this.radioButtonHintergrundOhne);
@@ -204,19 +206,6 @@
             this.label4.Size = new System.Drawing.Size(34, 13);
             this.label4.TabIndex = 4;
             this.label4.Text = "Farbe";
-            // 
-            // comboBoxHintergrundFarbe
-            // 
-            this.comboBoxHintergrundFarbe.FormattingEnabled = true;
-            this.comboBoxHintergrundFarbe.Items.AddRange(new object[] {
-            "Schwarz",
-            "Rot",
-            "Blau",
-            "Grün"});
-            this.comboBoxHintergrundFarbe.Location = new System.Drawing.Point(73, 42);
-            this.comboBoxHintergrundFarbe.Name = "comboBoxHintergrundFarbe";
-            this.comboBoxHintergrundFarbe.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxHintergrundFarbe.TabIndex = 3;
             // 
             // radioButtonHintergrundMuster
             // 
@@ -334,6 +323,24 @@
             this.buttonLoeschen.UseVisualStyleBackColor = true;
             this.buttonLoeschen.Click += new System.EventHandler(this.buttonLoeschen_Click);
             // 
+            // panelHintergrundFarbeVorschau
+            // 
+            this.panelHintergrundFarbeVorschau.BackColor = System.Drawing.Color.Black;
+            this.panelHintergrundFarbeVorschau.Location = new System.Drawing.Point(94, 42);
+            this.panelHintergrundFarbeVorschau.Name = "panelHintergrundFarbeVorschau";
+            this.panelHintergrundFarbeVorschau.Size = new System.Drawing.Size(47, 21);
+            this.panelHintergrundFarbeVorschau.TabIndex = 9;
+            // 
+            // buttonHintergrundFarbe
+            // 
+            this.buttonHintergrundFarbe.Location = new System.Drawing.Point(147, 42);
+            this.buttonHintergrundFarbe.Name = "buttonHintergrundFarbe";
+            this.buttonHintergrundFarbe.Size = new System.Drawing.Size(43, 23);
+            this.buttonHintergrundFarbe.TabIndex = 9;
+            this.buttonHintergrundFarbe.Text = "...";
+            this.buttonHintergrundFarbe.UseVisualStyleBackColor = true;
+            this.buttonHintergrundFarbe.Click += new System.EventHandler(this.buttonHintergrundFarbe_Click);
+            // 
             // EineSpielerei
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,7 +384,6 @@
         private System.Windows.Forms.RadioButton radioButtonHintergrundFarbe;
         private System.Windows.Forms.RadioButton radioButtonHintergrundOhne;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBoxHintergrundFarbe;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListBox listBoxHintergrundMuster;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -391,6 +397,8 @@
         private System.Windows.Forms.Panel panelLinieFarbeVorschau;
         private System.Windows.Forms.Button buttonLinieFarbe;
         private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.Button buttonHintergrundFarbe;
+        private System.Windows.Forms.Panel panelHintergrundFarbeVorschau;
     }
 }
 
