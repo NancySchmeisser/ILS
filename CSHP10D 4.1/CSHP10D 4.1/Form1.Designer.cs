@@ -30,6 +30,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonLinieFarbe = new System.Windows.Forms.Button();
+            this.panelLinieFarbeVorschau = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,8 +53,7 @@
             this.buttonStart = new System.Windows.Forms.Button();
             this.buttonBeenden = new System.Windows.Forms.Button();
             this.buttonLoeschen = new System.Windows.Forms.Button();
-            this.panelLinieFarbeVorschau = new System.Windows.Forms.Panel();
-            this.buttonLinieFarbe = new System.Windows.Forms.Button();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLinieStaerke)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -84,6 +85,24 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Linie";
+            // 
+            // buttonLinieFarbe
+            // 
+            this.buttonLinieFarbe.Location = new System.Drawing.Point(147, 9);
+            this.buttonLinieFarbe.Name = "buttonLinieFarbe";
+            this.buttonLinieFarbe.Size = new System.Drawing.Size(43, 23);
+            this.buttonLinieFarbe.TabIndex = 0;
+            this.buttonLinieFarbe.Text = "...";
+            this.buttonLinieFarbe.UseVisualStyleBackColor = true;
+            this.buttonLinieFarbe.Click += new System.EventHandler(this.buttonLinieFarbe_Click);
+            // 
+            // panelLinieFarbeVorschau
+            // 
+            this.panelLinieFarbeVorschau.BackColor = System.Drawing.Color.Black;
+            this.panelLinieFarbeVorschau.Location = new System.Drawing.Point(94, 11);
+            this.panelLinieFarbeVorschau.Name = "panelLinieFarbeVorschau";
+            this.panelLinieFarbeVorschau.Size = new System.Drawing.Size(47, 21);
+            this.panelLinieFarbeVorschau.TabIndex = 8;
             // 
             // label3
             // 
@@ -315,22 +334,6 @@
             this.buttonLoeschen.UseVisualStyleBackColor = true;
             this.buttonLoeschen.Click += new System.EventHandler(this.buttonLoeschen_Click);
             // 
-            // panelLinieFarbeVorschau
-            // 
-            this.panelLinieFarbeVorschau.Location = new System.Drawing.Point(94, 11);
-            this.panelLinieFarbeVorschau.Name = "panelLinieFarbeVorschau";
-            this.panelLinieFarbeVorschau.Size = new System.Drawing.Size(47, 21);
-            this.panelLinieFarbeVorschau.TabIndex = 8;
-            // 
-            // buttonLinieFarbe
-            // 
-            this.buttonLinieFarbe.Location = new System.Drawing.Point(147, 9);
-            this.buttonLinieFarbe.Name = "buttonLinieFarbe";
-            this.buttonLinieFarbe.Size = new System.Drawing.Size(43, 23);
-            this.buttonLinieFarbe.TabIndex = 0;
-            this.buttonLinieFarbe.Text = "...";
-            this.buttonLinieFarbe.UseVisualStyleBackColor = true;
-            // 
             // EineSpielerei
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -387,6 +390,7 @@
         private System.Windows.Forms.Button buttonLoeschen;
         private System.Windows.Forms.Panel panelLinieFarbeVorschau;
         private System.Windows.Forms.Button buttonLinieFarbe;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
 

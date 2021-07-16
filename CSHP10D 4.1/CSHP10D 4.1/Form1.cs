@@ -13,6 +13,7 @@ namespace CSHP10D_4._1
     public partial class EineSpielerei : Form
     {
         private Graphics zeichenflaeche;
+        private Color linienfarbe;
 
         public EineSpielerei()
         {
@@ -21,9 +22,8 @@ namespace CSHP10D_4._1
 
         private void EineSpielerei_Load(object sender, EventArgs e)
         {
-            comboBoxHintergrundFarbe.SelectedIndex = 0;
-            comboBoxLinieFarbe.SelectedIndex = 0;
-
+            linienfarbe = Color.Black;
+           
             zeichenflaeche = panel1.CreateGraphics();
         }
 
@@ -111,6 +111,15 @@ namespace CSHP10D_4._1
             if (radioButtonLinie.Checked == true)
             {
                 zeichenflaeche.DrawLine(stift, panel1.ClientRectangle.Left + groesse, panel1.ClientRectangle.Height / 2, panel1.ClientRectangle.Width - groesse, panel1.ClientRectangle.Height / 2);
+            }
+        }
+
+        private void buttonLinieFarbe_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                panelLinieFarbeVorschau.BackColor = colorDialog1.Color;
+                linienfarbe = colorDialog1.Color;
             }
         }
     }
