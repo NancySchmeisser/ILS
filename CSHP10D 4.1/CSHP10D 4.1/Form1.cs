@@ -16,6 +16,16 @@ namespace CSHP10D_4._1
         private Color linienfarbe;
         private Color hintergrundfarbe;
 
+        System.Drawing.Drawing2D.DashStyle[] linienstil =
+        {
+            System.Drawing.Drawing2D.DashStyle.Dash,
+            System.Drawing.Drawing2D.DashStyle.DashDot,
+            System.Drawing.Drawing2D.DashStyle.DashDotDot,
+            System.Drawing.Drawing2D.DashStyle.Dot,
+            System.Drawing.Drawing2D.DashStyle.Solid,
+
+        };
+
         public EineSpielerei()
         {
             InitializeComponent();
