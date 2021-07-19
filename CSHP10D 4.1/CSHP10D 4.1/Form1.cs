@@ -39,7 +39,7 @@ namespace CSHP10D_4._1
             zeichenflaeche = panel1.CreateGraphics();
 
             foreach (System.Drawing.Drawing2D.DashStyle element in linienstil)
-                listBoxLinieStil.Items.Add(element);
+                listBoxLinieStil.Items.Add("");
         }
 
         private void buttonLoeschen_Click(object sender, EventArgs e)
@@ -120,6 +120,17 @@ namespace CSHP10D_4._1
                 hintergrundfarbe = colorDialog1.Color;
                 radioButtonHintergrundFarbe.Checked = true;
             }
+        }
+
+        private void listBoxLinieStil_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            int y;
+
+            Pen boxStift = new Pen(Color.Black);
+            y = (e.Bounds.Top + e.Bounds.Bottom) / 2;
+            e.DrawBackground();
+            boxStift.DashStyle = linienstil[e.Index];
+            e.Graphics.DrawLine(boxStift, e.Bounds.Left + 1, y, e.Bounds.Right - 1, y);
         }
     }
 }

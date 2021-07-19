@@ -134,6 +134,7 @@
             // 
             // listBoxLinieStil
             // 
+            this.listBoxLinieStil.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.listBoxLinieStil.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxLinieStil.FormattingEnabled = true;
             this.listBoxLinieStil.ItemHeight = 16;
@@ -141,6 +142,7 @@
             this.listBoxLinieStil.Name = "listBoxLinieStil";
             this.listBoxLinieStil.Size = new System.Drawing.Size(120, 20);
             this.listBoxLinieStil.TabIndex = 2;
+            this.listBoxLinieStil.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.listBoxLinieStil_DrawItem);
             // 
             // numericUpDownLinieStaerke
             // 
