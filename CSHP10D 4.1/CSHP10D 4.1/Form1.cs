@@ -60,6 +60,10 @@ namespace CSHP10D_4._1
 
             stift.Width = Convert.ToInt32(numericUpDownLinieStaerke.Value);
 
+            if (listBoxLinieStil.SelectedIndex >= 0)
+                stift.DashStyle = linienstil[listBoxLinieStil.SelectedIndex];
+
+
             switch (trackBar1.Value)
             {
                 case 1:
@@ -95,10 +99,9 @@ namespace CSHP10D_4._1
             {
                 zeichenflaeche.DrawLine(stift, panel1.ClientRectangle.Left + groesse, panel1.ClientRectangle.Height / 2, panel1.ClientRectangle.Width - groesse, panel1.ClientRectangle.Height / 2);
             }
-
-            if (listBoxLinieStil.SelectedIndex >= 0)
-                stift.DashStyle = linienstil[listBoxLinieStil.SelectedIndex];
         }
+
+          
 
         private void buttonLinieFarbe_Click(object sender, EventArgs e)
         {
