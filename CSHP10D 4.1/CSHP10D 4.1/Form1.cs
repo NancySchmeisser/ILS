@@ -37,6 +37,9 @@ namespace CSHP10D_4._1
             hintergrundfarbe = Color.Black;
            
             zeichenflaeche = panel1.CreateGraphics();
+
+            foreach (System.Drawing.Drawing2D.DashStyle element in linienstil)
+                listBoxLinieStil.Items.Add(element);
         }
 
         private void buttonLoeschen_Click(object sender, EventArgs e)
