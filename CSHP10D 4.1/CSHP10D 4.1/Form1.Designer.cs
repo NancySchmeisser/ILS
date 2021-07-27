@@ -38,6 +38,8 @@
             this.listBoxLinieStil = new System.Windows.Forms.ListBox();
             this.numericUpDownLinieStaerke = new System.Windows.Forms.NumericUpDown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.buttonHintergrundFarbe = new System.Windows.Forms.Button();
+            this.panelHintergrundFarbeVorschau = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.listBoxHintergrundMuster = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,8 +55,6 @@
             this.buttonBeenden = new System.Windows.Forms.Button();
             this.buttonLoeschen = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.panelHintergrundFarbeVorschau = new System.Windows.Forms.Panel();
-            this.buttonHintergrundFarbe = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLinieStaerke)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -183,6 +183,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Hintergrund";
             // 
+            // buttonHintergrundFarbe
+            // 
+            this.buttonHintergrundFarbe.Location = new System.Drawing.Point(147, 42);
+            this.buttonHintergrundFarbe.Name = "buttonHintergrundFarbe";
+            this.buttonHintergrundFarbe.Size = new System.Drawing.Size(43, 23);
+            this.buttonHintergrundFarbe.TabIndex = 9;
+            this.buttonHintergrundFarbe.Text = "...";
+            this.buttonHintergrundFarbe.UseVisualStyleBackColor = true;
+            this.buttonHintergrundFarbe.Click += new System.EventHandler(this.buttonHintergrundFarbe_Click);
+            // 
+            // panelHintergrundFarbeVorschau
+            // 
+            this.panelHintergrundFarbeVorschau.BackColor = System.Drawing.Color.Black;
+            this.panelHintergrundFarbeVorschau.Location = new System.Drawing.Point(94, 42);
+            this.panelHintergrundFarbeVorschau.Name = "panelHintergrundFarbeVorschau";
+            this.panelHintergrundFarbeVorschau.Size = new System.Drawing.Size(47, 21);
+            this.panelHintergrundFarbeVorschau.TabIndex = 9;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -194,6 +212,7 @@
             // 
             // listBoxHintergrundMuster
             // 
+            this.listBoxHintergrundMuster.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.listBoxHintergrundMuster.FormattingEnabled = true;
             this.listBoxHintergrundMuster.Location = new System.Drawing.Point(74, 69);
             this.listBoxHintergrundMuster.Name = "listBoxHintergrundMuster";
@@ -324,24 +343,6 @@
             this.buttonLoeschen.Text = "Löschen";
             this.buttonLoeschen.UseVisualStyleBackColor = true;
             this.buttonLoeschen.Click += new System.EventHandler(this.buttonLoeschen_Click);
-            // 
-            // panelHintergrundFarbeVorschau
-            // 
-            this.panelHintergrundFarbeVorschau.BackColor = System.Drawing.Color.Black;
-            this.panelHintergrundFarbeVorschau.Location = new System.Drawing.Point(94, 42);
-            this.panelHintergrundFarbeVorschau.Name = "panelHintergrundFarbeVorschau";
-            this.panelHintergrundFarbeVorschau.Size = new System.Drawing.Size(47, 21);
-            this.panelHintergrundFarbeVorschau.TabIndex = 9;
-            // 
-            // buttonHintergrundFarbe
-            // 
-            this.buttonHintergrundFarbe.Location = new System.Drawing.Point(147, 42);
-            this.buttonHintergrundFarbe.Name = "buttonHintergrundFarbe";
-            this.buttonHintergrundFarbe.Size = new System.Drawing.Size(43, 23);
-            this.buttonHintergrundFarbe.TabIndex = 9;
-            this.buttonHintergrundFarbe.Text = "...";
-            this.buttonHintergrundFarbe.UseVisualStyleBackColor = true;
-            this.buttonHintergrundFarbe.Click += new System.EventHandler(this.buttonHintergrundFarbe_Click);
             // 
             // EineSpielerei
             // 
