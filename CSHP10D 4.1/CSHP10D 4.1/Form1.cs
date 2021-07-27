@@ -147,5 +147,12 @@ namespace CSHP10D_4._1
             boxStift.DashStyle = linienstil[e.Index];
             e.Graphics.DrawLine(boxStift, e.Bounds.Left + 1, y, e.Bounds.Right - 1, y);
         }
+
+        private void listBoxHintergrundMuster_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            System.Drawing.Drawing2D.HatchBrush boxPinsel = new System.Drawing.Drawing2D.HatchBrush(fuellstil[e.Index], Color.Black, Color.White);
+            e.DrawBackground();
+            e.Graphics.FillRectangle(boxPinsel, e.Bounds.Left + 1, e.Bounds.Top + 1, e.Bounds.Width - 1, e.Bounds.Height - 1);
+        }
     }
 }

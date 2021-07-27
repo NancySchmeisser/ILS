@@ -218,6 +218,7 @@
             this.listBoxHintergrundMuster.Name = "listBoxHintergrundMuster";
             this.listBoxHintergrundMuster.Size = new System.Drawing.Size(120, 30);
             this.listBoxHintergrundMuster.TabIndex = 5;
+            this.listBoxHintergrundMuster.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.listBoxHintergrundMuster_DrawItem);
             // 
             // label4
             // 
