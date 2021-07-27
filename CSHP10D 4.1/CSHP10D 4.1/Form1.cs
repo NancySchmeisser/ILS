@@ -26,6 +26,18 @@ namespace CSHP10D_4._1
 
         };
 
+        System.Drawing.Drawing2D.HatchStyle[] fuellstil =
+        {
+            System.Drawing.Drawing2D.HatchStyle.BackwardDiagonal,
+            System.Drawing.Drawing2D.HatchStyle.Cross,
+            System.Drawing.Drawing2D.HatchStyle.DottedGrid,
+            System.Drawing.Drawing2D.HatchStyle.ForwardDiagonal,
+            System.Drawing.Drawing2D.HatchStyle.Sphere,
+            System.Drawing.Drawing2D.HatchStyle.Vertical,
+            System.Drawing.Drawing2D.HatchStyle.Wave,
+            System.Drawing.Drawing2D.HatchStyle.ZigZag,
+
+        };
         public EineSpielerei()
         {
             InitializeComponent();
