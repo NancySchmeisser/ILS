@@ -52,6 +52,9 @@ namespace CSHP10D_4._1
 
             foreach (System.Drawing.Drawing2D.DashStyle element in linienstil)
                 listBoxLinieStil.Items.Add("");
+
+            foreach (System.Drawing.Drawing2D.HatchStyle element in fuellstil)
+                listBoxHintergrundMuster.Items.Add("");
         }
 
         private void buttonLoeschen_Click(object sender, EventArgs e)
