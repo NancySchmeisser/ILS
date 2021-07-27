@@ -99,6 +99,13 @@ namespace CSHP10D_4._1
                 if (radioButtonHintergrundFarbe.Checked == true)
                     zeichenflaeche.FillEllipse(pinsel, panel1.ClientRectangle.Left + groesse, panel1.ClientRectangle.Top + groesse, panel1.ClientRectangle.Width - (groesse * 2), panel1.ClientRectangle.Height - (groesse * 2));
 
+                if (radioButtonHintergrundMuster.Checked == true && listBoxHintergrundMuster.SelectedIndex >= 0)
+                {
+                    System.Drawing.Drawing2D.HatchBrush musterPinsel = new System.Drawing.Drawing2D.HatchBrush(fuellstil[listBoxHintergrundMuster.SelectedIndex], stift.Color, Color.White);
+                    zeichenflaeche.FillEllipse(musterPinsel, panel1.ClientRectangle.Left + groesse, panel1.ClientRectangle.Top + groesse, panel1.ClientRectangle.Width - (groesse * 2), panel1.ClientRectangle.Height - (groesse * 2));
+
+                }
+                    
             }
 
             if (radioButtonRechteck.Checked == true)
