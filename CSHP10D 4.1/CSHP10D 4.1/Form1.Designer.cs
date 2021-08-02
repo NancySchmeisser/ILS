@@ -55,11 +55,21 @@
             this.buttonBeenden = new System.Windows.Forms.Button();
             this.buttonLoeschen = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.radioButtonAnimationAn = new System.Windows.Forms.RadioButton();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.radioButtonAnimationAus = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLinieStaerke)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -82,7 +92,7 @@
             this.groupBox1.Controls.Add(this.numericUpDownLinieStaerke);
             this.groupBox1.Location = new System.Drawing.Point(372, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 100);
+            this.groupBox1.Size = new System.Drawing.Size(259, 100);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Linie";
@@ -178,7 +188,7 @@
             this.groupBox2.Controls.Add(this.radioButtonHintergrundOhne);
             this.groupBox2.Location = new System.Drawing.Point(372, 119);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 116);
+            this.groupBox2.Size = new System.Drawing.Size(259, 116);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Hintergrund";
@@ -268,7 +278,7 @@
             this.groupBox3.Controls.Add(this.radioButtonKreis);
             this.groupBox3.Location = new System.Drawing.Point(372, 241);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(200, 48);
+            this.groupBox3.Size = new System.Drawing.Size(259, 48);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Figur";
@@ -317,7 +327,7 @@
             // 
             // buttonStart
             // 
-            this.buttonStart.Location = new System.Drawing.Point(355, 346);
+            this.buttonStart.Location = new System.Drawing.Point(392, 484);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(68, 23);
             this.buttonStart.TabIndex = 5;
@@ -327,7 +337,7 @@
             // 
             // buttonBeenden
             // 
-            this.buttonBeenden.Location = new System.Drawing.Point(503, 346);
+            this.buttonBeenden.Location = new System.Drawing.Point(540, 484);
             this.buttonBeenden.Name = "buttonBeenden";
             this.buttonBeenden.Size = new System.Drawing.Size(68, 23);
             this.buttonBeenden.TabIndex = 6;
@@ -337,7 +347,7 @@
             // 
             // buttonLoeschen
             // 
-            this.buttonLoeschen.Location = new System.Drawing.Point(429, 346);
+            this.buttonLoeschen.Location = new System.Drawing.Point(466, 484);
             this.buttonLoeschen.Name = "buttonLoeschen";
             this.buttonLoeschen.Size = new System.Drawing.Size(68, 23);
             this.buttonLoeschen.TabIndex = 7;
@@ -345,11 +355,111 @@
             this.buttonLoeschen.UseVisualStyleBackColor = true;
             this.buttonLoeschen.Click += new System.EventHandler(this.buttonLoeschen_Click);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.radioButtonAnimationAus);
+            this.groupBox4.Controls.Add(this.label7);
+            this.groupBox4.Controls.Add(this.label6);
+            this.groupBox4.Controls.Add(this.numericUpDown2);
+            this.groupBox4.Controls.Add(this.numericUpDown1);
+            this.groupBox4.Controls.Add(this.radioButtonAnimationAn);
+            this.groupBox4.Location = new System.Drawing.Point(372, 329);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(259, 131);
+            this.groupBox4.TabIndex = 8;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Animation";
+            // 
+            // radioButtonAnimationAn
+            // 
+            this.radioButtonAnimationAn.AutoSize = true;
+            this.radioButtonAnimationAn.Checked = true;
+            this.radioButtonAnimationAn.Location = new System.Drawing.Point(15, 19);
+            this.radioButtonAnimationAn.Name = "radioButtonAnimationAn";
+            this.radioButtonAnimationAn.Size = new System.Drawing.Size(38, 17);
+            this.radioButtonAnimationAn.TabIndex = 4;
+            this.radioButtonAnimationAn.TabStop = true;
+            this.radioButtonAnimationAn.Text = "An";
+            this.radioButtonAnimationAn.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(133, 47);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown1.TabIndex = 5;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(133, 78);
+            this.numericUpDown2.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown2.TabIndex = 6;
+            this.numericUpDown2.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 47);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(120, 13);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Anzahl Wiederholungen";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 78);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(85, 13);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Geschwindigkeit";
+            // 
+            // radioButtonAnimationAus
+            // 
+            this.radioButtonAnimationAus.AutoSize = true;
+            this.radioButtonAnimationAus.Location = new System.Drawing.Point(78, 19);
+            this.radioButtonAnimationAus.Name = "radioButtonAnimationAus";
+            this.radioButtonAnimationAus.Size = new System.Drawing.Size(43, 17);
+            this.radioButtonAnimationAus.TabIndex = 9;
+            this.radioButtonAnimationAus.Text = "Aus";
+            this.radioButtonAnimationAus.UseVisualStyleBackColor = true;
+            // 
             // EineSpielerei
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 381);
+            this.ClientSize = new System.Drawing.Size(643, 540);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.buttonLoeschen);
             this.Controls.Add(this.buttonBeenden);
             this.Controls.Add(this.buttonStart);
@@ -359,7 +469,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Name = "EineSpielerei";
-            this.Text = "Form1";
+            this.Text = "    ";
             this.Load += new System.EventHandler(this.EineSpielerei_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -369,6 +479,10 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -403,6 +517,13 @@
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Button buttonHintergrundFarbe;
         private System.Windows.Forms.Panel panelHintergrundFarbeVorschau;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.RadioButton radioButtonAnimationAn;
+        private System.Windows.Forms.RadioButton radioButtonAnimationAus;
     }
 }
 
