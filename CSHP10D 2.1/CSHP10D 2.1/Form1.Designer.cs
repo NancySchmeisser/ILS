@@ -30,6 +30,7 @@
         {
             this.Close = new System.Windows.Forms.Button();
             this.Start = new System.Windows.Forms.Button();
+            this.buttonKreis = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Close
@@ -52,11 +53,22 @@
             this.Start.UseVisualStyleBackColor = true;
             this.Start.Click += new System.EventHandler(this.DrawLine);
             // 
+            // buttonKreis
+            // 
+            this.buttonKreis.Location = new System.Drawing.Point(110, 13);
+            this.buttonKreis.Name = "buttonKreis";
+            this.buttonKreis.Size = new System.Drawing.Size(75, 23);
+            this.buttonKreis.TabIndex = 2;
+            this.buttonKreis.Text = "Zeichne Kreis";
+            this.buttonKreis.UseVisualStyleBackColor = true;
+            this.buttonKreis.Click += new System.EventHandler(this.buttonKreis_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(612, 567);
+            this.Controls.Add(this.buttonKreis);
             this.Controls.Add(this.Start);
             this.Controls.Add(this.Close);
             this.Name = "Form1";
@@ -69,6 +81,7 @@
 
         private System.Windows.Forms.Button Close;
         private System.Windows.Forms.Button Start;
+        private System.Windows.Forms.Button buttonKreis;
     }
 }
 

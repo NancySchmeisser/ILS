@@ -56,5 +56,16 @@ namespace CSHP10D_2._1
             zeichenfläche.DrawLine(stift, 0, 0, xMax, yMax);
             zeichenfläche.DrawLine(stift, 0, yMax, xMax, 0);
         }
+
+        private void buttonKreis_Click(object sender, EventArgs e)
+        {
+            Graphics zeichenfläche;
+            Pen stift;
+
+            zeichenfläche = CreateGraphics();
+            stift = new Pen(Color.Black);
+
+            zeichenfläche.DrawEllipse(stift, 100, 100, 100, 100);
+        }
     }
 }
