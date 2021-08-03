@@ -15,6 +15,8 @@ namespace CSHP10D_4._1
         private Graphics zeichenflaeche;
         private Color linienfarbe;
         private Color hintergrundfarbe;
+      
+      
 
         System.Drawing.Drawing2D.DashStyle[] linienstil =
         {
@@ -38,6 +40,8 @@ namespace CSHP10D_4._1
             System.Drawing.Drawing2D.HatchStyle.ZigZag,
 
         };
+       
+
         public EineSpielerei()
         {
             InitializeComponent();
@@ -69,6 +73,15 @@ namespace CSHP10D_4._1
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
+            Form form = Form.Linie;
+            if (radioButtonKreis.Checked)
+                form = Form.Kreis;
+            if (radioButtonRechteck.Checked)
+                form = Form.Rechteck;
+
+            Animiere(form);
+            return;
+
             int groesse = 0;
             Pen stift = new Pen(linienfarbe);
             SolidBrush pinsel = new SolidBrush(hintergrundfarbe);
@@ -160,6 +173,74 @@ namespace CSHP10D_4._1
             System.Drawing.Drawing2D.HatchBrush boxPinsel = new System.Drawing.Drawing2D.HatchBrush(fuellstil[e.Index], Color.Black, Color.White);
             e.DrawBackground();
             e.Graphics.FillRectangle(boxPinsel, e.Bounds.Left + 1, e.Bounds.Top + 1, e.Bounds.Width - 1, e.Bounds.Height - 1);
+        }
+
+        public enum Form
+        {
+            Linie,
+            Kreis,
+            Rechteck
+        }
+
+        private void Animiere(Form form)
+        {
+            Pen stift = new Pen(Color.Black);
+            Rectangle bereich;
+            bereich = new Rectangle(150, 150, 0, 0);
+
+            var wiederholungen = Convert.ToInt32(numericUpDownWdh.Value);
+            var geschwindigkeit = Convert.ToInt32(numericUpDownGeschw.Value) * 2;
+
+            for (int wh = 0; wh < wiederholungen; wh++)
+            {
+                 for (int durchlauf = 0; durchlauf < 300 / geschwindigkeit ; durchlauf++)
+                {
+                    bereich.Width = bereich.Width + geschwindigkeit;
+                    bereich.Height = bereich.Height + geschwindigkeit;
+                    var graphics = panel1.CreateGraphics();
+                    bereich.Location = new Point(bereich.Location.X - geschwindigkeit / 2, bereich.Location.Y - geschwindigkeit / 2);
+                    switch(form)
+                    {
+                        case Form.Kreis:
+                            graphics.DrawEllipse(stift, bereich);
+                            break;
+                        case Form.Rechteck:
+                            graphics.DrawRectangle(stift, bereich);
+                            break;
+                        case Form.Linie:
+                            graphics.DrawLine(stift, new Point(150, bereich.Y), new Point(150, bereich.Y + bereich.Height));
+                            break;
+                        default:
+                            break;
+                    }
+                    System.Threading.Thread.Sleep(20);
+                    graphics.Clear(BackColor);
+                }
+
+                for (int durchlauf = 0; durchlauf < 300 / geschwindigkeit; durchlauf++)
+                {
+                    bereich.Width = bereich.Width - geschwindigkeit;
+                    bereich.Height = bereich.Height - geschwindigkeit;
+                    var graphics = panel1.CreateGraphics();
+                    bereich.Location = new Point(bereich.Location.X + geschwindigkeit/2, bereich.Location.Y + geschwindigkeit / 2);
+                    switch (form)
+                    {
+                        case Form.Kreis:
+                            graphics.DrawEllipse(stift, bereich);
+                            break;
+                        case Form.Rechteck:
+                            graphics.DrawRectangle(stift, bereich);
+                            break;
+                        case Form.Linie:
+                            graphics.DrawLine(stift, new Point(150, bereich.Y), new Point(150, bereich.Y + bereich.Height));
+                            break;
+                        default:
+                            break;
+                    }
+                    System.Threading.Thread.Sleep(20);
+                    graphics.Clear(BackColor);
+                }
+            }
         }
     }
 }
