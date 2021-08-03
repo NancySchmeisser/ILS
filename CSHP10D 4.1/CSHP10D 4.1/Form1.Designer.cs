@@ -415,7 +415,7 @@
             this.numericUpDownGeschw.Size = new System.Drawing.Size(120, 20);
             this.numericUpDownGeschw.TabIndex = 6;
             this.numericUpDownGeschw.Value = new decimal(new int[] {
-            1,
+            5,
             0,
             0,
             0});

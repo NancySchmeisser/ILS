@@ -73,14 +73,18 @@ namespace CSHP10D_4._1
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
-            Form form = Form.Linie;
-            if (radioButtonKreis.Checked)
-                form = Form.Kreis;
-            if (radioButtonRechteck.Checked)
-                form = Form.Rechteck;
+            if (radioButtonAnimationAn.Checked)
+            {
+                Form form = Form.Linie;
+                if (radioButtonKreis.Checked)
+                    form = Form.Kreis;
+                if (radioButtonRechteck.Checked)
+                    form = Form.Rechteck;
 
-            Animiere(form);
-            return;
+                Animiere(form);
+                return;
+            }
+            
 
             int groesse = 0;
             Pen stift = new Pen(linienfarbe);
@@ -184,62 +188,50 @@ namespace CSHP10D_4._1
 
         private void Animiere(Form form)
         {
-            Pen stift = new Pen(Color.Black);
-            Rectangle bereich;
-            bereich = new Rectangle(150, 150, 0, 0);
+            var stift = new Pen(linienfarbe);
+            stift.Width = Convert.ToInt32(numericUpDownLinieStaerke.Value);
+
+            if (listBoxLinieStil.SelectedIndex >= 0)
+                stift.DashStyle = linienstil[listBoxLinieStil.SelectedIndex];
 
             var wiederholungen = Convert.ToInt32(numericUpDownWdh.Value);
             var geschwindigkeit = Convert.ToInt32(numericUpDownGeschw.Value) * 2;
 
-            for (int wh = 0; wh < wiederholungen; wh++)
+            for (var wh = 0; wh < wiederholungen; wh++)
             {
-                 for (int durchlauf = 0; durchlauf < 300 / geschwindigkeit ; durchlauf++)
-                {
-                    bereich.Width = bereich.Width + geschwindigkeit;
-                    bereich.Height = bereich.Height + geschwindigkeit;
-                    var graphics = panel1.CreateGraphics();
-                    bereich.Location = new Point(bereich.Location.X - geschwindigkeit / 2, bereich.Location.Y - geschwindigkeit / 2);
-                    switch(form)
-                    {
-                        case Form.Kreis:
-                            graphics.DrawEllipse(stift, bereich);
-                            break;
-                        case Form.Rechteck:
-                            graphics.DrawRectangle(stift, bereich);
-                            break;
-                        case Form.Linie:
-                            graphics.DrawLine(stift, new Point(150, bereich.Y), new Point(150, bereich.Y + bereich.Height));
-                            break;
-                        default:
-                            break;
-                    }
-                    System.Threading.Thread.Sleep(20);
-                    graphics.Clear(BackColor);
-                }
 
-                for (int durchlauf = 0; durchlauf < 300 / geschwindigkeit; durchlauf++)
+                HalbAnimation(geschwindigkeit, new Rectangle(150, 150, 0, 0), stift, form, true);
+                HalbAnimation(geschwindigkeit, panel1.ClientRectangle, stift, form, false);
+            }
+        }
+        private void HalbAnimation(int geschwindigkeit, Rectangle bereich, Pen stift, Form form, bool rückwärts)
+        { 
+            if (rückwärts)
+                geschwindigkeit *= -1;
+            var graphics = panel1.CreateGraphics();
+
+            for (var durchlauf = 0; durchlauf < 300 / Math.Abs(geschwindigkeit); durchlauf++)
+            {
+                bereich.Width = bereich.Width - geschwindigkeit;
+                bereich.Height = bereich.Height - geschwindigkeit;
+                bereich.Location = new Point(bereich.Location.X + geschwindigkeit / 2, bereich.Location.Y + geschwindigkeit / 2);
+
+                switch (form)
                 {
-                    bereich.Width = bereich.Width - geschwindigkeit;
-                    bereich.Height = bereich.Height - geschwindigkeit;
-                    var graphics = panel1.CreateGraphics();
-                    bereich.Location = new Point(bereich.Location.X + geschwindigkeit/2, bereich.Location.Y + geschwindigkeit / 2);
-                    switch (form)
-                    {
-                        case Form.Kreis:
-                            graphics.DrawEllipse(stift, bereich);
-                            break;
-                        case Form.Rechteck:
-                            graphics.DrawRectangle(stift, bereich);
-                            break;
-                        case Form.Linie:
-                            graphics.DrawLine(stift, new Point(150, bereich.Y), new Point(150, bereich.Y + bereich.Height));
-                            break;
-                        default:
-                            break;
-                    }
-                    System.Threading.Thread.Sleep(20);
-                    graphics.Clear(BackColor);
+                    case Form.Kreis:
+                        graphics.DrawEllipse(stift, bereich);
+                        break;
+                    case Form.Rechteck:
+                        graphics.DrawRectangle(stift, bereich);
+                        break;
+                    case Form.Linie:
+                        graphics.DrawLine(stift, new Point(150, bereich.Y), new Point(150, bereich.Y + bereich.Height));
+                        break;
+                    default:
+                        break;
                 }
+                System.Threading.Thread.Sleep(20);
+                graphics.Clear(BackColor);
             }
         }
     }
