@@ -31,7 +31,7 @@ namespace CSHP11D_2
         //für das Spielfeld
         Rectangle spielfeldGroesse;
         int spielfeldMaxX, spielfeldMaxY, spielfeldMinX, spielfeldMinY;
-        int spielfeldLininenbreite;
+        int spielfeldLinienbreite;
         //für den Schläger
 
         int schlaegerGroesse;
@@ -44,7 +44,7 @@ namespace CSHP11D_2
         {
             InitializeComponent();
             //die Breite der Linien
-            spielfeldLininenbreite = 10;
+            spielfeldLinienbreite = 10;
             //die Größe des Schlägers
             schlaegerGroesse = 50;
             //erst einmal geht der Ball nach rechts und oben mit
@@ -58,6 +58,21 @@ namespace CSHP11D_2
             zeichenfläche = spielfeld.CreateGraphics();
             //das Spielfeld bekommt einen schwarzen Hintergurnd
             spielfeld.BackColor = Color.Black;
+        }
+
+        void SetzeSpielfeld()
+        {
+            spielfeldGroesse = spielfeld.ClientRectangle;
+            //die minimalen und die maximalen Ränder festlegen
+            //dabei werden die Linien berücksichtigt
+            spielfeldMaxX = spielfeldGroesse.Right - spielfeldLinienbreite;
+
+            //den linken Rand verschieben wir ein Pixel nach rechts
+            spielfeldMinX = spielfeldGroesse.Left + spielfeldLinienbreite + 1;
+            spielfeldMaxY = spielfeldGroesse.Bottom - spielfeldLinienbreite;
+            spielfeldMinY = spielfeldGroesse.Top + spielfeldLinienbreite;
+
+
         }
 
         private void beendenToolStripMenuItem_Click(object sender, EventArgs e)
