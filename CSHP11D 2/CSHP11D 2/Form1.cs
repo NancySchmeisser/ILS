@@ -16,5 +16,10 @@ namespace CSHP11D_2
         {
             InitializeComponent();
         }
+
+        private void beendenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
