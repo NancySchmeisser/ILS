@@ -98,6 +98,8 @@
 
         internal void ZeichneSchlaeger(int y)
         {
+            //befindet sich der Schläger im Spielfeld?
+            if(((y + schlaegerGroesse) < spielfeldMaxY) && (y > spielfeldMinY))
             schlaeger.Top = y;
         }
 
