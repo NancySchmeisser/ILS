@@ -90,6 +90,12 @@
             ZeichneSpielfeld();
         }
 
+        private void schlaeger_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+                ZeichneSchlaeger(e.Y + schlaeger.Top);
+        }
+
         internal void ZeichneSchlaeger(int y)
         {
             schlaeger.Top = y;

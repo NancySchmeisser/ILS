@@ -80,6 +80,7 @@
             this.schlaeger.Name = "schlaeger";
             this.schlaeger.Size = new System.Drawing.Size(200, 100);
             this.schlaeger.TabIndex = 1;
+            this.schlaeger.MouseMove += new System.Windows.Forms.MouseEventHandler(this.schlaeger_MouseMove);
             // 
             // ball
             // 
