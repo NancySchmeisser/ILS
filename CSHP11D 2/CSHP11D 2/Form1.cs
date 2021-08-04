@@ -6,7 +6,7 @@
 
     public partial class Form1 : Form
     {
-        struct Spielball
+        internal struct Spielball
         {
             public bool richtungX;
 
@@ -47,6 +47,9 @@
             zeichenflaeche = spielfeld.CreateGraphics();
             //das Spielfeld bekommt einen schwarzen Hintergurnd
             spielfeld.BackColor = Color.Black;
+
+            SetzeSpielfeld();
+            NeuerBall();
         }
 
         internal void SetzeSpielfeld()
@@ -80,6 +83,11 @@
         internal void ZeichneBall(Point position)
         {
             ball.Location = position;
+        }
+
+        private void spielfeld_Paint(object sender, PaintEventArgs e)
+        {
+            ZeichneSpielfeld();
         }
 
         internal void ZeichneSchlaeger(int y)

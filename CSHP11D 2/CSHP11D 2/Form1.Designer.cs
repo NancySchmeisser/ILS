@@ -32,8 +32,8 @@
             this.spielToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.beendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.spielfeld = new System.Windows.Forms.Panel();
-            this.ball = new System.Windows.Forms.Panel();
             this.schlaeger = new System.Windows.Forms.Panel();
+            this.ball = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.spielfeld.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +59,7 @@
             // beendenToolStripMenuItem
             // 
             this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.beendenToolStripMenuItem.Text = "&Beenden";
             this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
             // 
@@ -72,13 +72,7 @@
             this.spielfeld.Name = "spielfeld";
             this.spielfeld.Size = new System.Drawing.Size(624, 417);
             this.spielfeld.TabIndex = 1;
-            // 
-            // ball
-            // 
-            this.ball.Location = new System.Drawing.Point(148, 270);
-            this.ball.Name = "ball";
-            this.ball.Size = new System.Drawing.Size(200, 100);
-            this.ball.TabIndex = 0;
+            this.spielfeld.Paint += new System.Windows.Forms.PaintEventHandler(this.spielfeld_Paint);
             // 
             // schlaeger
             // 
@@ -86,6 +80,13 @@
             this.schlaeger.Name = "schlaeger";
             this.schlaeger.Size = new System.Drawing.Size(200, 100);
             this.schlaeger.TabIndex = 1;
+            // 
+            // ball
+            // 
+            this.ball.Location = new System.Drawing.Point(148, 270);
+            this.ball.Name = "ball";
+            this.ball.Size = new System.Drawing.Size(200, 100);
+            this.ball.TabIndex = 0;
             // 
             // Form1
             // 
