@@ -31,7 +31,11 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.spielToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.beendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Spielfeld = new System.Windows.Forms.Panel();
+            this.ball = new System.Windows.Forms.Panel();
+            this.schlaeger = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
+            this.Spielfeld.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -55,15 +59,40 @@
             // beendenToolStripMenuItem
             // 
             this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.beendenToolStripMenuItem.Text = "&Beenden";
             this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
+            // 
+            // Spielfeld
+            // 
+            this.Spielfeld.Controls.Add(this.schlaeger);
+            this.Spielfeld.Controls.Add(this.ball);
+            this.Spielfeld.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Spielfeld.Location = new System.Drawing.Point(0, 24);
+            this.Spielfeld.Name = "Spielfeld";
+            this.Spielfeld.Size = new System.Drawing.Size(624, 417);
+            this.Spielfeld.TabIndex = 1;
+            // 
+            // ball
+            // 
+            this.ball.Location = new System.Drawing.Point(148, 270);
+            this.ball.Name = "ball";
+            this.ball.Size = new System.Drawing.Size(200, 100);
+            this.ball.TabIndex = 0;
+            // 
+            // schlaeger
+            // 
+            this.schlaeger.Location = new System.Drawing.Point(253, 143);
+            this.schlaeger.Name = "schlaeger";
+            this.schlaeger.Size = new System.Drawing.Size(200, 100);
+            this.schlaeger.TabIndex = 1;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 441);
+            this.Controls.Add(this.Spielfeld);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
@@ -74,6 +103,7 @@
             this.Text = " Pong";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.Spielfeld.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -84,6 +114,9 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem spielToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem beendenToolStripMenuItem;
+        private System.Windows.Forms.Panel Spielfeld;
+        private System.Windows.Forms.Panel schlaeger;
+        private System.Windows.Forms.Panel ball;
     }
 }
 
