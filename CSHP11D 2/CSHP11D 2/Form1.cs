@@ -1,44 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace CSHP11D_2
+﻿namespace CSHP11D_2
 {
+    using System;
+    using System.Drawing;
+    using System.Windows.Forms;
+
     public partial class Form1 : Form
     {
-        //die Felder
-        //eine Struktur für die Richtung des Balls
-
         struct Spielball
         {
-            //wenn die Richtung true ist, geht es nach oben
-            //bzw nach rechts
-            //sonst nach unten bzw. nach links
             public bool richtungX;
+
             public bool richtungY;
-            //für die Veränderung des Bewegungswinkels
+
             public int winkel;
         }
 
-        //für die Zeichenfläche
-        Graphics zeichenflaeche;
-        //für das Spielfeld
-        Rectangle spielfeldGroesse;
-        int spielfeldMaxX, spielfeldMaxY, spielfeldMinX, spielfeldMinY;
-        int spielfeldLinienbreite;
-        //für den Schläger
+        internal Graphics zeichenflaeche;
 
-        int schlaegerGroesse;
-        //für den Ball
-        Spielball ballPosition;
-        //zum Zeichnen
-        SolidBrush pinsel;
+        internal Rectangle spielfeldGroesse;
+
+        internal int spielfeldMaxX, spielfeldMaxY, spielfeldMinX, spielfeldMinY;
+
+        internal int spielfeldLinienbreite;
+
+        internal int schlaegerGroesse;
+
+        internal Spielball ballPosition;
+
+        internal SolidBrush pinsel;
 
         public Form1()
         {
@@ -60,7 +49,7 @@ namespace CSHP11D_2
             spielfeld.BackColor = Color.Black;
         }
 
-        void SetzeSpielfeld()
+        internal void SetzeSpielfeld()
         {
             spielfeldGroesse = spielfeld.ClientRectangle;
             //die minimalen und die maximalen Ränder festlegen
@@ -71,11 +60,9 @@ namespace CSHP11D_2
             spielfeldMinX = spielfeldGroesse.Left + spielfeldLinienbreite + 1;
             spielfeldMaxY = spielfeldGroesse.Bottom - spielfeldLinienbreite;
             spielfeldMinY = spielfeldGroesse.Top + spielfeldLinienbreite;
-
-
         }
 
-        void ZeichneSpielfeld()
+        internal void ZeichneSpielfeld()
         {
             //die weißen Begrenzungen
             pinsel.Color = Color.White;
@@ -88,6 +75,38 @@ namespace CSHP11D_2
             //Graue Linie Mitte
             pinsel.Color = Color.Gray;
             zeichenflaeche.FillRectangle(pinsel, spielfeldMaxX / 2, spielfeldMinY, spielfeldLinienbreite, spielfeldMaxY - spielfeldLinienbreite);
+        }
+
+        internal void ZeichneBall(Point position)
+        {
+            ball.Location = position;
+        }
+
+        internal void ZeichneSchlaeger(int y)
+        {
+            schlaeger.Top = y;
+        }
+
+        //setzt die Einstellungen für einen neuen Ball und einen neuen Schläger
+
+        void NeuerBall()
+        {
+            //die Größe des Balls setzen
+            ball.Width = 10;
+            ball.Height = 10;
+            //die Größe des Schlägers setzen
+            schlaeger.Width = spielfeldLinienbreite;
+            schlaeger.Height = schlaegerGroesse;
+            //beide Panels werden weiß
+            ball.BackColor = Color.White;
+            schlaeger.BackColor = Color.White;
+            //den Schläger positionieren
+            //links an den Rand
+            schlaeger.Left = 2;
+            //ungefähr in die Mitte
+            ZeichneSchlaeger((spielfeldMaxY / 2) - (schlaegerGroesse / 2));
+            //der Ball kommt vor den Schläger ungefähr in die Mitte
+            ZeichneBall(new Point(spielfeldMinX, spielfeldMaxY / 2));
 
         }
 
