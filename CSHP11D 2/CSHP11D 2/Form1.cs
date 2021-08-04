@@ -43,6 +43,21 @@ namespace CSHP11D_2
         public Form1()
         {
             InitializeComponent();
+            //die Breite der Linien
+            spielfeldLininenbreite = 10;
+            //die Größe des Schlägers
+            schlaegerGroesse = 50;
+            //erst einmal geht der Ball nach rechts und oben mit
+            //dem Winkel 0
+            ballPosition.richtungX = true;
+            ballPosition.richtungX = true;
+            ballPosition.winkel = 0;
+            //den Pinsel erzeugen
+            pinsel = new SolidBrush(Color.Black);
+            //die Zeichenfläche beschaffen
+            zeichenfläche = spielfeld.CreateGraphics();
+            //das Spielfeld bekommt einen schwarzen Hintergurnd
+            spielfeld.BackColor = Color.Black;
         }
 
         private void beendenToolStripMenuItem_Click(object sender, EventArgs e)
