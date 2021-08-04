@@ -96,6 +96,25 @@
                 ZeichneSchlaeger(e.Y + schlaeger.Top);
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            int neuX = 0, neuY = 0;
+            //abhängig von der Bewegungsrichtung die
+            //Koordinaten neu setzen
+            if (ballPosition.richtungX == true)
+                neuX = ball.Left + 10;
+            else
+                neuX = ball.Left - 10;
+            if (ballPosition.richtungY == true)
+                neuY = ball.Top - ballPosition.winkel;
+            else
+                neuY = ball.Top + ballPosition.winkel;
+            //den Ball neu zeichnen
+            ZeichneBall(new Point(neuX, neuY));
+
+
+        }
+
         internal void ZeichneSchlaeger(int y)
         {
             //befindet sich der Schläger im Spielfeld?

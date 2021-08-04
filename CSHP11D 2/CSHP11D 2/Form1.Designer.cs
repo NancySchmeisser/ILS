@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.spielToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.beendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.spielfeld = new System.Windows.Forms.Panel();
             this.schlaeger = new System.Windows.Forms.Panel();
             this.ball = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.spielfeld.SuspendLayout();
             this.SuspendLayout();
@@ -89,6 +91,11 @@
             this.ball.Size = new System.Drawing.Size(200, 100);
             this.ball.TabIndex = 0;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -119,6 +126,7 @@
         private System.Windows.Forms.Panel spielfeld;
         private System.Windows.Forms.Panel schlaeger;
         private System.Windows.Forms.Panel ball;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
