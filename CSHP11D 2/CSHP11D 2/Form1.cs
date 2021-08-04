@@ -27,7 +27,7 @@ namespace CSHP11D_2
         }
 
         //für die Zeichenfläche
-        Graphics zeichenfläche;
+        Graphics zeichenflaeche;
         //für das Spielfeld
         Rectangle spielfeldGroesse;
         int spielfeldMaxX, spielfeldMaxY, spielfeldMinX, spielfeldMinY;
@@ -55,7 +55,7 @@ namespace CSHP11D_2
             //den Pinsel erzeugen
             pinsel = new SolidBrush(Color.Black);
             //die Zeichenfläche beschaffen
-            zeichenfläche = spielfeld.CreateGraphics();
+            zeichenflaeche = spielfeld.CreateGraphics();
             //das Spielfeld bekommt einen schwarzen Hintergurnd
             spielfeld.BackColor = Color.Black;
         }
@@ -72,6 +72,22 @@ namespace CSHP11D_2
             spielfeldMaxY = spielfeldGroesse.Bottom - spielfeldLinienbreite;
             spielfeldMinY = spielfeldGroesse.Top + spielfeldLinienbreite;
 
+
+        }
+
+        void ZeichneSpielfeld()
+        {
+            //die weißen Begrenzungen
+            pinsel.Color = Color.White;
+            //ein Rechteck oben
+            zeichenflaeche.FillRectangle(pinsel, 0, 0, spielfeldMaxX, spielfeldLinienbreite);
+            //ein Rechteck rechts
+            zeichenflaeche.FillRectangle(pinsel, spielfeldMaxX, 0, spielfeldLinienbreite, spielfeldMaxY + spielfeldLinienbreite);
+            //ein Rechteck unten
+            zeichenflaeche.FillRectangle(pinsel, 0, spielfeldMaxY, spielfeldMaxX, spielfeldLinienbreite);
+            //Graue Linie Mitte
+            pinsel.Color = Color.Gray;
+            zeichenflaeche.FillRectangle(pinsel, spielfeldMaxX / 2, spielfeldMinY, spielfeldLinienbreite, spielfeldMaxY - spielfeldLinienbreite);
 
         }
 
