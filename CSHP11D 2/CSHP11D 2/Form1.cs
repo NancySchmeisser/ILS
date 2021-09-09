@@ -82,6 +82,7 @@
 
         internal void ZeichneBall(Point position)
         {
+            //für die Zufallszahl
             Random zufall = new Random();
 
             ball.Location = position;
@@ -103,6 +104,16 @@
                 ballPosition.richtungX = true;
                 //und den Winkel
                 ballPosition.winkel = zufall.Next(5);
+            }
+
+            //ist der Ball hinter dem Schläger?
+            if (position.X < spielfeldMinX)
+            {
+                //eine kurze Pause einlegen
+                System.Threading.Thread.Sleep(1000);
+                //und alles von vorne
+                ZeichneBall(new Point(spielfeldMinX, position.Y));
+                ballPosition.richtungX = true;
             }
 
 
