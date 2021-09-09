@@ -83,6 +83,15 @@
         internal void ZeichneBall(Point position)
         {
             ball.Location = position;
+            //wenn der Ball rechts anstößt, änern wir die Richtung
+            if ((position.X + 10) >= spielfeldMaxX)
+                ballPosition.richtungX = false;
+            //stößt er unten bzw. oben an, ebenfalls
+            if ((position.Y + 10) >= spielfeldMaxY)
+                ballPosition.richtungY = true;
+            else
+                if (position.Y <= spielfeldMinY)
+                ballPosition.richtungY = false;
         }
 
         private void spielfeld_Paint(object sender, PaintEventArgs e)
