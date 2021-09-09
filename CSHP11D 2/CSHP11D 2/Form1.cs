@@ -82,6 +82,8 @@
 
         internal void ZeichneBall(Point position)
         {
+            Random zufall = new Random();
+
             ball.Location = position;
             //wenn der Ball rechts anstößt, änern wir die Richtung
             if ((position.X + 10) >= spielfeldMaxX)
@@ -96,8 +98,14 @@
             //ist er wieder links, prüfen wir, ob der Schläger in
             //der Nähe ist
             if ((position.X == spielfeldMinX) && ((schlaeger.Top <= position.Y) && (schlaeger.Bottom >= position.Y)))
-                    //die Richtung ändern
-                    ballPosition.richtungX = true;
+            {
+                //die Richtung ändern
+                ballPosition.richtungX = true;
+                //und den Winkel
+                ballPosition.winkel = zufall.Next(5);
+            }
+
+
         }
 
         private void spielfeld_Paint(object sender, PaintEventArgs e)
