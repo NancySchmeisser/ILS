@@ -92,6 +92,12 @@
             else
                 if (position.Y <= spielfeldMinY)
                 ballPosition.richtungY = false;
+
+            //ist er wieder links, prüfen wir, ob der Schläger in
+            //der Nähe ist
+            if ((position.X == spielfeldMinX) && ((schlaeger.Top <= position.Y) && (schlaeger.Bottom >= position.Y)))
+                    //die Richtung ändern
+                    ballPosition.richtungX = true;
         }
 
         private void spielfeld_Paint(object sender, PaintEventArgs e)
