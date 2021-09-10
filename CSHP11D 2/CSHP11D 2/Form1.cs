@@ -33,6 +33,11 @@
 
         internal int aktuelleSpielzeit;
 
+        internal Font schrift;
+
+        
+
+
         public Form1()
         {
             InitializeComponent();
@@ -51,7 +56,9 @@
             zeichenflaeche = spielfeld.CreateGraphics();
             //das Spielfeld bekommt einen schwarzen Hintergurnd
             spielfeld.BackColor = Color.Black;
-      
+            schrift = new Font("Arial", 12, FontStyle.Bold);
+
+
 
             SetzeSpielfeld();
             NeuerBall();
@@ -136,6 +143,7 @@
         private void spielfeld_Paint(object sender, PaintEventArgs e)
         {
             ZeichneSpielfeld();
+            ZeichneZeit(Convert.ToString(aktuelleSpielzeit));
         }
 
         private void schlaeger_MouseMove(object sender, MouseEventArgs e)
@@ -195,6 +203,8 @@
 
         void ZeichneZeit(string restzeit)
         {
+            
+
             //zuerst die alte Anzeige überschreiben
             pinsel.Color = spielfeld.BackColor;
             zeichenflaeche.FillRectangle(pinsel, spielfeldMaxX - 50, spielfeldMinY + 20, 30, 20);

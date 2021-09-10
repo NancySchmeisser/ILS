@@ -100,7 +100,7 @@
             // 
             // timerSpiel
             // 
-            this.timerSpiel.Interval = 12000;
+            this.timerSpiel.Interval = 120000;
             // 
             // timerSekunde
             // 
