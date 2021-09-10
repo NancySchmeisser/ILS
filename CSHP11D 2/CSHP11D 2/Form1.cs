@@ -29,6 +29,10 @@
 
         internal SolidBrush pinsel;
 
+        internal bool spielPause;
+
+        internal int aktuelleSpielzeit;
+
         public Form1()
         {
             InitializeComponent();
@@ -47,6 +51,7 @@
             zeichenflaeche = spielfeld.CreateGraphics();
             //das Spielfeld bekommt einen schwarzen Hintergurnd
             spielfeld.BackColor = Color.Black;
+      
 
             SetzeSpielfeld();
             NeuerBall();
