@@ -186,6 +186,41 @@
             ZeichneZeit(Convert.ToString(aktuelleSpielzeit));
         }
 
+        private void pauseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //erst einmal prüfen wir den Status
+            //läuft das Spiel?
+            if (spielPause == false)
+            {
+                //alle Timer anhalten
+                timerBall.Enabled = false;
+                timerSekunde.Enabled = false;
+                timerSpiel.Enabled = false;
+                //die Markierung im Menü einschalten
+                pauseToolStripMenuItem.Checked = true;
+                //den Text in der Titelleiste ändern
+                this.Text = "Pong - Das Spiel ist angehalten!";
+                spielPause = true;
+            }
+            else
+            {
+                //das Intervall für die verbelibende Spielzeit setzen
+                timerSpiel.Interval = aktuelleSpielzeit * 1000;
+                //alle Timer wieder an
+                timerBall.Enabled = true;
+                timerSekunde.Enabled = true;
+                timerSpiel.Enabled = true;
+                //die Markierung im Menü abschalten
+                pauseToolStripMenuItem.Checked = false;
+                //den Text in der Titelleiste änern
+                this.Text = "Pong";
+                spielPause = false;
+
+            }
+        }
+
+
+
         //setzt die Einstellungen für einen neuen Ball und einen neuen Schläger
 
         void NeuerBall()

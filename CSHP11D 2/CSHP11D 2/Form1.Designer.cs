@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.spielToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pauseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.beendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.spielfeld = new System.Windows.Forms.Panel();
             this.schlaeger = new System.Windows.Forms.Panel();
@@ -55,10 +56,18 @@
             // spielToolStripMenuItem
             // 
             this.spielToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pauseToolStripMenuItem,
             this.beendenToolStripMenuItem});
             this.spielToolStripMenuItem.Name = "spielToolStripMenuItem";
             this.spielToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.spielToolStripMenuItem.Text = "&Spiel";
+            // 
+            // pauseToolStripMenuItem
+            // 
+            this.pauseToolStripMenuItem.Name = "pauseToolStripMenuItem";
+            this.pauseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pauseToolStripMenuItem.Text = "&Pause";
+            this.pauseToolStripMenuItem.Click += new System.EventHandler(this.pauseToolStripMenuItem_Click);
             // 
             // beendenToolStripMenuItem
             // 
@@ -140,6 +149,7 @@
         private System.Windows.Forms.Timer timerBall;
         private System.Windows.Forms.Timer timerSpiel;
         private System.Windows.Forms.Timer timerSekunde;
+        private System.Windows.Forms.ToolStripMenuItem pauseToolStripMenuItem;
     }
 }
 
