@@ -148,6 +148,8 @@
 
         private void schlaeger_MouseMove(object sender, MouseEventArgs e)
         {
+            if (spielPause == true)
+                return;
             if (e.Button == MouseButtons.Left)
                 ZeichneSchlaeger(e.Y + schlaeger.Top);
         }
