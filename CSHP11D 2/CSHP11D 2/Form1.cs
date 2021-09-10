@@ -193,6 +193,18 @@
 
         }
 
+        void ZeichneZeit(string restzeit)
+        {
+            //zuerst die alte Anzeige überschreiben
+            pinsel.Color = spielfeld.BackColor;
+            zeichenflaeche.FillRectangle(pinsel, spielfeldMaxX - 50, spielfeldMinY + 20, 30, 20);
+            //in weißer Schrift
+            pinsel.Color = Color.White;
+            //die Auszeichnungen für die Schrift werden beim
+            //Erstellen des Spielfelds gesetzt
+            zeichenflaeche.DrawString(restzeit, schrift, pinsel, new Point(spielfeldMaxX - 50, spielfeldMinY + 20));
+        }
+
         private void beendenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
