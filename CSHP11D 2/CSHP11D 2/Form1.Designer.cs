@@ -105,6 +105,7 @@
             // timerSekunde
             // 
             this.timerSekunde.Interval = 1000;
+            this.timerSekunde.Tick += new System.EventHandler(this.timerSekunde_Tick);
             // 
             // Form1
             // 

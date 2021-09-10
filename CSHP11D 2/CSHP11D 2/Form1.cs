@@ -178,6 +178,14 @@
             schlaeger.Top = y;
         }
 
+        private void timerSekunde_Tick(object sender, EventArgs e)
+        {
+            //eine Sekunde abziehen
+            aktuelleSpielzeit = aktuelleSpielzeit - 1;
+            //die Restzeit ausgeben
+            ZeichneZeit(Convert.ToString(aktuelleSpielzeit));
+        }
+
         //setzt die Einstellungen für einen neuen Ball und einen neuen Schläger
 
         void NeuerBall()
