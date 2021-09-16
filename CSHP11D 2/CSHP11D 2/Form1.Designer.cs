@@ -112,6 +112,7 @@
             // timerSpiel
             // 
             this.timerSpiel.Interval = 120000;
+            this.timerSpiel.Tick += new System.EventHandler(this.timerSpiel_Tick);
             // 
             // timerSekunde
             // 

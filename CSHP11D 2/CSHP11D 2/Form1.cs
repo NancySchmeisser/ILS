@@ -265,6 +265,21 @@
                 pauseToolStripMenuItem_Click(sender, e);
         }
 
+        private void timerSpiel_Tick(object sender, EventArgs e)
+        {
+            //das Spiel anhalten
+            pauseToolStripMenuItem_Click(sender, e);
+            //eine Meldung anzeigen
+            MessageBox.Show("Die Zeit ist um", "Spielende", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //Abfrage, ob ein neues Spiel gestartet werden soll
+            if (NeuesSpiel() == true)
+                //das Spiel fortsetzen
+                pauseToolStripMenuItem_Click(sender, e);
+            else
+                //sonst beenden
+                beendenToolStripMenuItem_Click(sender, e);
+        }
+
         void ZeichneZeit(string restzeit)
         {
             
