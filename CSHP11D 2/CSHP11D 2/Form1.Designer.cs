@@ -39,6 +39,7 @@
             this.timerBall = new System.Windows.Forms.Timer(this.components);
             this.timerSpiel = new System.Windows.Forms.Timer(this.components);
             this.timerSekunde = new System.Windows.Forms.Timer(this.components);
+            this.neuesSpielToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.spielfeld.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +58,7 @@
             // 
             this.spielToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pauseToolStripMenuItem,
+            this.neuesSpielToolStripMenuItem,
             this.beendenToolStripMenuItem});
             this.spielToolStripMenuItem.Name = "spielToolStripMenuItem";
             this.spielToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
@@ -72,7 +74,7 @@
             // beendenToolStripMenuItem
             // 
             this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.beendenToolStripMenuItem.Text = "&Beenden";
             this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
             // 
@@ -116,6 +118,13 @@
             this.timerSekunde.Interval = 1000;
             this.timerSekunde.Tick += new System.EventHandler(this.timerSekunde_Tick);
             // 
+            // neuesSpielToolStripMenuItem
+            // 
+            this.neuesSpielToolStripMenuItem.Name = "neuesSpielToolStripMenuItem";
+            this.neuesSpielToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.neuesSpielToolStripMenuItem.Text = "Neues Spiel";
+            this.neuesSpielToolStripMenuItem.Click += new System.EventHandler(this.neuesSpielToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -150,6 +159,7 @@
         private System.Windows.Forms.Timer timerSpiel;
         private System.Windows.Forms.Timer timerSekunde;
         private System.Windows.Forms.ToolStripMenuItem pauseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem neuesSpielToolStripMenuItem;
     }
 }
 

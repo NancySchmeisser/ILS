@@ -246,6 +246,25 @@
 
         }
 
+        private void neuesSpielToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //läuft ein Spiel
+            //dann erst einmal pausieren
+            if (spielPause == false)
+            {
+                pauseToolStripMenuItem_Click(sender, e);
+                //den Dialog anzeigen
+                NeuesSpiel();
+                //und weiter spielem
+                pauseToolStripMenuItem_Click(sender, e);
+            }
+            //wenn kein Spiel läuft, starten wir ein neues,
+            //wenn im Dialog auf Ja geklickt wurde
+            else
+                if (NeuesSpiel() == true)
+                pauseToolStripMenuItem_Click(sender, e);
+        }
+
         void ZeichneZeit(string restzeit)
         {
             
