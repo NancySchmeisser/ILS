@@ -260,6 +260,22 @@
             zeichenflaeche.DrawString(restzeit, schrift, pinsel, new Point(spielfeldMaxX - 50, spielfeldMinY + 20));
         }
 
+        bool NeuesSpiel()
+        {
+            bool ergebnis = false;
+            if (MessageBox.Show("Neues Spiel starten?", "Neues Spiel", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                //die Spielzeit neu setzen
+                aktuelleSpielzeit = 120;
+                //alles neu zeichnen
+                ZeichneSpielfeld();
+                NeuerBall();
+                ZeichneZeit(Convert.ToString(aktuelleSpielzeit));
+                ergebnis = true;
+            }
+            return ergebnis;
+        }
+
         private void beendenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
