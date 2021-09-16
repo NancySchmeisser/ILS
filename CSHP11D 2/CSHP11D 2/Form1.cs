@@ -65,11 +65,12 @@
             //erst einmal ist das Spiel angehalten
             spielPause = true;
             //die Spielzeit in Sekunden setzen
-            aktuelleSpielzeit = timerSpiel.Interval / 1000;
+          //  aktuelleSpielzeit = timerSpiel.Interval / 1000;
             //alle drei Timer sind zunächst angehalten
             timerBall.Enabled = false;
             timerSpiel.Enabled = false;
             timerSekunde.Enabled = false;
+            pauseToolStripMenuItem.Enabled = false;
 
         }
 
@@ -306,6 +307,7 @@
                 NeuerBall();
                 ZeichneZeit(Convert.ToString(aktuelleSpielzeit));
                 ergebnis = true;
+                pauseToolStripMenuItem.Enabled = true;
             }
             return ergebnis;
         }
