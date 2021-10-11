@@ -35,6 +35,8 @@
 
         internal Font schrift;
 
+        Score spielpunkte = new Score();
+
         
 
 
@@ -310,6 +312,19 @@
                 pauseToolStripMenuItem.Enabled = true;
             }
             return ergebnis;
+        }
+
+        void ZeichnePunkte(string punkte)
+        {
+            //zuerst die alte Anzeige überschreiben
+            pinsel.Color = spielfeld.BackColor;
+
+            zeichenflaeche.FillRectangle(pinsel, spielfeldMaxX - 50, spielfeldMinY + 40, 30, 20);
+            //in weißer Schrift
+            pinsel.Color = Color.White;
+            //die Einstellungen für die Schrift werden beim
+            //Erstellen des Spielfelds gesetzt
+            zeichenflaeche.DrawString(punkte, schrift, pinsel, new Point(spielfeldMaxX - 50, spielfeldMinY + 40));
         }
 
         private void beendenToolStripMenuItem_Click(object sender, EventArgs e)
