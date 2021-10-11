@@ -124,6 +124,9 @@
             //der Nähe ist
             if ((position.X == spielfeldMinX) && ((schlaeger.Top <= position.Y) && (schlaeger.Bottom >= position.Y)))
             {
+                if (ballPosition.richtungX == false)
+                    //einen Punkt dazu und die Punkte ausgeben
+                    ZeichnePunkte(Convert.ToString(spielpunkte.VeraenderePunkte(1)));
                 //die Richtung ändern
                 ballPosition.richtungX = true;
                 //und den Winkel
@@ -133,6 +136,9 @@
             //ist der Ball hinter dem Schläger?
             if (position.X < spielfeldMinX)
             {
+                //fünf Punkte abziehen und die Punkte ausgeben
+                ZeichnePunkte(Convert.ToString(spielpunkte.VeraenderePunkte(-5)));
+
                 //eine kurze Pause einlegen
                 System.Threading.Thread.Sleep(1000);
                 //und alles von vorne
