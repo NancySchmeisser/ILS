@@ -310,6 +310,8 @@
             {
                 //die Spielzeit neu setzen
                 aktuelleSpielzeit = 120;
+                spielpunkte.LoeschePunkte();
+                ZeichnePunkte("0");
                 //alles neu zeichnen
                 ZeichneSpielfeld();
                 NeuerBall();
