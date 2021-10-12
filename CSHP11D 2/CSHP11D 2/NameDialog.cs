@@ -16,5 +16,15 @@ namespace CSHP11D_2
         {
             InitializeComponent();
         }
+
+        private void NameDialog_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public string LiefereName()
+        {
+            return textBox1.Text;
+        }
     }
 }

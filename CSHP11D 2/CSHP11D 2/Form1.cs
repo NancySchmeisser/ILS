@@ -75,6 +75,9 @@
             pauseToolStripMenuItem.Enabled = false;
 
         }
+        
+           
+        
 
         internal void SetzeSpielfeld()
         {
