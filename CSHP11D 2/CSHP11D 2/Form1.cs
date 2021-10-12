@@ -277,6 +277,34 @@
                 pauseToolStripMenuItem_Click(sender, e);
         }
 
+        private void BestenlisteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //zur Unterscheidung zwischen einem laufenden und 
+            //einem nicht gestarteten Spiel
+            bool weiter = false;
+            //läuft ein Spiel? dann erst einmal pausieren
+            if (spielPause == false)
+            {
+                PauseToolStripMenuItem_Click(sender, e);
+                weiter = true;
+            }
+            //Ball und Schläger verstecken
+            ball.Hide();
+            schlaeger.Hide();
+            //die Liste ausgeben
+            spielpunkte.ListeAusgeben(zeichenflaeche, spielfeldGroesse);
+            //fünf Sekunden warten
+            System.Threading.Thread.Sleep(5000);
+            //die Zeichenfläche löschen
+            zeichenflaeche.Clear(spielfeld.BackColor);
+            //Ball und Schläger wieder anzeigen
+            ball.Show();
+            schlaeger.Show();
+            //das Spiel wieder fortsetzen, wenn wir es angehalten haben
+            if (weiter == true)
+                PauseToolStripMenuItem_Click(sender, e);
+        }
+
         private void timerSpiel_Tick(object sender, EventArgs e)
         {
             //das Spiel anhalten
