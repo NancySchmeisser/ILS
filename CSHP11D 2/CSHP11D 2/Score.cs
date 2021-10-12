@@ -1,6 +1,6 @@
 ﻿namespace CSHP11D_2
 {
-   
+    using System;
     internal class Score
     {
         internal int punkte;
@@ -30,6 +30,28 @@
         public void LoeschePunkte()
         {
             punkte = 0;
+        }
+
+        public bool NeuerEintrag()
+        {
+            string tempName = string.Empty;
+            //wenn die aktuelle Punktzahl größer ist als der
+            //letzte Eintrag der Liste, wird der letzte Eintrag
+            //der Liste überschrieben und die Liste neu sortiert
+            if (punkte > bestenliste[anzahl - 1].GetPunkte())
+            {
+                //den Namen beschaffen
+                NameDialog neuerName = new NameDialog();
+                if (neuerName.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    tempName = neuerName.LiefereName();
+                neuerName.Close();
+                bestenliste[anzahl - 1].SetzeEintrag(punkte, tempName);
+                Array.Sort(bestenliste);
+                return true;
+            }
+            else
+                return false;
+           
         }
     }
 
