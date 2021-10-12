@@ -4,6 +4,10 @@
     internal class Score
     {
         internal int punkte;
+        //die Anzahl der Einträge in der Liste
+        int anzahl = 10;
+        //für die Liste
+        Liste[] bestenliste;
 
         public Score()
         {
