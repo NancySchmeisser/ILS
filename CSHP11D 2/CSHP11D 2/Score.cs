@@ -12,6 +12,13 @@
         public Score()
         {
             punkte = 0;
+            //eine neue Instanz der Liste erstellen
+            bestenliste = new Liste[anzahl];
+            //die Elemente initialisieren
+            for (int i = 0; i < anzahl; i++)
+            {
+                bestenliste[i] = new Liste();
+            }
         }
 
         public int VeraenderePunkte(int anzahl)
