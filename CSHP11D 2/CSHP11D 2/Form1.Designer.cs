@@ -32,6 +32,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.spielToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pauseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.neuesSpielToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.beendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.spielfeld = new System.Windows.Forms.Panel();
             this.schlaeger = new System.Windows.Forms.Panel();
@@ -39,7 +40,6 @@
             this.timerBall = new System.Windows.Forms.Timer(this.components);
             this.timerSpiel = new System.Windows.Forms.Timer(this.components);
             this.timerSekunde = new System.Windows.Forms.Timer(this.components);
-            this.neuesSpielToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.spielfeld.SuspendLayout();
             this.SuspendLayout();
@@ -67,14 +67,21 @@
             // pauseToolStripMenuItem
             // 
             this.pauseToolStripMenuItem.Name = "pauseToolStripMenuItem";
-            this.pauseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pauseToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.pauseToolStripMenuItem.Text = "&Pause";
             this.pauseToolStripMenuItem.Click += new System.EventHandler(this.pauseToolStripMenuItem_Click);
+            // 
+            // neuesSpielToolStripMenuItem
+            // 
+            this.neuesSpielToolStripMenuItem.Name = "neuesSpielToolStripMenuItem";
+            this.neuesSpielToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.neuesSpielToolStripMenuItem.Text = "Neues Spiel";
+            this.neuesSpielToolStripMenuItem.Click += new System.EventHandler(this.neuesSpielToolStripMenuItem_Click);
             // 
             // beendenToolStripMenuItem
             // 
             this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.beendenToolStripMenuItem.Text = "&Beenden";
             this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
             // 
@@ -118,13 +125,6 @@
             // 
             this.timerSekunde.Interval = 1000;
             this.timerSekunde.Tick += new System.EventHandler(this.timerSekunde_Tick);
-            // 
-            // neuesSpielToolStripMenuItem
-            // 
-            this.neuesSpielToolStripMenuItem.Name = "neuesSpielToolStripMenuItem";
-            this.neuesSpielToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.neuesSpielToolStripMenuItem.Text = "Neues Spiel";
-            this.neuesSpielToolStripMenuItem.Click += new System.EventHandler(this.neuesSpielToolStripMenuItem_Click);
             // 
             // Form1
             // 
