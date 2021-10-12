@@ -280,16 +280,27 @@
         private void timerSpiel_Tick(object sender, EventArgs e)
         {
             //das Spiel anhalten
-            pauseToolStripMenuItem_Click(sender, e);
+            PauseToolStripMenuItem_Click(sender, e);
             //eine Meldung anzeigen
             MessageBox.Show("Die Zeit ist um", "Spielende", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //Abfrage, ob ein neues Spiel gestartet werden soll
-            if (NeuesSpiel() == true)
-                //das Spiel fortsetzen
-                pauseToolStripMenuItem_Click(sender, e);
-            else
-                //sonst beenden
-                beendenToolStripMenuItem_Click(sender, e);
+            //nachsehen, ob ein neuer Eintrag in der Bestenliste
+            //erfolgen kann
+            if (spielpunkte.NeuerEintrag() == true)
+            {
+                //Ball und Schläger verstecken
+                ball.Hide();
+                schlaeger.Hide();
+                //die Liste ausgeben
+                spielpunkte.ListeAusgeben(zeichenflaeche, spielfeldGroesse);
+                //fünf Sekunden warten
+                System.Threading.Thread.Sleep(5000);
+                //die Zeichenfläche löschen
+                zeichenflaeche.Clear(spielfeld.BackColor);
+                //Ball und Schläger wieder anzeigen
+                ball.Show();
+                schlaeger.Show();
+            }
+
         }
 
         void ZeichneZeit(string restzeit)
