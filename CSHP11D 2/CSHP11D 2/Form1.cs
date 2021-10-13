@@ -126,18 +126,18 @@
             {
                 if (ballPosition.richtungX == false)
                     //einen Punkt dazu und die Punkte ausgeben
-                    ZeichnePunkte(Convert.ToString(spielpunkte.VeraenderePunkte(1)));
+                    ZeichnePunkte(Convert.ToString(spielpunkte.VeraenderePunkte(punkteMehr)));
                 //die Richtung ändern
                 ballPosition.richtungX = true;
                 //und den Winkel
-                ballPosition.winkel = zufall.Next(5);
+                ballPosition.winkel = zufall.Next(winkelZufall);
             }
 
             //ist der Ball hinter dem Schläger?
             if (position.X < spielfeldMinX)
             {
                 //fünf Punkte abziehen und die Punkte ausgeben
-                ZeichnePunkte(Convert.ToString(spielpunkte.VeraenderePunkte(-5)));
+                ZeichnePunkte(Convert.ToString(spielpunkte.VeraenderePunkte(punkteWeniger)));
 
                 //eine kurze Pause einlegen
                 System.Threading.Thread.Sleep(1000);
