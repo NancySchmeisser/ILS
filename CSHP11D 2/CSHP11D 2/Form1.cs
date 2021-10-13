@@ -60,6 +60,10 @@
             //das Spielfeld bekommt einen schwarzen Hintergurnd
             spielfeld.BackColor = Color.Black;
             schrift = new Font("Arial", 12, FontStyle.Bold);
+            //die Standardwerte setzen
+            punkteMehr = 1;
+            punkteWeniger = -5;
+            winkelZufall = 5;
 
 
 
@@ -293,6 +297,76 @@
                 pauseToolStripMenuItem_Click(sender, e);
         }
 
+        private void sehrEinfachToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //das Intervall für den Ball setzen
+            timerBall.Interval = 200;
+            //die Einstellungen setzen
+            SetzeEinstellungen(100, 1, -20, 2);
+            //und die Markierungen
+            schwerToolStripMenuItem.Checked = false;
+            sehrEinfachToolStripMenuItem.Checked = true;
+            einfachToolStripMenuItem.Checked = false;
+            mittelToolStripMenuItem.Checked = false;
+            sehrSchwerToolStripMenuItem.Checked = false;
+        }
+
+        private void einfachToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //das Intervall für den Ball setzen
+            timerBall.Interval = 100;
+            //die Einstellungen setzen
+            SetzeEinstellungen(50, 1, -5, 5);
+            //und die Markierungen
+            schwerToolStripMenuItem.Checked = false;
+            sehrEinfachToolStripMenuItem.Checked = false;
+            einfachToolStripMenuItem.Checked = true;
+            mittelToolStripMenuItem.Checked = false;
+            sehrSchwerToolStripMenuItem.Checked = false;
+        }
+
+        private void mittelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //das Intervall für den Ball setzen
+            timerBall.Interval = 50;
+            //die Einstellungen setzen
+            SetzeEinstellungen(50, 3, -5, 15);
+            //und die Markierungen
+            schwerToolStripMenuItem.Checked = false;
+            sehrEinfachToolStripMenuItem.Checked = false;
+            einfachToolStripMenuItem.Checked = false;
+            mittelToolStripMenuItem.Checked = true;
+            sehrSchwerToolStripMenuItem.Checked = false;
+        }
+
+        private void schwerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //das Intervall für den Ball setzen
+            timerBall.Interval = 25;
+            //die Einstellungen setzen
+            SetzeEinstellungen(50, 10, -5, 25);
+            //und die Markierungen
+            schwerToolStripMenuItem.Checked = true;
+            sehrEinfachToolStripMenuItem.Checked = false;
+            einfachToolStripMenuItem.Checked = false;
+            mittelToolStripMenuItem.Checked = false;
+            sehrSchwerToolStripMenuItem.Checked = false;
+        }
+
+        private void sehrSchwerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //das Intervall für den Ball setzen
+            timerBall.Interval = 10;
+            //die Einstellungen setzen
+            SetzeEinstellungen(20, 20, -5, 40);
+            //und die Markierungen
+            schwerToolStripMenuItem.Checked = false;
+            sehrEinfachToolStripMenuItem.Checked = false;
+            einfachToolStripMenuItem.Checked = false;
+            mittelToolStripMenuItem.Checked = false;
+            sehrSchwerToolStripMenuItem.Checked = true;
+        }
+
         private void timerSpiel_Tick(object sender, EventArgs e)
         {
             //das Spiel anhalten
@@ -351,8 +425,7 @@
             return ergebnis;
         }
 
-        //setzt die Einstellungen für den Schwierigkeitsgrad
-        void SetzeEinstellungen(int schlaeger, int mehr, int weniger, int winkel)
+        internal void SetzeEinstellungen(int schlaeger, int mehr, int weniger, int winkel)
         {
             schlaegerGroesse = schlaeger;
             punkteMehr = mehr;
