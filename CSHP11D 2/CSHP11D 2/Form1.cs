@@ -37,6 +37,12 @@
 
         Score spielpunkte = new Score();
 
+        //für die Punkte
+        int punkteMehr, punkteWeniger;
+        //für die Veränderung des Winkels
+        int winkelZufall;
+
+
         
 
 
