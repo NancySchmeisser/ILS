@@ -285,7 +285,7 @@
             //läuft ein Spiel? dann erst einmal pausieren
             if (spielPause == false)
             {
-                PauseToolStripMenuItem_Click(sender, e);
+                pauseToolStripMenuItem_Click(sender, e);
                 weiter = true;
             }
             //Ball und Schläger verstecken
@@ -302,13 +302,13 @@
             schlaeger.Show();
             //das Spiel wieder fortsetzen, wenn wir es angehalten haben
             if (weiter == true)
-                PauseToolStripMenuItem_Click(sender, e);
+                pauseToolStripMenuItem_Click(sender, e);
         }
 
         private void timerSpiel_Tick(object sender, EventArgs e)
         {
             //das Spiel anhalten
-            PauseToolStripMenuItem_Click(sender, e);
+            pauseToolStripMenuItem_Click(sender, e);
             //eine Meldung anzeigen
             MessageBox.Show("Die Zeit ist um", "Spielende", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //nachsehen, ob ein neuer Eintrag in der Bestenliste
