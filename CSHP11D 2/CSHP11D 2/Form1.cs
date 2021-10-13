@@ -35,16 +35,11 @@
 
         internal Font schrift;
 
-        Score spielpunkte = new Score();
+        internal Score spielpunkte = new Score();
 
-        //für die Punkte
-        int punkteMehr, punkteWeniger;
-        //für die Veränderung des Winkels
-        int winkelZufall;
+        internal int punkteMehr, punkteWeniger;
 
-
-        
-
+        internal int winkelZufall;
 
         public Form1()
         {
@@ -73,17 +68,13 @@
             //erst einmal ist das Spiel angehalten
             spielPause = true;
             //die Spielzeit in Sekunden setzen
-          //  aktuelleSpielzeit = timerSpiel.Interval / 1000;
+            //  aktuelleSpielzeit = timerSpiel.Interval / 1000;
             //alle drei Timer sind zunächst angehalten
             timerBall.Enabled = false;
             timerSpiel.Enabled = false;
             timerSekunde.Enabled = false;
             pauseToolStripMenuItem.Enabled = false;
-
         }
-        
-           
-        
 
         internal void SetzeSpielfeld()
         {
@@ -154,8 +145,6 @@
                 ZeichneBall(new Point(spielfeldMinX, position.Y));
                 ballPosition.richtungX = true;
             }
-
-
         }
 
         private void spielfeld_Paint(object sender, PaintEventArgs e)
@@ -187,15 +176,13 @@
                 neuY = ball.Top + ballPosition.winkel;
             //den Ball neu zeichnen
             ZeichneBall(new Point(neuX, neuY));
-
-
         }
 
         internal void ZeichneSchlaeger(int y)
         {
             //befindet sich der Schläger im Spielfeld?
-            if(((y + schlaegerGroesse) < spielfeldMaxY) && (y > spielfeldMinY))
-            schlaeger.Top = y;
+            if (((y + schlaegerGroesse) < spielfeldMaxY) && (y > spielfeldMinY))
+                schlaeger.Top = y;
         }
 
         private void timerSekunde_Tick(object sender, EventArgs e)
@@ -239,11 +226,7 @@
             }
         }
 
-
-
-        //setzt die Einstellungen für einen neuen Ball und einen neuen Schläger
-
-        void NeuerBall()
+        internal void NeuerBall()
         {
             //die Größe des Balls setzen
             ball.Width = 10;
@@ -261,7 +244,6 @@
             ZeichneSchlaeger((spielfeldMaxY / 2) - (schlaegerGroesse / 2));
             //der Ball kommt vor den Schläger ungefähr in die Mitte
             ZeichneBall(new Point(spielfeldMinX, spielfeldMaxY / 2));
-
         }
 
         private void neuesSpielToolStripMenuItem_Click(object sender, EventArgs e)
@@ -334,12 +316,11 @@
                 ball.Show();
                 schlaeger.Show();
             }
-
         }
 
-        void ZeichneZeit(string restzeit)
+        internal void ZeichneZeit(string restzeit)
         {
-            
+
 
             //zuerst die alte Anzeige überschreiben
             pinsel.Color = spielfeld.BackColor;
@@ -351,7 +332,7 @@
             zeichenflaeche.DrawString(restzeit, schrift, pinsel, new Point(spielfeldMaxX - 50, spielfeldMinY + 20));
         }
 
-        bool NeuesSpiel()
+        internal bool NeuesSpiel()
         {
             bool ergebnis = false;
             if (MessageBox.Show("Neues Spiel starten?", "Neues Spiel", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -370,7 +351,16 @@
             return ergebnis;
         }
 
-        void ZeichnePunkte(string punkte)
+        //setzt die Einstellungen für den Schwierigkeitsgrad
+        void SetzeEinstellungen(int schlaeger, int mehr, int weniger, int winkel)
+        {
+            schlaegerGroesse = schlaeger;
+            punkteMehr = mehr;
+            punkteWeniger = weniger;
+            winkelZufall = winkel;
+        }
+
+        internal void ZeichnePunkte(string punkte)
         {
             //zuerst die alte Anzeige überschreiben
             pinsel.Color = spielfeld.BackColor;
