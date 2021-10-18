@@ -31,19 +31,19 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonÜbernehmenGröße = new System.Windows.Forms.Button();
             this.buttonAbbrechen = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton320 = new System.Windows.Forms.RadioButton();
+            this.radioButton640 = new System.Windows.Forms.RadioButton();
+            this.radioButton1024 = new System.Windows.Forms.RadioButton();
+            this.radioButtonMaximal = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton4);
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.radioButtonMaximal);
+            this.groupBox1.Controls.Add(this.radioButton1024);
+            this.groupBox1.Controls.Add(this.radioButton640);
+            this.groupBox1.Controls.Add(this.radioButton320);
             this.groupBox1.Location = new System.Drawing.Point(39, 24);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(480, 100);
@@ -71,49 +71,49 @@
             this.buttonAbbrechen.UseVisualStyleBackColor = true;
             this.buttonAbbrechen.Click += new System.EventHandler(this.buttonAbbrechen_Click);
             // 
-            // radioButton1
+            // radioButton320
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(42, 36);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(71, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "320 * 200";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton320.AutoSize = true;
+            this.radioButton320.Location = new System.Drawing.Point(42, 36);
+            this.radioButton320.Name = "radioButton320";
+            this.radioButton320.Size = new System.Drawing.Size(71, 17);
+            this.radioButton320.TabIndex = 0;
+            this.radioButton320.TabStop = true;
+            this.radioButton320.Text = "320 * 200";
+            this.radioButton320.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioButton640
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(159, 36);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(71, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "640 * 480";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton640.AutoSize = true;
+            this.radioButton640.Location = new System.Drawing.Point(159, 36);
+            this.radioButton640.Name = "radioButton640";
+            this.radioButton640.Size = new System.Drawing.Size(71, 17);
+            this.radioButton640.TabIndex = 1;
+            this.radioButton640.TabStop = true;
+            this.radioButton640.Text = "640 * 480";
+            this.radioButton640.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // radioButton1024
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(273, 36);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(77, 17);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "1024 * 768";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton1024.AutoSize = true;
+            this.radioButton1024.Location = new System.Drawing.Point(273, 36);
+            this.radioButton1024.Name = "radioButton1024";
+            this.radioButton1024.Size = new System.Drawing.Size(77, 17);
+            this.radioButton1024.TabIndex = 2;
+            this.radioButton1024.TabStop = true;
+            this.radioButton1024.Text = "1024 * 768";
+            this.radioButton1024.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // radioButtonMaximal
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(398, 36);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(63, 17);
-            this.radioButton4.TabIndex = 3;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Maximal";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButtonMaximal.AutoSize = true;
+            this.radioButtonMaximal.Location = new System.Drawing.Point(398, 36);
+            this.radioButtonMaximal.Name = "radioButtonMaximal";
+            this.radioButtonMaximal.Size = new System.Drawing.Size(63, 17);
+            this.radioButtonMaximal.TabIndex = 3;
+            this.radioButtonMaximal.TabStop = true;
+            this.radioButtonMaximal.Text = "Maximal";
+            this.radioButtonMaximal.UseVisualStyleBackColor = true;
             // 
             // EinstellungenDialog
             // 
@@ -138,9 +138,9 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button buttonÜbernehmenGröße;
         private System.Windows.Forms.Button buttonAbbrechen;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButtonMaximal;
+        private System.Windows.Forms.RadioButton radioButton1024;
+        private System.Windows.Forms.RadioButton radioButton640;
+        private System.Windows.Forms.RadioButton radioButton320;
     }
 }
