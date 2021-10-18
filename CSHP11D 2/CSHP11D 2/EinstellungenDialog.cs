@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace CSHP11D_2
+﻿namespace CSHP11D_2
 {
+    using System;
+    using System.Drawing;
+    using System.Windows.Forms;
+
     public partial class EinstellungenDialog : Form
     {
         public EinstellungenDialog()
@@ -17,7 +11,6 @@ namespace CSHP11D_2
             InitializeComponent();
         }
 
-        //die Methode liefert den ausgewählten Wert
         public Point LiefereWert()
         {
             Point rueckgabe = new Point(0, 0);
@@ -31,7 +24,6 @@ namespace CSHP11D_2
                 rueckgabe = new Point(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
             return rueckgabe;
         }
-
 
         private void buttonAbbrechen_Click(object sender, EventArgs e)
         {
