@@ -421,6 +421,10 @@
                 ZeichneZeit(Convert.ToString(aktuelleSpielzeit));
                 ergebnis = true;
                 pauseToolStripMenuItem.Enabled = true;
+                //Einstellungen deaktivieren
+                schwierigkeitsgradToolStripMenuItem.Enabled = false;
+                spielfeldToolStripMenuItem.Enabled = false;
+                ergebnis = true;
             }
             return ergebnis;
         }
