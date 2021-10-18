@@ -38,6 +38,9 @@
             this.schwierigkeitsgradToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sehrEinfachToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.einfachToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mittelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.schwerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sehrSchwerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.spielfeldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.spielfeld = new System.Windows.Forms.Panel();
             this.schlaeger = new System.Windows.Forms.Panel();
@@ -45,9 +48,6 @@
             this.timerBall = new System.Windows.Forms.Timer(this.components);
             this.timerSpiel = new System.Windows.Forms.Timer(this.components);
             this.timerSekunde = new System.Windows.Forms.Timer(this.components);
-            this.mittelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.schwerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sehrSchwerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.spielfeld.SuspendLayout();
             this.SuspendLayout();
@@ -118,7 +118,7 @@
             // sehrEinfachToolStripMenuItem
             // 
             this.sehrEinfachToolStripMenuItem.Name = "sehrEinfachToolStripMenuItem";
-            this.sehrEinfachToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sehrEinfachToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.sehrEinfachToolStripMenuItem.Text = "Sehr einfach";
             this.sehrEinfachToolStripMenuItem.Click += new System.EventHandler(this.sehrEinfachToolStripMenuItem_Click);
             // 
@@ -127,15 +127,37 @@
             this.einfachToolStripMenuItem.Checked = true;
             this.einfachToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.einfachToolStripMenuItem.Name = "einfachToolStripMenuItem";
-            this.einfachToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.einfachToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.einfachToolStripMenuItem.Text = "Einfach";
             this.einfachToolStripMenuItem.Click += new System.EventHandler(this.einfachToolStripMenuItem_Click);
+            // 
+            // mittelToolStripMenuItem
+            // 
+            this.mittelToolStripMenuItem.Name = "mittelToolStripMenuItem";
+            this.mittelToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.mittelToolStripMenuItem.Text = "Mittel";
+            this.mittelToolStripMenuItem.Click += new System.EventHandler(this.mittelToolStripMenuItem_Click);
+            // 
+            // schwerToolStripMenuItem
+            // 
+            this.schwerToolStripMenuItem.Name = "schwerToolStripMenuItem";
+            this.schwerToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.schwerToolStripMenuItem.Text = "Schwer";
+            this.schwerToolStripMenuItem.Click += new System.EventHandler(this.schwerToolStripMenuItem_Click);
+            // 
+            // sehrSchwerToolStripMenuItem
+            // 
+            this.sehrSchwerToolStripMenuItem.Name = "sehrSchwerToolStripMenuItem";
+            this.sehrSchwerToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.sehrSchwerToolStripMenuItem.Text = "Sehr schwer";
+            this.sehrSchwerToolStripMenuItem.Click += new System.EventHandler(this.sehrSchwerToolStripMenuItem_Click);
             // 
             // spielfeldToolStripMenuItem
             // 
             this.spielfeldToolStripMenuItem.Name = "spielfeldToolStripMenuItem";
             this.spielfeldToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.spielfeldToolStripMenuItem.Text = "Spielfeld";
+            this.spielfeldToolStripMenuItem.Click += new System.EventHandler(this.spielfeldToolStripMenuItem_Click);
             // 
             // spielfeld
             // 
@@ -177,27 +199,6 @@
             // 
             this.timerSekunde.Interval = 1000;
             this.timerSekunde.Tick += new System.EventHandler(this.timerSekunde_Tick);
-            // 
-            // mittelToolStripMenuItem
-            // 
-            this.mittelToolStripMenuItem.Name = "mittelToolStripMenuItem";
-            this.mittelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.mittelToolStripMenuItem.Text = "Mittel";
-            this.mittelToolStripMenuItem.Click += new System.EventHandler(this.mittelToolStripMenuItem_Click);
-            // 
-            // schwerToolStripMenuItem
-            // 
-            this.schwerToolStripMenuItem.Name = "schwerToolStripMenuItem";
-            this.schwerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.schwerToolStripMenuItem.Text = "Schwer";
-            this.schwerToolStripMenuItem.Click += new System.EventHandler(this.schwerToolStripMenuItem_Click);
-            // 
-            // sehrSchwerToolStripMenuItem
-            // 
-            this.sehrSchwerToolStripMenuItem.Name = "sehrSchwerToolStripMenuItem";
-            this.sehrSchwerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.sehrSchwerToolStripMenuItem.Text = "Sehr schwer";
-            this.sehrSchwerToolStripMenuItem.Click += new System.EventHandler(this.sehrSchwerToolStripMenuItem_Click);
             // 
             // Form1
             // 

@@ -406,6 +406,37 @@
             zeichenflaeche.DrawString(restzeit, schrift, pinsel, new Point(spielfeldMaxX - 50, spielfeldMinY + 20));
         }
 
+        private void spielfeldToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Point neueGroesse = new Point(0, 0);
+            EinstellungenDialog neueWerte = new EinstellungenDialog();
+            //wenn der Dialog über die "OK"-Schaltfläche
+            //beendet wird
+            if (neueWerte.ShowDialog() == DialogResult.OK)
+            {
+                //die neue Größe holen
+                neueGroesse = neueWerte.LiefereWert();
+                //den Dialog wieder schließen
+                neueWerte.Close();
+                //das Formular ändern
+                this.Width = neueGroesse.X;
+                this.Height = neueGroesse.Y;
+                //neu ausrichten
+                this.Left = (Screen.PrimaryScreen.Bounds.Width - this.Width) / 2;
+                this.Top = (Screen.PrimaryScreen.Bounds.Height - this.Height) / 2;
+                //die Zeichenfläche neu beschaffen
+                zeichenflaeche = spielfeld.CreateGraphics();
+                //das Spielfeld neu setzen
+                SetzeSpielfeld();
+                //Spielfeld löschen
+                zeichenflaeche.Clear(spielfeld.BackColor);
+                //einen neuen Ball und Schläger zeichnen
+                NeuerBall();
+                //das Spielfeld neu zeichnen
+                ZeichneSpielfeld();
+            }
+        }
+
         internal bool NeuesSpiel()
         {
             bool ergebnis = false;
