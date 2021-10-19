@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CSHP11D_2
+namespace Pong
 {
     public partial class NameDialog : Form
     {

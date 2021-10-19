@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CSHP11D_2.Properties
+namespace Pong.Properties
 {
 
 

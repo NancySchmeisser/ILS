@@ -1,6 +1,8 @@
-﻿namespace CSHP11D_2
+﻿using System;
+
+namespace Pong
 {
-    using System;
+    
 
     internal class Score
     {

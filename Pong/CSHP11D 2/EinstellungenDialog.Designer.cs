@@ -1,4 +1,4 @@
-﻿namespace CSHP11D_2
+﻿namespace Pong
 {
     partial class EinstellungenDialog
     {
