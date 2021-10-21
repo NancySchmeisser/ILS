@@ -410,6 +410,8 @@
         {
             Point neueGroesse = new Point(0, 0);
             EinstellungenDialog neueWerte = new EinstellungenDialog();
+            //Aufgabe 1
+            neueWerte.SetzeButton(this.Width);
             //wenn der Dialog über die "OK"-Schaltfläche
             //beendet wird
             if (neueWerte.ShowDialog() == DialogResult.OK)

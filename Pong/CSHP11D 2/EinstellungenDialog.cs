@@ -1,13 +1,12 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
-
-namespace Pong
+﻿namespace Pong
 {
-    
+    using System;
+    using System.Drawing;
+    using System.Windows.Forms;
 
     public partial class EinstellungenDialog : Form
     {
+        public Color rahmenfarbe;
         public EinstellungenDialog()
         {
             InitializeComponent();
@@ -27,21 +26,32 @@ namespace Pong
             return rueckgabe;
         }
 
-        //markiert den Button mit der aktuellen Einstellung der Größe des Spielfelds
+        //setzt den jeweiligen Button auf die aktuelle Einstellung der Spielfeldgröße
         //Aufgabe 1 CSHP11D
-        private void SetzeButton(int einstellung)
+        public void SetzeButton(int aktuelleGröße)
         {
-            if (einstellung == 640)
+
+            if (aktuelleGröße == 320)
+                radioButton320.Checked = true;
+            else if (aktuelleGröße == 640)
                 radioButton640.Checked = true;
-            if (einstellung == 1024)
+            else if (aktuelleGröße == 1024)
                 radioButton1024.Checked = true;
-            if (einstellung > 1024)
+            else
                 radioButtonMaximal.Checked = true;
         }
 
         private void buttonAbbrechen_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void buttonRahmenfarbe_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                rahmenfarbe = colorDialog1.Color;
+            }
         }
     }
 }

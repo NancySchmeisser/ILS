@@ -35,7 +35,14 @@
             this.radioButton320 = new System.Windows.Forms.RadioButton();
             this.buttonÜbernehmenGröße = new System.Windows.Forms.Button();
             this.buttonAbbrechen = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.buttonRahmenfarbe = new System.Windows.Forms.Button();
+            this.buttonSpielfeldfarbe = new System.Windows.Forms.Button();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -98,7 +105,7 @@
             // buttonÜbernehmenGröße
             // 
             this.buttonÜbernehmenGröße.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.buttonÜbernehmenGröße.Location = new System.Drawing.Point(81, 147);
+            this.buttonÜbernehmenGröße.Location = new System.Drawing.Point(39, 438);
             this.buttonÜbernehmenGröße.Name = "buttonÜbernehmenGröße";
             this.buttonÜbernehmenGröße.Size = new System.Drawing.Size(92, 23);
             this.buttonÜbernehmenGröße.TabIndex = 1;
@@ -107,7 +114,7 @@
             // 
             // buttonAbbrechen
             // 
-            this.buttonAbbrechen.Location = new System.Drawing.Point(377, 147);
+            this.buttonAbbrechen.Location = new System.Drawing.Point(377, 438);
             this.buttonAbbrechen.Name = "buttonAbbrechen";
             this.buttonAbbrechen.Size = new System.Drawing.Size(123, 23);
             this.buttonAbbrechen.TabIndex = 2;
@@ -115,11 +122,62 @@
             this.buttonAbbrechen.UseVisualStyleBackColor = true;
             this.buttonAbbrechen.Click += new System.EventHandler(this.buttonAbbrechen_Click);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.buttonSpielfeldfarbe);
+            this.groupBox2.Controls.Add(this.buttonRahmenfarbe);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Location = new System.Drawing.Point(39, 159);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(461, 100);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Farben";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(19, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Rahmen";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(19, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Spielfeld";
+            // 
+            // buttonRahmenfarbe
+            // 
+            this.buttonRahmenfarbe.Location = new System.Drawing.Point(87, 31);
+            this.buttonRahmenfarbe.Name = "buttonRahmenfarbe";
+            this.buttonRahmenfarbe.Size = new System.Drawing.Size(43, 24);
+            this.buttonRahmenfarbe.TabIndex = 2;
+            this.buttonRahmenfarbe.Text = "...";
+            this.buttonRahmenfarbe.UseVisualStyleBackColor = true;
+            this.buttonRahmenfarbe.Click += new System.EventHandler(this.buttonRahmenfarbe_Click);
+            // 
+            // buttonSpielfeldfarbe
+            // 
+            this.buttonSpielfeldfarbe.Location = new System.Drawing.Point(87, 64);
+            this.buttonSpielfeldfarbe.Name = "buttonSpielfeldfarbe";
+            this.buttonSpielfeldfarbe.Size = new System.Drawing.Size(43, 24);
+            this.buttonSpielfeldfarbe.TabIndex = 3;
+            this.buttonSpielfeldfarbe.Text = "...";
+            this.buttonSpielfeldfarbe.UseVisualStyleBackColor = true;
+            // 
             // EinstellungenDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(538, 210);
+            this.ClientSize = new System.Drawing.Size(538, 473);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.buttonAbbrechen);
             this.Controls.Add(this.buttonÜbernehmenGröße);
             this.Controls.Add(this.groupBox1);
@@ -129,6 +187,8 @@
             this.TopMost = true;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -142,5 +202,11 @@
         private System.Windows.Forms.RadioButton radioButton1024;
         private System.Windows.Forms.RadioButton radioButton640;
         private System.Windows.Forms.RadioButton radioButton320;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button buttonSpielfeldfarbe;
+        private System.Windows.Forms.Button buttonRahmenfarbe;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
