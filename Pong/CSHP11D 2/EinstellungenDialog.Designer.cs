@@ -36,11 +36,14 @@
             this.buttonÜbernehmenGröße = new System.Windows.Forms.Button();
             this.buttonAbbrechen = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.buttonRahmenfarbe = new System.Windows.Forms.Button();
             this.buttonSpielfeldfarbe = new System.Windows.Forms.Button();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.buttonRahmenfarbe = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.colorDialogRahmen = new System.Windows.Forms.ColorDialog();
+            this.Vorschau = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.colorDialogSpielfeld = new System.Windows.Forms.ColorDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -135,23 +138,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Farben";
             // 
-            // label1
+            // buttonSpielfeldfarbe
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Rahmen";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Spielfeld";
+            this.buttonSpielfeldfarbe.Location = new System.Drawing.Point(87, 64);
+            this.buttonSpielfeldfarbe.Name = "buttonSpielfeldfarbe";
+            this.buttonSpielfeldfarbe.Size = new System.Drawing.Size(43, 24);
+            this.buttonSpielfeldfarbe.TabIndex = 3;
+            this.buttonSpielfeldfarbe.Text = "...";
+            this.buttonSpielfeldfarbe.UseVisualStyleBackColor = true;
+            this.buttonSpielfeldfarbe.Click += new System.EventHandler(this.buttonSpielfeldfarbe_Click);
             // 
             // buttonRahmenfarbe
             // 
@@ -163,21 +158,48 @@
             this.buttonRahmenfarbe.UseVisualStyleBackColor = true;
             this.buttonRahmenfarbe.Click += new System.EventHandler(this.buttonRahmenfarbe_Click);
             // 
-            // buttonSpielfeldfarbe
+            // label2
             // 
-            this.buttonSpielfeldfarbe.Location = new System.Drawing.Point(87, 64);
-            this.buttonSpielfeldfarbe.Name = "buttonSpielfeldfarbe";
-            this.buttonSpielfeldfarbe.Size = new System.Drawing.Size(43, 24);
-            this.buttonSpielfeldfarbe.TabIndex = 3;
-            this.buttonSpielfeldfarbe.Text = "...";
-            this.buttonSpielfeldfarbe.UseVisualStyleBackColor = true;
-            this.buttonSpielfeldfarbe.Click += new System.EventHandler(this.buttonSpielfeldfarbe_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(19, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Spielfeld";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(19, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Rahmen";
+            // 
+            // Vorschau
+            // 
+            this.Vorschau.Location = new System.Drawing.Point(39, 292);
+            this.Vorschau.Name = "Vorschau";
+            this.Vorschau.Size = new System.Drawing.Size(461, 100);
+            this.Vorschau.TabIndex = 4;
+            this.Vorschau.Paint += new System.Windows.Forms.PaintEventHandler(this.Vorschau_Paint);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(39, 273);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Vorschau:";
             // 
             // EinstellungenDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(538, 473);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.Vorschau);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.buttonAbbrechen);
             this.Controls.Add(this.buttonÜbernehmenGröße);
@@ -191,6 +213,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -208,6 +231,9 @@
         private System.Windows.Forms.Button buttonRahmenfarbe;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.ColorDialog colorDialogRahmen;
+        private System.Windows.Forms.Panel Vorschau;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ColorDialog colorDialogSpielfeld;
     }
 }

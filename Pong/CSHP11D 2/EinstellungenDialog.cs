@@ -6,8 +6,11 @@
 
     public partial class EinstellungenDialog : Form
     {
-        public Color rahmenfarbe;
-        public Color spielfeldfarbe;
+        //Felder für die Farben
+        //Aufgabe 2 CSHP11D
+        public Color rahmenFarbe;
+        public Color spielfeldFarbe;
+
         public EinstellungenDialog()
         {
             InitializeComponent();
@@ -42,20 +45,40 @@
                 radioButtonMaximal.Checked = true;
         }
 
+        //Aufgabe 2 CSHP11D
         private void buttonRahmenfarbe_Click(object sender, EventArgs e)
         {
-            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            if (colorDialogRahmen.ShowDialog() == DialogResult.OK)
             {
-                rahmenfarbe = colorDialog1.Color;
+                rahmenFarbe = colorDialogRahmen.Color;
             }
         }
-
+        //Aufgabe 2 CSHP11D
         private void buttonSpielfeldfarbe_Click(object sender, EventArgs e)
         {
-            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            if (colorDialogRahmen.ShowDialog() == DialogResult.OK)
             {
-                spielfeldfarbe = colorDialog1.Color;
+                spielfeldFarbe = colorDialogRahmen.Color;
+                Vorschau.Refresh();
             }
+        }
+        //Aufgabe 2 CSHP11D
+        private void Vorschau_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics vorschau = Vorschau.CreateGraphics();
+            Pen stift = new Pen(rahmenFarbe);
+            SolidBrush pinsel = new SolidBrush(spielfeldFarbe);
+
+            //Zeichne die Hintergrundfarbe
+            vorschau.FillRectangle(pinsel, 0, 0, Vorschau.Width, Vorschau.Height);
+
+            //Zeichne den Rahmen, Schläger und Bal
+            vorschau.DrawRectangle(stift, 0, 0, Vorschau.Width, Vorschau.Height);
+            vorschau.DrawRectangle(stift, 15, 50, 1, 25);
+
+            pinsel.Color = rahmenFarbe;
+            vorschau.FillRectangle(pinsel, 100, 50, 10, 10);
+
         }
 
         private void buttonAbbrechen_Click(object sender, EventArgs e)
@@ -63,6 +86,6 @@
             Close();
         }
 
-      
+        
     }
 }
