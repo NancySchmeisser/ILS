@@ -171,6 +171,7 @@
             this.buttonSpielfeldfarbe.TabIndex = 3;
             this.buttonSpielfeldfarbe.Text = "...";
             this.buttonSpielfeldfarbe.UseVisualStyleBackColor = true;
+            this.buttonSpielfeldfarbe.Click += new System.EventHandler(this.buttonSpielfeldfarbe_Click);
             // 
             // EinstellungenDialog
             // 

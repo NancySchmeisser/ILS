@@ -7,6 +7,7 @@
     public partial class EinstellungenDialog : Form
     {
         public Color rahmenfarbe;
+        public Color spielfeldfarbe;
         public EinstellungenDialog()
         {
             InitializeComponent();
@@ -41,11 +42,6 @@
                 radioButtonMaximal.Checked = true;
         }
 
-        private void buttonAbbrechen_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void buttonRahmenfarbe_Click(object sender, EventArgs e)
         {
             if (colorDialog1.ShowDialog() == DialogResult.OK)
@@ -53,5 +49,20 @@
                 rahmenfarbe = colorDialog1.Color;
             }
         }
+
+        private void buttonSpielfeldfarbe_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                spielfeldfarbe = colorDialog1.Color;
+            }
+        }
+
+        private void buttonAbbrechen_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+      
     }
 }
