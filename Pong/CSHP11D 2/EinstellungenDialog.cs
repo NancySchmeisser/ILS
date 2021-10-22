@@ -51,6 +51,7 @@
             if (colorDialogRahmen.ShowDialog() == DialogResult.OK)
             {
                 rahmenFarbe = colorDialogRahmen.Color;
+                Vorschau.Refresh();
             }
         }
         //Aufgabe 2 CSHP11D
@@ -63,18 +64,22 @@
             }
         }
         //Aufgabe 2 CSHP11D
+        //Vorschau zeichnen
         private void Vorschau_Paint(object sender, PaintEventArgs e)
         {
             Graphics vorschau = Vorschau.CreateGraphics();
-            Pen stift = new Pen(rahmenFarbe);
+            SolidBrush stift = new SolidBrush(rahmenFarbe);
             SolidBrush pinsel = new SolidBrush(spielfeldFarbe);
 
             //Zeichne die Hintergrundfarbe
-            vorschau.FillRectangle(pinsel, 0, 0, Vorschau.Width, Vorschau.Height);
+            vorschau.FillRectangle(pinsel, 0, 0, Vorschau.Width - 1 , Vorschau.Height - 1);
 
-            //Zeichne den Rahmen, Schläger und Bal
-            vorschau.DrawRectangle(stift, 0, 0, Vorschau.Width, Vorschau.Height);
-            vorschau.DrawRectangle(stift, 15, 50, 1, 25);
+            //Zeichne den Rahmen
+            vorschau.FillRectangle(stift, 0, 0, Vorschau.Width - 1, 3);
+            vorschau.FillRectangle(stift, Vorschau.Width - 3, 0, 3, Vorschau.Height);
+            vorschau.FillRectangle(stift, 0, Vorschau.Height - 3, Vorschau.Width, 3);
+                
+            vorschau.FillRectangle(stift, 15, 50, 3, 25);
 
             pinsel.Color = rahmenFarbe;
             vorschau.FillRectangle(pinsel, 100, 50, 10, 10);

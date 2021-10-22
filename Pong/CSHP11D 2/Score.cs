@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 
 namespace Pong
 {
@@ -56,23 +57,23 @@ namespace Pong
                 return false;
         }
 
-        public void ListeAusgeben(System.Drawing.Graphics zeichenflaeche, System.Drawing.RectangleF flaeche)
+        public void ListeAusgeben(Graphics zeichenflaeche, RectangleF flaeche, Color hintergrundFarbe, Color schriftFarbe)
         {
             //ein temporärer Pinsel
-            System.Drawing.SolidBrush tempPinsel = new System.Drawing.SolidBrush(System.Drawing.Color.White);
+            SolidBrush tempPinsel = new SolidBrush(schriftFarbe);
             //die Schriftart setzen
-            System.Drawing.Font tempSchrift = new System.Drawing.Font("Arial", 12, System.Drawing.FontStyle.Bold);
+            Font tempSchrift = new Font("Arial", 12, FontStyle.Bold);
             //für die zentrierte Ausgabe
-            System.Drawing.StringFormat ausrichtung = new System.Drawing.StringFormat();
+            StringFormat ausrichtung = new StringFormat();
             //Koordinaten für die Ausgabe
             float punkteX, nameX, y;
             punkteX = flaeche.Left + 50;
             nameX = flaeche.Left + 250;
             y = flaeche.Top + 50;
             //die Ausrichtung ist zentriert
-            ausrichtung.Alignment = System.Drawing.StringAlignment.Center;
+            ausrichtung.Alignment = StringAlignment.Center;
             //die Zeichenfläche löschen
-            zeichenflaeche.Clear(System.Drawing.Color.Black);
+            zeichenflaeche.Clear(hintergrundFarbe);
             //den Titel ausgeben
             zeichenflaeche.DrawString("Bestenliste", tempSchrift, tempPinsel, flaeche.Width / 2, y, ausrichtung);
             //und nun die Liste selbst
@@ -84,7 +85,7 @@ namespace Pong
             }
         }
 
-        public class Liste : System.IComparable
+        public class Liste : IComparable
         {
             internal int listePunkte;
 

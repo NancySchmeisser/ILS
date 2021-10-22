@@ -40,6 +40,10 @@
         internal int punkteMehr, punkteWeniger;
 
         internal int winkelZufall;
+       
+        public Color rahmenFarbe = Color.White;
+
+        public Color spielfeldFarbe = Color.Black;
 
         public Form1()
         {
@@ -54,11 +58,11 @@
             ballPosition.richtungX = true;
             ballPosition.winkel = 0;
             //den Pinsel erzeugen
-            pinsel = new SolidBrush(Color.Black);
+            pinsel = new SolidBrush(spielfeldFarbe);
             //die Zeichenfläche beschaffen
             zeichenflaeche = spielfeld.CreateGraphics();
-            //das Spielfeld bekommt einen schwarzen Hintergurnd
-            spielfeld.BackColor = Color.Black;
+            //das Spielfeld bekommt eine Hintergrundfarbe
+            spielfeld.BackColor = spielfeldFarbe;
             schrift = new Font("Arial", 12, FontStyle.Bold);
             //die Standardwerte setzen
             punkteMehr = 1;
@@ -96,7 +100,7 @@
         internal void ZeichneSpielfeld()
         {
             //die weißen Begrenzungen
-            pinsel.Color = Color.White;
+            pinsel.Color = rahmenFarbe;
             //ein Rechteck oben
             zeichenflaeche.FillRectangle(pinsel, 0, 0, spielfeldMaxX, spielfeldLinienbreite);
             //ein Rechteck rechts
@@ -239,8 +243,8 @@
             schlaeger.Width = spielfeldLinienbreite;
             schlaeger.Height = schlaegerGroesse;
             //beide Panels werden weiß
-            ball.BackColor = Color.White;
-            schlaeger.BackColor = Color.White;
+            ball.BackColor = rahmenFarbe;
+            schlaeger.BackColor = rahmenFarbe;
             //den Schläger positionieren
             //links an den Rand
             schlaeger.Left = 2;
@@ -284,7 +288,7 @@
             ball.Hide();
             schlaeger.Hide();
             //die Liste ausgeben
-            spielpunkte.ListeAusgeben(zeichenflaeche, spielfeldGroesse);
+            spielpunkte.ListeAusgeben(zeichenflaeche, spielfeldGroesse, spielfeldFarbe, rahmenFarbe);
             //fünf Sekunden warten
             System.Threading.Thread.Sleep(5000);
             //die Zeichenfläche löschen
@@ -295,6 +299,12 @@
             //das Spiel wieder fortsetzen, wenn wir es angehalten haben
             if (weiter == true)
                 pauseToolStripMenuItem_Click(sender, e);
+            else
+            {
+                //die Einstellungen aktivieren
+                schwierigkeitsgradToolStripMenuItem.Enabled = true;
+                spielfeldToolStripMenuItem.Enabled = true;
+            }
         }
 
         private void sehrEinfachToolStripMenuItem_Click(object sender, EventArgs e)
@@ -373,6 +383,9 @@
             pauseToolStripMenuItem_Click(sender, e);
             //eine Meldung anzeigen
             MessageBox.Show("Die Zeit ist um", "Spielende", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //die Einstellungen aktivieren
+            schwierigkeitsgradToolStripMenuItem.Enabled = true;
+            spielfeldToolStripMenuItem.Enabled = true;
             //nachsehen, ob ein neuer Eintrag in der Bestenliste
             //erfolgen kann
             if (spielpunkte.NeuerEintrag() == true)
@@ -381,7 +394,7 @@
                 ball.Hide();
                 schlaeger.Hide();
                 //die Liste ausgeben
-                spielpunkte.ListeAusgeben(zeichenflaeche, spielfeldGroesse);
+                spielpunkte.ListeAusgeben(zeichenflaeche, spielfeldGroesse, spielfeldFarbe, rahmenFarbe);
                 //fünf Sekunden warten
                 System.Threading.Thread.Sleep(5000);
                 //die Zeichenfläche löschen
@@ -394,13 +407,11 @@
 
         internal void ZeichneZeit(string restzeit)
         {
-
-
             //zuerst die alte Anzeige überschreiben
             pinsel.Color = spielfeld.BackColor;
             zeichenflaeche.FillRectangle(pinsel, spielfeldMaxX - 50, spielfeldMinY + 20, 30, 20);
             //in weißer Schrift
-            pinsel.Color = Color.White;
+            pinsel.Color = rahmenFarbe;
             //die Auszeichnungen für die Schrift werden beim
             //Erstellen des Spielfelds gesetzt
             zeichenflaeche.DrawString(restzeit, schrift, pinsel, new Point(spielfeldMaxX - 50, spielfeldMinY + 20));
@@ -412,12 +423,20 @@
             EinstellungenDialog neueWerte = new EinstellungenDialog();
             //Aufgabe 1
             neueWerte.SetzeButton(this.Width);
+            //Aufgabe 2
+            neueWerte.rahmenFarbe = rahmenFarbe;
+            neueWerte.spielfeldFarbe = spielfeldFarbe;
             //wenn der Dialog über die "OK"-Schaltfläche
             //beendet wird
             if (neueWerte.ShowDialog() == DialogResult.OK)
             {
                 //die neue Größe holen
                 neueGroesse = neueWerte.LiefereWert();
+                //neue Farben holen
+                //Aufgabe 2
+                rahmenFarbe = neueWerte.rahmenFarbe;
+                spielfeldFarbe = neueWerte.spielfeldFarbe;
+                spielfeld.BackColor = spielfeldFarbe;
                 //den Dialog wieder schließen
                 neueWerte.Close();
                 //das Formular ändern
@@ -477,7 +496,7 @@
 
             zeichenflaeche.FillRectangle(pinsel, spielfeldMaxX - 50, spielfeldMinY + 40, 30, 20);
             //in weißer Schrift
-            pinsel.Color = Color.White;
+            pinsel.Color = rahmenFarbe;
             //die Einstellungen für die Schrift werden beim
             //Erstellen des Spielfelds gesetzt
             zeichenflaeche.DrawString(punkte, schrift, pinsel, new Point(spielfeldMaxX - 50, spielfeldMinY + 40));
