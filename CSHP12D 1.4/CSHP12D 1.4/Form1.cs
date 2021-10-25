@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,5 +17,31 @@ namespace CSHP12D_1._4
         {
             InitializeComponent();
         }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            using (RegistryKey regSchluessel = Registry.CurrentUser.OpenSubKey("Software\\RegistryDemo2"))
+            {
+                //das Formular der eigentlichen Anwendung ausblenden
+                this.Hide();
+                //wenn es den Schlüssel nicht gibt, das Formular
+                //zum Festlegen des Kennworts anzeigen
+                if (regSchluessel == null)
+                {
+                    FrmNeuesKennwort dialogNeu = new FrmNeuesKennwort();
+                    dialogNeu.ShowDialog();
+                }
+                //sonst das Formular zur Eingabe des Kennworts anzeigen
+                else
+                {
+                    FRmKennwortDialog dialogEingabe = new FRmKennwortDialog();
+                    dialogEingabe.ShowDialog();
+                }
+            }
+            //das Formular der eigentlichen Anwendung zeigen
+            this.Show();
+        }
+       
+        
     }
 }
