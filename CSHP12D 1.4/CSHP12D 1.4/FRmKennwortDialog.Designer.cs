@@ -1,6 +1,6 @@
 ﻿namespace CSHP12D_1._4
 {
-    partial class Kennwort
+    partial class FrmKennwortDialog
     {
         /// <summary>
         /// Required designer variable.
@@ -69,7 +69,7 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Bitte geben Sie das Kennwort ein:";
             // 
-            // Kennwort
+            // FrmKennwortDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -79,7 +79,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Name = "Kennwort";
+            this.Name = "FrmKennwortDialog";
             this.Text = "Kennwort";
             this.TopMost = true;
             this.ResumeLayout(false);

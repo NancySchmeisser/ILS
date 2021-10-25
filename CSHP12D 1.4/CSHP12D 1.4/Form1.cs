@@ -34,7 +34,7 @@ namespace CSHP12D_1._4
                 //sonst das Formular zur Eingabe des Kennworts anzeigen
                 else
                 {
-                    FRmKennwortDialog dialogEingabe = new FRmKennwortDialog();
+                    FrmKennwortDialog dialogEingabe = new FrmKennwortDialog();
                     dialogEingabe.ShowDialog();
                 }
             }

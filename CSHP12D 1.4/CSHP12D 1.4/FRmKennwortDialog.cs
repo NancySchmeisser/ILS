@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CSHP12D_1._4
 {
-    public partial class Kennwort : Form
+    public partial class FrmKennwortDialog : Form
     {
-        public Kennwort()
+        public FrmKennwortDialog()
         {
             InitializeComponent();
         }
