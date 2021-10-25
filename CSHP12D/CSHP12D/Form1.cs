@@ -47,5 +47,21 @@ namespace CSHP12D
                 regSchluessel.SetValue("Eintrag", textBox1.Text);
             }
         }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //beim Schlißen speichern wir die Position und die
+            //Größe in der Registrierung
+            //den Schlüssel HKEY_CURRENT_USER\Software\RegistryDemo
+            //anlegen bzw. öffnen
+            using (RegistryKey regSchluessel = Registry.CurrentUser.CreateSubKey("Software\\RegistryDemo"))
+            {
+                //die Werte speichern
+                regSchluessel.SetValue("Top", this.Top);
+                regSchluessel.SetValue("Left", this.Left);
+                regSchluessel.SetValue("Width", this.Width);
+                regSchluessel.SetValue("Height", this.Height);
+            }
+        }
     }
 }
