@@ -61,6 +61,7 @@
             this.ButtonSchreiben.TabIndex = 2;
             this.ButtonSchreiben.Text = "Schreiben";
             this.ButtonSchreiben.UseVisualStyleBackColor = true;
+            this.ButtonSchreiben.Click += new System.EventHandler(this.ButtonSchreiben_Click);
             // 
             // textBox1
             // 

@@ -36,5 +36,16 @@ namespace CSHP12D
                     label1.Text = Convert.ToString(regSchluessel.GetValue("Eintrag"));
             }
         }
+
+        private void ButtonSchreiben_Click(object sender, EventArgs e)
+        {
+            //den Schlüssel HKEY_CURRENT_USER\Software\RegistryDemo
+            //anlegen bzw. öffnen
+            using (RegistryKey regSchluessel = Registry.CurrentUser.CreateSubKey("Software\\RegistryDemo"))
+            {
+                //den Wert aus dem Eingabefeld in den Eintrag schreiben
+                regSchluessel.SetValue("Eintrag", textBox1.Text);
+            }
+        }
     }
 }
