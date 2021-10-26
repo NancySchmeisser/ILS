@@ -1,24 +1,17 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace CSHP12D_1._4
+﻿namespace CSHP12D_1._4
 {
+    using Microsoft.Win32;
+    using System;
+    using System.Windows.Forms;
+
     public partial class FrmKennwortDialog : Form
     {
-        //ein eigenes Feld zum Zählen
-        //es wird im Konstruktor auf 0 gesetzt
-        int zaehler = 0;
+        internal int zaehler;
+
         public FrmKennwortDialog()
         {
             InitializeComponent();
+            zaehler = 0;
         }
 
         private void ButtonOK_Click(object sender, EventArgs e)
@@ -50,6 +43,7 @@ namespace CSHP12D_1._4
                     textBoxKennwort.Select();
             }
         }
+
         private void buttonAbbrechen_Click(object sender, EventArgs e)
         {
             //die gesamte Anwendung beenden
