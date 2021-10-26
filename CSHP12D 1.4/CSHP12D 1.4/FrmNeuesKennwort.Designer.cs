@@ -28,22 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.ButtonUebernehmen = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxKennwort1 = new System.Windows.Forms.TextBox();
+            this.textBoxKennwort2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // ButtonUebernehmen
             // 
-            this.button1.Location = new System.Drawing.Point(35, 158);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Übernehmen";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ButtonUebernehmen.Location = new System.Drawing.Point(35, 158);
+            this.ButtonUebernehmen.Name = "ButtonUebernehmen";
+            this.ButtonUebernehmen.Size = new System.Drawing.Size(94, 23);
+            this.ButtonUebernehmen.TabIndex = 0;
+            this.ButtonUebernehmen.Text = "Übernehmen";
+            this.ButtonUebernehmen.UseVisualStyleBackColor = true;
+            this.ButtonUebernehmen.Click += new System.EventHandler(this.ButtonUebernehmen_Click);
             // 
             // button2
             // 
@@ -54,21 +55,21 @@
             this.button2.Text = "Abbrechen";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // textBoxKennwort1
             // 
-            this.textBox1.Location = new System.Drawing.Point(35, 58);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(209, 20);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.UseSystemPasswordChar = true;
+            this.textBoxKennwort1.Location = new System.Drawing.Point(35, 58);
+            this.textBoxKennwort1.Name = "textBoxKennwort1";
+            this.textBoxKennwort1.Size = new System.Drawing.Size(209, 20);
+            this.textBoxKennwort1.TabIndex = 2;
+            this.textBoxKennwort1.UseSystemPasswordChar = true;
             // 
-            // textBox2
+            // textBoxKennwort2
             // 
-            this.textBox2.Location = new System.Drawing.Point(35, 113);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(209, 20);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.UseSystemPasswordChar = true;
+            this.textBoxKennwort2.Location = new System.Drawing.Point(35, 113);
+            this.textBoxKennwort2.Name = "textBoxKennwort2";
+            this.textBoxKennwort2.Size = new System.Drawing.Size(209, 20);
+            this.textBoxKennwort2.TabIndex = 3;
+            this.textBoxKennwort2.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -96,10 +97,10 @@
             this.ControlBox = false;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxKennwort2);
+            this.Controls.Add(this.textBoxKennwort1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ButtonUebernehmen);
             this.Name = "FrmNeuesKennwort";
             this.Text = "Neues Kennwort eingeben";
             this.TopMost = true;
@@ -110,10 +111,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ButtonUebernehmen;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxKennwort1;
+        private System.Windows.Forms.TextBox textBoxKennwort2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }
