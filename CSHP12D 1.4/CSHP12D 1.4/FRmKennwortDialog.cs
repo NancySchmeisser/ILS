@@ -50,6 +50,10 @@ namespace CSHP12D_1._4
                     textBoxKennwort.Select();
             }
         }
-
+        private void buttonAbbrechen_Click(object sender, EventArgs e)
+        {
+            //die gesamte Anwendung beenden
+            Application.Exit();
+        }
     }
 }

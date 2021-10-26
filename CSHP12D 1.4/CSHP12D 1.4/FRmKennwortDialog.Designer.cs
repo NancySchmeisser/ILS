@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.ButtonOK = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonAbbrechen = new System.Windows.Forms.Button();
             this.textBoxKennwort = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -44,14 +44,15 @@
             this.ButtonOK.UseVisualStyleBackColor = true;
             this.ButtonOK.Click += new System.EventHandler(this.ButtonOK_Click);
             // 
-            // button2
+            // buttonAbbrechen
             // 
-            this.button2.Location = new System.Drawing.Point(181, 72);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Abbrechen";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonAbbrechen.Location = new System.Drawing.Point(181, 72);
+            this.buttonAbbrechen.Name = "buttonAbbrechen";
+            this.buttonAbbrechen.Size = new System.Drawing.Size(97, 23);
+            this.buttonAbbrechen.TabIndex = 1;
+            this.buttonAbbrechen.Text = "Abbrechen";
+            this.buttonAbbrechen.UseVisualStyleBackColor = true;
+            this.buttonAbbrechen.Click += new System.EventHandler(this.buttonAbbrechen_Click);
             // 
             // textBoxKennwort
             // 
@@ -78,7 +79,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxKennwort);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonAbbrechen);
             this.Controls.Add(this.ButtonOK);
             this.Name = "FrmKennwortDialog";
             this.Text = "Kennwort";
@@ -91,7 +92,7 @@
         #endregion
 
         private System.Windows.Forms.Button ButtonOK;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonAbbrechen;
         private System.Windows.Forms.TextBox textBoxKennwort;
         private System.Windows.Forms.Label label1;
     }
