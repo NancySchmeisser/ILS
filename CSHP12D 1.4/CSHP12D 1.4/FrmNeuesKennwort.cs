@@ -46,5 +46,15 @@ namespace CSHP12D_1._4
                 textBoxKennwort2.Select();
             }
         }
+
+        private void buttonAbbrechen_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void ButtonAbbrechen_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
