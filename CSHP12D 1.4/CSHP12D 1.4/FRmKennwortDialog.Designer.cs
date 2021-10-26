@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.ButtonOK = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxKennwort = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // ButtonOK
             // 
-            this.button1.Location = new System.Drawing.Point(44, 72);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ButtonOK.Location = new System.Drawing.Point(44, 72);
+            this.ButtonOK.Name = "ButtonOK";
+            this.ButtonOK.Size = new System.Drawing.Size(97, 23);
+            this.ButtonOK.TabIndex = 0;
+            this.ButtonOK.Text = "OK";
+            this.ButtonOK.UseVisualStyleBackColor = true;
+            this.ButtonOK.Click += new System.EventHandler(this.ButtonOK_Click);
             // 
             // button2
             // 
@@ -52,13 +53,13 @@
             this.button2.Text = "Abbrechen";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // textBoxKennwort
             // 
-            this.textBox1.Location = new System.Drawing.Point(44, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(234, 20);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.UseSystemPasswordChar = true;
+            this.textBoxKennwort.Location = new System.Drawing.Point(44, 37);
+            this.textBoxKennwort.Name = "textBoxKennwort";
+            this.textBoxKennwort.Size = new System.Drawing.Size(234, 20);
+            this.textBoxKennwort.TabIndex = 2;
+            this.textBoxKennwort.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -76,9 +77,9 @@
             this.ClientSize = new System.Drawing.Size(327, 107);
             this.ControlBox = false;
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxKennwort);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ButtonOK);
             this.Name = "FrmKennwortDialog";
             this.Text = "Kennwort";
             this.TopMost = true;
@@ -89,9 +90,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ButtonOK;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxKennwort;
         private System.Windows.Forms.Label label1;
     }
 }
