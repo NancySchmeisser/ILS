@@ -46,7 +46,7 @@ namespace CSHP12D_1._5
                 listBox2.Items.Add(eintrag);
 
             //den Schlüssel \Software\Registrierungsdemo öffnen
-            using (RegistryKey regSchluessel = Registry.CurrentUser.OpenSubKey("Software\\Registrierungsdemo"))
+            using (RegistryKey regSchluessel = Registry.CurrentUser.OpenSubKey("Software\\Registrydemo"))
             {
                 //die Einträge lesen
                 regEintragListe = regSchluessel.GetValueNames();
