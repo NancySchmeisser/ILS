@@ -41,7 +41,11 @@ namespace CSHP12D_1._4
             //das Formular der eigentlichen Anwendung zeigen
             this.Show();
         }
-       
-        
+
+        private void ButtonLoeschen_Click(object sender, EventArgs e)
+        {
+            //den gesamten Zweig in der Registrierung löschen
+            Registry.CurrentUser.DeleteSubKeyTree("Software\\RegistryDemo2");
+        }
     }
 }

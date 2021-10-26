@@ -28,7 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.ButtonLoeschen = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // ButtonLoeschen
+            // 
+            this.ButtonLoeschen.Location = new System.Drawing.Point(161, 82);
+            this.ButtonLoeschen.Name = "ButtonLoeschen";
+            this.ButtonLoeschen.Size = new System.Drawing.Size(75, 23);
+            this.ButtonLoeschen.TabIndex = 0;
+            this.ButtonLoeschen.Text = "Löschen";
+            this.ButtonLoeschen.UseVisualStyleBackColor = true;
+            this.ButtonLoeschen.Click += new System.EventHandler(this.ButtonLoeschen_Click);
             // 
             // Form1
             // 
@@ -36,6 +47,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(319, 125);
             this.ControlBox = false;
+            this.Controls.Add(this.ButtonLoeschen);
             this.Name = "Form1";
             this.Text = "Form1";
             this.TopMost = true;
@@ -45,6 +57,8 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Button ButtonLoeschen;
     }
 }
 
