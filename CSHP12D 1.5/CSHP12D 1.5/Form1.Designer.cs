@@ -50,6 +50,7 @@
             this.listBox1.Location = new System.Drawing.Point(138, 108);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(120, 95);
+            this.listBox1.Sorted = true;
             this.listBox1.TabIndex = 1;
             // 
             // listBox2
@@ -58,6 +59,7 @@
             this.listBox2.Location = new System.Drawing.Point(282, 108);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(120, 95);
+            this.listBox2.Sorted = true;
             this.listBox2.TabIndex = 2;
             // 
             // listBox3
@@ -66,6 +68,7 @@
             this.listBox3.Location = new System.Drawing.Point(428, 108);
             this.listBox3.Name = "listBox3";
             this.listBox3.Size = new System.Drawing.Size(120, 95);
+            this.listBox3.Sorted = true;
             this.listBox3.TabIndex = 3;
             // 
             // Form1
