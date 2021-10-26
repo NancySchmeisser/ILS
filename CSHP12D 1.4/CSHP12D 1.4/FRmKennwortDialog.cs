@@ -28,7 +28,7 @@ namespace CSHP12D_1._4
             //kennwort ablegen
             using (RegistryKey regSchluessel = Registry.CurrentUser.OpenSubKey("Software\\RegistryDemo2"))
             {
-                kennwort = Convert.ToString
+                kennwort = Convert.ToString(regSchluessel.GetValue("Kennwort"));
             }
             //stimmen die Eingabe und das Kennwort überein?
             if (textBoxKennwort.Text == kennwort)
