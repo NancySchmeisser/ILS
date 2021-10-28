@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace CSHP12D_2._5
 {
@@ -15,6 +16,16 @@ namespace CSHP12D_2._5
         public Form1()
         {
             InitializeComponent();
+            //den Namen aus der ausführbaren Datei ableiten
+            xmlName = System.IO.Path.ChangeExtension(Application.ExecutablePath, ".xml");
+            //prüfen, ob es die Datei bereits gibt
+            xmlVorhanden = System.IO.File.Exists(xmlName);
         }
+
+
+       
+
+
+
     }
 }
