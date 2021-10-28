@@ -21,7 +21,7 @@ namespace CSHP12D_2._2
         private void button1_Click(object sender, EventArgs e)
         {
             //eine neue Instanz für XMLReader über Create() erzeugen
-            XmlReader xmlLesen = XmlReader.Create("c:\\test\\test.xml");
+            XmlReader xmlLesen = XmlReader.Create("C:\\Users\\user\\source\\repos\\test\\test.xml");
             //solange Daten gelesen werden können
             while (xmlLesen.Read())
                 //den Wert in das Listenfeld schreiben
