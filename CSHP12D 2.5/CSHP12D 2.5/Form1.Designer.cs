@@ -31,12 +31,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxWert1 = new System.Windows.Forms.TextBox();
+            this.textBoxWert2 = new System.Windows.Forms.TextBox();
+            this.textBoxWert3 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButtonTrue = new System.Windows.Forms.RadioButton();
+            this.radioButtonFalse = new System.Windows.Forms.RadioButton();
             this.ButtonLesen = new System.Windows.Forms.Button();
             this.ButtonSchreiben = new System.Windows.Forms.Button();
             this.ButtonPosition = new System.Windows.Forms.Button();
@@ -74,31 +74,31 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Wert 3";
             // 
-            // textBox1
+            // textBoxWert1
             // 
-            this.textBox1.Location = new System.Drawing.Point(80, 22);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
+            this.textBoxWert1.Location = new System.Drawing.Point(80, 22);
+            this.textBoxWert1.Name = "textBoxWert1";
+            this.textBoxWert1.Size = new System.Drawing.Size(100, 20);
+            this.textBoxWert1.TabIndex = 3;
             // 
-            // textBox2
+            // textBoxWert2
             // 
-            this.textBox2.Location = new System.Drawing.Point(80, 48);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 4;
+            this.textBoxWert2.Location = new System.Drawing.Point(80, 48);
+            this.textBoxWert2.Name = "textBoxWert2";
+            this.textBoxWert2.Size = new System.Drawing.Size(100, 20);
+            this.textBoxWert2.TabIndex = 4;
             // 
-            // textBox3
+            // textBoxWert3
             // 
-            this.textBox3.Location = new System.Drawing.Point(80, 74);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 5;
+            this.textBoxWert3.Location = new System.Drawing.Point(80, 74);
+            this.textBoxWert3.Name = "textBoxWert3";
+            this.textBoxWert3.Size = new System.Drawing.Size(100, 20);
+            this.textBoxWert3.TabIndex = 5;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.radioButtonTrue);
+            this.groupBox1.Controls.Add(this.radioButtonFalse);
             this.groupBox1.Location = new System.Drawing.Point(216, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 64);
@@ -106,27 +106,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Boolscher Wert";
             // 
-            // radioButton2
+            // radioButtonTrue
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(6, 41);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(47, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "True";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButtonTrue.AutoSize = true;
+            this.radioButtonTrue.Location = new System.Drawing.Point(6, 41);
+            this.radioButtonTrue.Name = "radioButtonTrue";
+            this.radioButtonTrue.Size = new System.Drawing.Size(47, 17);
+            this.radioButtonTrue.TabIndex = 1;
+            this.radioButtonTrue.TabStop = true;
+            this.radioButtonTrue.Text = "True";
+            this.radioButtonTrue.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // radioButtonFalse
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 20);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(50, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "False";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButtonFalse.AutoSize = true;
+            this.radioButtonFalse.Location = new System.Drawing.Point(6, 20);
+            this.radioButtonFalse.Name = "radioButtonFalse";
+            this.radioButtonFalse.Size = new System.Drawing.Size(50, 17);
+            this.radioButtonFalse.TabIndex = 0;
+            this.radioButtonFalse.TabStop = true;
+            this.radioButtonFalse.Text = "False";
+            this.radioButtonFalse.UseVisualStyleBackColor = true;
             // 
             // ButtonLesen
             // 
@@ -194,9 +194,9 @@
             this.Controls.Add(this.ButtonSchreiben);
             this.Controls.Add(this.ButtonLesen);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxWert3);
+            this.Controls.Add(this.textBoxWert2);
+            this.Controls.Add(this.textBoxWert1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -217,12 +217,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxWert1;
+        private System.Windows.Forms.TextBox textBoxWert2;
+        private System.Windows.Forms.TextBox textBoxWert3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButtonTrue;
+        private System.Windows.Forms.RadioButton radioButtonFalse;
         private System.Windows.Forms.Button ButtonLesen;
         private System.Windows.Forms.Button ButtonSchreiben;
         private System.Windows.Forms.Button ButtonPosition;
