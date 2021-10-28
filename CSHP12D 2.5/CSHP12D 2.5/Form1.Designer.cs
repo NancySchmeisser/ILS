@@ -41,8 +41,8 @@
             this.ButtonSchreiben = new System.Windows.Forms.Button();
             this.ButtonPosition = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelVorhanden = new System.Windows.Forms.Label();
+            this.labelName = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -157,8 +157,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.labelVorhanden);
+            this.groupBox2.Controls.Add(this.labelName);
             this.groupBox2.Location = new System.Drawing.Point(16, 100);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(400, 60);
@@ -166,23 +166,23 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "XML-Datei";
             // 
-            // label5
+            // labelVorhanden
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 37);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "vorhanden:";
+            this.labelVorhanden.AutoSize = true;
+            this.labelVorhanden.Location = new System.Drawing.Point(27, 37);
+            this.labelVorhanden.Name = "labelVorhanden";
+            this.labelVorhanden.Size = new System.Drawing.Size(61, 13);
+            this.labelVorhanden.TabIndex = 1;
+            this.labelVorhanden.Text = "vorhanden:";
             // 
-            // label4
+            // labelName
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 24);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Name:";
+            this.labelName.AutoSize = true;
+            this.labelName.Location = new System.Drawing.Point(27, 24);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(38, 13);
+            this.labelName.TabIndex = 0;
+            this.labelName.Text = "Name:";
             // 
             // Form1
             // 
@@ -227,8 +227,8 @@
         private System.Windows.Forms.Button ButtonSchreiben;
         private System.Windows.Forms.Button ButtonPosition;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelVorhanden;
+        private System.Windows.Forms.Label labelName;
     }
 }
 

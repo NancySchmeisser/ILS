@@ -13,6 +13,9 @@ namespace CSHP12D_2._5
 {
     public partial class Form1 : Form
     {
+        //die Felder
+        string xmlName;
+        bool xmlVorhanden;
         public Form1()
         {
             InitializeComponent();
@@ -25,7 +28,7 @@ namespace CSHP12D_2._5
         private void Form1_Shown(object sender, EventArgs e)
         {
             //die Anzeige in den Labels setzen
-            labelName.Text = XmlNamedNodeMap;
+            labelName.Text = xmlName;
             if (xmlVorhanden == true)
                 labelVorhanden.Text = "Ja";
             else
