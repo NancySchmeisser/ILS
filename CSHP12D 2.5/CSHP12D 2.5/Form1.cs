@@ -22,10 +22,14 @@ namespace CSHP12D_2._5
             xmlVorhanden = System.IO.File.Exists(xmlName);
         }
 
-
-       
-
-
-
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            //die Anzeige in den Labels setzen
+            labelName.Text = XmlNamedNodeMap;
+            if (xmlVorhanden == true)
+                labelVorhanden.Text = "Ja";
+            else
+                labelVorhanden.Text = "Nein";
+        }
     }
 }

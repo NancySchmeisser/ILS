@@ -202,6 +202,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "XML Demo";
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
