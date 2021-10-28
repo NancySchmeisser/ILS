@@ -24,8 +24,10 @@ namespace CSHP12D_2._2
             XmlReader xmlLesen = XmlReader.Create("C:\\Users\\user\\source\\repos\\test\\test.xml");
             //solange Daten gelesen werden können
             while (xmlLesen.Read())
-                //den Wert in das Listenfeld schreiben
-                listBox1.Items.Add(xmlLesen.Value);
+                //den Wert in das Listenfeld schreiben, wenn es
+                //sich um Text handelt
+                if (xmlLesen.NodeType == XmlNodeType.Text)
+                    listBox1.Items.Add(xmlLesen.Value);
             //die Datei wieder schließen
             xmlLesen.Close();
         }
