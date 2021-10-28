@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml;
-
-namespace CSHP12D_2._5
+﻿namespace CSHP12D_2._5
 {
+    using System;
+    using System.Windows.Forms;
+    using System.Xml;
+
     public partial class Form1 : Form
     {
-        //die Felder
-        string xmlName;
-        bool xmlVorhanden;
+        internal string xmlName;
+
+        internal bool xmlVorhanden;
+
         public Form1()
         {
             InitializeComponent();
