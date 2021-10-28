@@ -1,8 +1,11 @@
-﻿namespace Pong
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Xml;
+
+namespace Pong
 {
-    using System;
-    using System.Drawing;
-    using System.Windows.Forms;
+   
 
     public partial class Form1 : Form
     {
@@ -329,6 +332,8 @@
             einfachToolStripMenuItem.Checked = false;
             mittelToolStripMenuItem.Checked = false;
             sehrSchwerToolStripMenuItem.Checked = false;
+            //für das Speichern des Schwierigkeitsgrades
+            xmlSchwierigkeit = 1;
         }
 
         private void einfachToolStripMenuItem_Click(object sender, EventArgs e)
@@ -343,6 +348,7 @@
             einfachToolStripMenuItem.Checked = true;
             mittelToolStripMenuItem.Checked = false;
             sehrSchwerToolStripMenuItem.Checked = false;
+            xmlSchwierigkeit = 2;
         }
 
         private void mittelToolStripMenuItem_Click(object sender, EventArgs e)
@@ -357,6 +363,7 @@
             einfachToolStripMenuItem.Checked = false;
             mittelToolStripMenuItem.Checked = true;
             sehrSchwerToolStripMenuItem.Checked = false;
+            xmlSchwierigkeit = 3;
         }
 
         private void schwerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -371,6 +378,7 @@
             einfachToolStripMenuItem.Checked = false;
             mittelToolStripMenuItem.Checked = false;
             sehrSchwerToolStripMenuItem.Checked = false;
+            xmlSchwierigkeit = 4;
         }
 
         private void sehrSchwerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -385,6 +393,7 @@
             einfachToolStripMenuItem.Checked = false;
             mittelToolStripMenuItem.Checked = false;
             sehrSchwerToolStripMenuItem.Checked = true;
+            xmlSchwierigkeit = 5;
         }
 
         private void timerSpiel_Tick(object sender, EventArgs e)
