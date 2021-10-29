@@ -279,18 +279,6 @@
             spielfeldLinienbreite = 10;
             //die Größe des Schlägers
             schlaegerGroesse = 50;
-            //erst einmal geht der Ball nach rechts und oben mit
-            //dem Winkel 0
-            ballPosition.richtungX = true;
-            ballPosition.richtungX = true;
-            ballPosition.winkel = 0;
-            //den Pinsel erzeugen
-            pinsel = new SolidBrush(spielfeldFarbe);
-            //die Zeichenfläche beschaffen
-            zeichenflaeche = spielfeld.CreateGraphics();
-            //das Spielfeld bekommt eine Hintergrundfarbe
-            spielfeld.BackColor = spielfeldFarbe;
-            schrift = new Font("Arial", 12, FontStyle.Bold);
             //die Standardwerte setzen
             punkteMehr = 1;
             punkteWeniger = -5;
@@ -307,6 +295,18 @@
             //die Größe des Formulars setzen
             this.Height = xmlHoehe;
             this.Width = xmlBreite;
+            //erst einmal geht der Ball nach rechts und oben mit
+            //dem Winkel 0
+            ballPosition.richtungX = true;
+            ballPosition.richtungX = true;
+            ballPosition.winkel = 0;
+            //den Pinsel erzeugen
+            pinsel = new SolidBrush(spielfeldFarbe);
+            //die Zeichenfläche beschaffen
+            zeichenflaeche = spielfeld.CreateGraphics();
+            //das Spielfeld bekommt eine Hintergrundfarbe
+            spielfeld.BackColor = spielfeldFarbe;
+            schrift = new Font("Arial", 12, FontStyle.Bold);
             SetzeSpielfeld();
             NeuerBall();
             //erst einmal ist das Spiel angehalten
