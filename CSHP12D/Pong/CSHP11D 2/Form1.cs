@@ -320,35 +320,9 @@
             pauseToolStripMenuItem.Enabled = false;
         }
 
-        private void spielfeld_Paint(object sender, PaintEventArgs e)
+        private void beendenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ZeichneSpielfeld();
-            ZeichneZeit(Convert.ToString(aktuelleSpielzeit));
-        }
-
-        private void schlaeger_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (spielPause == true)
-                return;
-            if (e.Button == MouseButtons.Left)
-                ZeichneSchlaeger(e.Y + schlaeger.Top);
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            int neuX = 0, neuY = 0;
-            //abhängig von der Bewegungsrichtung die
-            //Koordinaten neu setzen
-            if (ballPosition.richtungX == true)
-                neuX = ball.Left + 10;
-            else
-                neuX = ball.Left - 10;
-            if (ballPosition.richtungY == true)
-                neuY = ball.Top - ballPosition.winkel;
-            else
-                neuY = ball.Top + ballPosition.winkel;
-            //den Ball neu zeichnen
-            ZeichneBall(new Point(neuX, neuY));
+            Close();
         }
 
         private void timerSekunde_Tick(object sender, EventArgs e)
@@ -521,34 +495,6 @@
             xmlSchwierigkeit = 5;
         }
 
-        private void timerSpiel_Tick(object sender, EventArgs e)
-        {
-            //das Spiel anhalten
-            pauseToolStripMenuItem_Click(sender, e);
-            //eine Meldung anzeigen
-            MessageBox.Show("Die Zeit ist um", "Spielende", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //die Einstellungen aktivieren
-            schwierigkeitsgradToolStripMenuItem.Enabled = true;
-            spielfeldToolStripMenuItem.Enabled = true;
-            //nachsehen, ob ein neuer Eintrag in der Bestenliste
-            //erfolgen kann
-            if (spielpunkte.NeuerEintrag() == true)
-            {
-                //Ball und Schläger verstecken
-                ball.Hide();
-                schlaeger.Hide();
-                //die Liste ausgeben
-                spielpunkte.ListeAusgeben(zeichenflaeche, spielfeldGroesse, spielfeldFarbe, rahmenFarbe);
-                //fünf Sekunden warten
-                System.Threading.Thread.Sleep(5000);
-                //die Zeichenfläche löschen
-                zeichenflaeche.Clear(spielfeld.BackColor);
-                //Ball und Schläger wieder anzeigen
-                ball.Show();
-                schlaeger.Show();
-            }
-        }
-
         private void spielfeldToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Point neueGroesse = new Point(0, 0);
@@ -590,9 +536,63 @@
             }
         }
 
-        private void beendenToolStripMenuItem_Click(object sender, EventArgs e)
+        private void timerSpiel_Tick(object sender, EventArgs e)
         {
-            Close();
+            //das Spiel anhalten
+            pauseToolStripMenuItem_Click(sender, e);
+            //eine Meldung anzeigen
+            MessageBox.Show("Die Zeit ist um", "Spielende", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //die Einstellungen aktivieren
+            schwierigkeitsgradToolStripMenuItem.Enabled = true;
+            spielfeldToolStripMenuItem.Enabled = true;
+            //nachsehen, ob ein neuer Eintrag in der Bestenliste
+            //erfolgen kann
+            if (spielpunkte.NeuerEintrag() == true)
+            {
+                //Ball und Schläger verstecken
+                ball.Hide();
+                schlaeger.Hide();
+                //die Liste ausgeben
+                spielpunkte.ListeAusgeben(zeichenflaeche, spielfeldGroesse, spielfeldFarbe, rahmenFarbe);
+                //fünf Sekunden warten
+                System.Threading.Thread.Sleep(5000);
+                //die Zeichenfläche löschen
+                zeichenflaeche.Clear(spielfeld.BackColor);
+                //Ball und Schläger wieder anzeigen
+                ball.Show();
+                schlaeger.Show();
+            }
+        }
+
+        private void spielfeld_Paint(object sender, PaintEventArgs e)
+        {
+            ZeichneSpielfeld();
+            ZeichneZeit(Convert.ToString(aktuelleSpielzeit));
+        }
+
+        private void schlaeger_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (spielPause == true)
+                return;
+            if (e.Button == MouseButtons.Left)
+                ZeichneSchlaeger(e.Y + schlaeger.Top);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            int neuX = 0, neuY = 0;
+            //abhängig von der Bewegungsrichtung die
+            //Koordinaten neu setzen
+            if (ballPosition.richtungX == true)
+                neuX = ball.Left + 10;
+            else
+                neuX = ball.Left - 10;
+            if (ballPosition.richtungY == true)
+                neuY = ball.Top - ballPosition.winkel;
+            else
+                neuY = ball.Top + ballPosition.winkel;
+            //den Ball neu zeichnen
+            ZeichneBall(new Point(neuX, neuY));
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
