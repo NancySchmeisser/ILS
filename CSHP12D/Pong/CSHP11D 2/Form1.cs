@@ -56,6 +56,8 @@ namespace Pong
 
         int xmlSchwierigkeit;
 
+
+
       
 
         public Form1()
@@ -85,6 +87,14 @@ namespace Pong
             xmlSchwierigkeit = 2;
             //den Dateinamen setzen
             xmlDateiname = System.IO.Path.ChangeExtension(Application.ExecutablePath, ".xml");
+            //Standardwert für die Größe
+            xmlBreite = 640;
+            xmlHoehe = 480;
+            //die Daten lesen
+            LeseEinstellungen();
+            //die Größe des Formulars setzen
+            this.Height = xmlHoehe;
+            this.Width = xmlBreite;
 
 
 
