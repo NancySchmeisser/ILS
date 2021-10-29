@@ -81,6 +81,10 @@ namespace Pong
             punkteMehr = 1;
             punkteWeniger = -5;
             winkelZufall = 5;
+            //die Standardschwierigkeit
+            xmlSchwierigkeit = 2;
+            //den Dateinamen setzen
+            xmlDateiname = System.IO.Path.ChangeExtension(Application.ExecutablePath, ".xml");
 
 
 
@@ -506,6 +510,34 @@ namespace Pong
             punkteMehr = mehr;
             punkteWeniger = weniger;
             winkelZufall = winkel;
+        }
+
+        void SchreibeEinstellungen()
+        {
+            //die Einstellungen setzen
+            XmlWriterSettings einstellungen = new XmlWriterSettings();
+            einstellungen.Indent = true;
+            //eine Instanz für XmlWriter erzeugen
+            XmlWriter xmlSchreiben = XmlWriter.Create(xmlDateiname, einstellungen);
+            //die Deklaration schreiben
+            xmlSchreiben.WriteStartDocument();
+            //den Wurzelknoten pong erzeugen
+            xmlSchreiben.WriteStartElement("pong");
+            //den Knoten groesse erzeugen
+            xmlSchreiben.WriteStartElement("groesse");
+            //die Einträge schreiben
+            xmlSchreiben.WriteElementString("breite", Convert.ToString(this.Width));
+            xmlSchreiben.WriteElementString("hoehe", Convert.ToString(this.Height));
+            //den Knoten abschließen
+            xmlSchreiben.WriteEndElement();
+            //den Knoten schwierigkeitsgrad erzeugen
+            xmlSchreiben.WriteStartElement("schwierigkeitsgrad");
+            //den Eintrag schreiben
+            xmlSchreiben.WriteElementString("wert", Convert.ToString(xmlSchwierigkeit));
+            //alle abschließen
+            xmlSchreiben.WriteEndDocument();
+            //Datei schließen
+            xmlSchreiben.Close();
         }
 
         internal void ZeichnePunkte(string punkte)
