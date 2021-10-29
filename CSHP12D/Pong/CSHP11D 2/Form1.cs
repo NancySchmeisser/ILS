@@ -1,11 +1,9 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
-using System.Xml;
-
-namespace Pong
+﻿namespace Pong
 {
-   
+    using System;
+    using System.Drawing;
+    using System.Windows.Forms;
+    using System.Xml;
 
     public partial class Form1 : Form
     {
@@ -43,73 +41,16 @@ namespace Pong
         internal int punkteMehr, punkteWeniger;
 
         internal int winkelZufall;
-       
+
         public Color rahmenFarbe = Color.White;
 
         public Color spielfeldFarbe = Color.Black;
 
-        //für die Speicherung der Daten
+        internal string xmlDateiname;
 
-        string xmlDateiname;
+        internal int xmlBreite, xmlHoehe;
 
-        int xmlBreite, xmlHoehe;
-
-        int xmlSchwierigkeit;
-
-
-
-      
-
-        public Form1()
-        {
-            InitializeComponent();
-            //die Breite der Linien
-            spielfeldLinienbreite = 10;
-            //die Größe des Schlägers
-            schlaegerGroesse = 50;
-            //erst einmal geht der Ball nach rechts und oben mit
-            //dem Winkel 0
-            ballPosition.richtungX = true;
-            ballPosition.richtungX = true;
-            ballPosition.winkel = 0;
-            //den Pinsel erzeugen
-            pinsel = new SolidBrush(spielfeldFarbe);
-            //die Zeichenfläche beschaffen
-            zeichenflaeche = spielfeld.CreateGraphics();
-            //das Spielfeld bekommt eine Hintergrundfarbe
-            spielfeld.BackColor = spielfeldFarbe;
-            schrift = new Font("Arial", 12, FontStyle.Bold);
-            //die Standardwerte setzen
-            punkteMehr = 1;
-            punkteWeniger = -5;
-            winkelZufall = 5;
-            //die Standardschwierigkeit
-            xmlSchwierigkeit = 2;
-            //den Dateinamen setzen
-            xmlDateiname = System.IO.Path.ChangeExtension(Application.ExecutablePath, ".xml");
-            //Standardwert für die Größe
-            xmlBreite = 640;
-            xmlHoehe = 480;
-            //die Daten lesen
-            LeseEinstellungen();
-            //die Größe des Formulars setzen
-            this.Height = xmlHoehe;
-            this.Width = xmlBreite;
-
-
-
-            SetzeSpielfeld();
-            NeuerBall();
-            //erst einmal ist das Spiel angehalten
-            spielPause = true;
-            //die Spielzeit in Sekunden setzen
-            //  aktuelleSpielzeit = timerSpiel.Interval / 1000;
-            //alle drei Timer sind zunächst angehalten
-            timerBall.Enabled = false;
-            timerSpiel.Enabled = false;
-            timerSekunde.Enabled = false;
-            pauseToolStripMenuItem.Enabled = false;
-        }
+        internal int xmlSchwierigkeit;
 
         internal void SetzeSpielfeld()
         {
@@ -182,6 +123,203 @@ namespace Pong
             }
         }
 
+        internal void ZeichneSchlaeger(int y)
+        {
+            //befindet sich der Schläger im Spielfeld?
+            if (((y + schlaegerGroesse) < spielfeldMaxY) && (y > spielfeldMinY))
+                schlaeger.Top = y;
+        }
+
+        internal void NeuerBall()
+        {
+            //die Größe des Balls setzen
+            ball.Width = 10;
+            ball.Height = 10;
+            //die Größe des Schlägers setzen
+            schlaeger.Width = spielfeldLinienbreite;
+            schlaeger.Height = schlaegerGroesse;
+            //beide Panels werden weiß
+            ball.BackColor = rahmenFarbe;
+            schlaeger.BackColor = rahmenFarbe;
+            //den Schläger positionieren
+            //links an den Rand
+            schlaeger.Left = 2;
+            //ungefähr in die Mitte
+            ZeichneSchlaeger((spielfeldMaxY / 2) - (schlaegerGroesse / 2));
+            //der Ball kommt vor den Schläger ungefähr in die Mitte
+            ZeichneBall(new Point(spielfeldMinX, spielfeldMaxY / 2));
+        }
+
+        internal void ZeichneZeit(string restzeit)
+        {
+            //zuerst die alte Anzeige überschreiben
+            pinsel.Color = spielfeld.BackColor;
+            zeichenflaeche.FillRectangle(pinsel, spielfeldMaxX - 50, spielfeldMinY + 20, 30, 20);
+            //in weißer Schrift
+            pinsel.Color = rahmenFarbe;
+            //die Auszeichnungen für die Schrift werden beim
+            //Erstellen des Spielfelds gesetzt
+            zeichenflaeche.DrawString(restzeit, schrift, pinsel, new Point(spielfeldMaxX - 50, spielfeldMinY + 20));
+        }
+
+        internal void ZeichnePunkte(string punkte)
+        {
+            //zuerst die alte Anzeige überschreiben
+            pinsel.Color = spielfeld.BackColor;
+
+            zeichenflaeche.FillRectangle(pinsel, spielfeldMaxX - 50, spielfeldMinY + 40, 30, 20);
+            //in weißer Schrift
+            pinsel.Color = rahmenFarbe;
+            //die Einstellungen für die Schrift werden beim
+            //Erstellen des Spielfelds gesetzt
+            zeichenflaeche.DrawString(punkte, schrift, pinsel, new Point(spielfeldMaxX - 50, spielfeldMinY + 40));
+        }
+
+        internal bool NeuesSpiel()
+        {
+            bool ergebnis = false;
+            if (MessageBox.Show("Neues Spiel starten?", "Neues Spiel", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                //die Spielzeit neu setzen
+                aktuelleSpielzeit = 120;
+                spielpunkte.LoeschePunkte();
+                ZeichnePunkte("0");
+                //alles neu zeichnen
+                ZeichneSpielfeld();
+                NeuerBall();
+                ZeichneZeit(Convert.ToString(aktuelleSpielzeit));
+                ergebnis = true;
+                pauseToolStripMenuItem.Enabled = true;
+                //Einstellungen deaktivieren
+                schwierigkeitsgradToolStripMenuItem.Enabled = false;
+                spielfeldToolStripMenuItem.Enabled = false;
+                ergebnis = true;
+            }
+            return ergebnis;
+        }
+
+        internal void SetzeEinstellungen(int schlaeger, int mehr, int weniger, int winkel)
+        {
+            schlaegerGroesse = schlaeger;
+            punkteMehr = mehr;
+            punkteWeniger = weniger;
+            winkelZufall = winkel;
+        }
+
+        internal void SchreibeEinstellungen()
+        {
+            //die Einstellungen setzen
+            XmlWriterSettings einstellungen = new XmlWriterSettings();
+            einstellungen.Indent = true;
+            //eine Instanz für XmlWriter erzeugen
+            XmlWriter xmlSchreiben = XmlWriter.Create(xmlDateiname, einstellungen);
+            //die Deklaration schreiben
+            xmlSchreiben.WriteStartDocument();
+            //den Wurzelknoten pong erzeugen
+            xmlSchreiben.WriteStartElement("pong");
+            //den Knoten groesse erzeugen
+            xmlSchreiben.WriteStartElement("groesse");
+            //die Einträge schreiben
+            xmlSchreiben.WriteElementString("breite", Convert.ToString(this.Width));
+            xmlSchreiben.WriteElementString("hoehe", Convert.ToString(this.Height));
+            //den Knoten abschließen
+            xmlSchreiben.WriteEndElement();
+            //den Knoten schwierigkeitsgrad erzeugen
+            xmlSchreiben.WriteStartElement("schwierigkeitsgrad");
+            //den Eintrag schreiben
+            xmlSchreiben.WriteElementString("wert", Convert.ToString(xmlSchwierigkeit));
+            //alle abschließen
+            xmlSchreiben.WriteEndDocument();
+            //Datei schließen
+            xmlSchreiben.Close();
+        }
+
+        internal void LeseEinstellungen()
+        {
+            //gibt es die Datei?
+            if (System.IO.File.Exists(xmlDateiname) == false)
+                return;
+            //eine Instanz von XmlReader erzeugen
+            XmlReader xmlLesen = XmlReader.Create(xmlDateiname);
+            //die Daten lesen und zuweisen
+            xmlLesen.ReadToFollowing("breite");
+            xmlBreite = Convert.ToInt32(xmlLesen.ReadElementString());
+            xmlLesen.ReadToFollowing("hoehe");
+            xmlHoehe = Convert.ToInt32(xmlLesen.ReadElementString());
+            xmlLesen.ReadToFollowing("wert");
+            xmlSchwierigkeit = Convert.ToInt32(xmlLesen.ReadElementString());
+            //die Datei wieder schließen
+            xmlLesen.Close();
+            //nach Schwierigkeitsgrad die Einstellungen setzen
+            //als Sender wird das Formular übergeben, das zweite Argument ist EventArgs.Empty
+            switch (xmlSchwierigkeit)
+            {
+                case 1:
+                    sehrEinfachToolStripMenuItem_Click(this, EventArgs.Empty);
+                    break;
+                case 2:
+                    einfachToolStripMenuItem_Click(this, EventArgs.Empty);
+                    break;
+                case 3:
+                    mittelToolStripMenuItem_Click(this, EventArgs.Empty);
+                    break;
+                case 4:
+                    schwerToolStripMenuItem_Click(this, EventArgs.Empty);
+                    break;
+                case 5:
+                    sehrSchwerToolStripMenuItem_Click(this, EventArgs.Empty);
+                    break;
+            }
+        }
+
+        public Form1()
+        {
+            InitializeComponent();
+            //die Breite der Linien
+            spielfeldLinienbreite = 10;
+            //die Größe des Schlägers
+            schlaegerGroesse = 50;
+            //erst einmal geht der Ball nach rechts und oben mit
+            //dem Winkel 0
+            ballPosition.richtungX = true;
+            ballPosition.richtungX = true;
+            ballPosition.winkel = 0;
+            //den Pinsel erzeugen
+            pinsel = new SolidBrush(spielfeldFarbe);
+            //die Zeichenfläche beschaffen
+            zeichenflaeche = spielfeld.CreateGraphics();
+            //das Spielfeld bekommt eine Hintergrundfarbe
+            spielfeld.BackColor = spielfeldFarbe;
+            schrift = new Font("Arial", 12, FontStyle.Bold);
+            //die Standardwerte setzen
+            punkteMehr = 1;
+            punkteWeniger = -5;
+            winkelZufall = 5;
+            //die Standardschwierigkeit
+            xmlSchwierigkeit = 2;
+            //den Dateinamen setzen
+            xmlDateiname = System.IO.Path.ChangeExtension(Application.ExecutablePath, ".xml");
+            //Standardwert für die Größe
+            xmlBreite = 640;
+            xmlHoehe = 480;
+            //die Daten lesen
+            LeseEinstellungen();
+            //die Größe des Formulars setzen
+            this.Height = xmlHoehe;
+            this.Width = xmlBreite;
+            SetzeSpielfeld();
+            NeuerBall();
+            //erst einmal ist das Spiel angehalten
+            spielPause = true;
+            //die Spielzeit in Sekunden setzen
+            //  aktuelleSpielzeit = timerSpiel.Interval / 1000;
+            //alle drei Timer sind zunächst angehalten
+            timerBall.Enabled = false;
+            timerSpiel.Enabled = false;
+            timerSekunde.Enabled = false;
+            pauseToolStripMenuItem.Enabled = false;
+        }
+
         private void spielfeld_Paint(object sender, PaintEventArgs e)
         {
             ZeichneSpielfeld();
@@ -211,13 +349,6 @@ namespace Pong
                 neuY = ball.Top + ballPosition.winkel;
             //den Ball neu zeichnen
             ZeichneBall(new Point(neuX, neuY));
-        }
-
-        internal void ZeichneSchlaeger(int y)
-        {
-            //befindet sich der Schläger im Spielfeld?
-            if (((y + schlaegerGroesse) < spielfeldMaxY) && (y > spielfeldMinY))
-                schlaeger.Top = y;
         }
 
         private void timerSekunde_Tick(object sender, EventArgs e)
@@ -259,26 +390,6 @@ namespace Pong
                 spielPause = false;
 
             }
-        }
-
-        internal void NeuerBall()
-        {
-            //die Größe des Balls setzen
-            ball.Width = 10;
-            ball.Height = 10;
-            //die Größe des Schlägers setzen
-            schlaeger.Width = spielfeldLinienbreite;
-            schlaeger.Height = schlaegerGroesse;
-            //beide Panels werden weiß
-            ball.BackColor = rahmenFarbe;
-            schlaeger.BackColor = rahmenFarbe;
-            //den Schläger positionieren
-            //links an den Rand
-            schlaeger.Left = 2;
-            //ungefähr in die Mitte
-            ZeichneSchlaeger((spielfeldMaxY / 2) - (schlaegerGroesse / 2));
-            //der Ball kommt vor den Schläger ungefähr in die Mitte
-            ZeichneBall(new Point(spielfeldMinX, spielfeldMaxY / 2));
         }
 
         private void neuesSpielToolStripMenuItem_Click(object sender, EventArgs e)
@@ -438,18 +549,6 @@ namespace Pong
             }
         }
 
-        internal void ZeichneZeit(string restzeit)
-        {
-            //zuerst die alte Anzeige überschreiben
-            pinsel.Color = spielfeld.BackColor;
-            zeichenflaeche.FillRectangle(pinsel, spielfeldMaxX - 50, spielfeldMinY + 20, 30, 20);
-            //in weißer Schrift
-            pinsel.Color = rahmenFarbe;
-            //die Auszeichnungen für die Schrift werden beim
-            //Erstellen des Spielfelds gesetzt
-            zeichenflaeche.DrawString(restzeit, schrift, pinsel, new Point(spielfeldMaxX - 50, spielfeldMinY + 20));
-        }
-
         private void spielfeldToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Point neueGroesse = new Point(0, 0);
@@ -489,119 +588,6 @@ namespace Pong
                 //das Spielfeld neu zeichnen
                 ZeichneSpielfeld();
             }
-        }
-
-        
-
-        internal bool NeuesSpiel()
-        {
-            bool ergebnis = false;
-            if (MessageBox.Show("Neues Spiel starten?", "Neues Spiel", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                //die Spielzeit neu setzen
-                aktuelleSpielzeit = 120;
-                spielpunkte.LoeschePunkte();
-                ZeichnePunkte("0");
-                //alles neu zeichnen
-                ZeichneSpielfeld();
-                NeuerBall();
-                ZeichneZeit(Convert.ToString(aktuelleSpielzeit));
-                ergebnis = true;
-                pauseToolStripMenuItem.Enabled = true;
-                //Einstellungen deaktivieren
-                schwierigkeitsgradToolStripMenuItem.Enabled = false;
-                spielfeldToolStripMenuItem.Enabled = false;
-                ergebnis = true;
-            }
-            return ergebnis;
-        }
-
-        internal void SetzeEinstellungen(int schlaeger, int mehr, int weniger, int winkel)
-        {
-            schlaegerGroesse = schlaeger;
-            punkteMehr = mehr;
-            punkteWeniger = weniger;
-            winkelZufall = winkel;
-        }
-
-        void SchreibeEinstellungen()
-        {
-            //die Einstellungen setzen
-            XmlWriterSettings einstellungen = new XmlWriterSettings();
-            einstellungen.Indent = true;
-            //eine Instanz für XmlWriter erzeugen
-            XmlWriter xmlSchreiben = XmlWriter.Create(xmlDateiname, einstellungen);
-            //die Deklaration schreiben
-            xmlSchreiben.WriteStartDocument();
-            //den Wurzelknoten pong erzeugen
-            xmlSchreiben.WriteStartElement("pong");
-            //den Knoten groesse erzeugen
-            xmlSchreiben.WriteStartElement("groesse");
-            //die Einträge schreiben
-            xmlSchreiben.WriteElementString("breite", Convert.ToString(this.Width));
-            xmlSchreiben.WriteElementString("hoehe", Convert.ToString(this.Height));
-            //den Knoten abschließen
-            xmlSchreiben.WriteEndElement();
-            //den Knoten schwierigkeitsgrad erzeugen
-            xmlSchreiben.WriteStartElement("schwierigkeitsgrad");
-            //den Eintrag schreiben
-            xmlSchreiben.WriteElementString("wert", Convert.ToString(xmlSchwierigkeit));
-            //alle abschließen
-            xmlSchreiben.WriteEndDocument();
-            //Datei schließen
-            xmlSchreiben.Close();
-        }
-
-        //liest die Einstellungen
-        void LeseEinstellungen()
-        {
-            //gibt es die Datei?
-            if (System.IO.File.Exists(xmlDateiname) == false)
-                return;
-            //eine Instanz von XmlReader erzeugen
-            XmlReader xmlLesen = XmlReader.Create(xmlDateiname);
-            //die Daten lesen und zuweisen
-            xmlLesen.ReadToFollowing("breite");
-            xmlBreite = Convert.ToInt32(xmlLesen.ReadElementString());
-            xmlLesen.ReadToFollowing("hoehe");
-            xmlHoehe = Convert.ToInt32(xmlLesen.ReadElementString());
-            xmlLesen.ReadToFollowing("wert");
-            xmlSchwierigkeit = Convert.ToInt32(xmlLesen.ReadElementString());
-            //die Datei wieder schließen
-            xmlLesen.Close();
-            //nach Schwierigkeitsgrad die Einstellungen setzen
-            //als Sender wird das Formular übergeben, das zweite Argument ist EventArgs.Empty
-            switch (xmlSchwierigkeit)
-            {
-                case 1:
-                    sehrEinfachToolStripMenuItem_Click(this, EventArgs.Empty);
-                    break;
-                case 2:
-                    einfachToolStripMenuItem_Click(this, EventArgs.Empty);
-                    break;
-                case 3:
-                    mittelToolStripMenuItem_Click(this, EventArgs.Empty);
-                    break;
-                case 4:
-                    schwerToolStripMenuItem_Click(this, EventArgs.Empty);
-                    break;
-                case 5:
-                    sehrSchwerToolStripMenuItem_Click(this, EventArgs.Empty);
-                    break;
-            }
-        }
-
-        internal void ZeichnePunkte(string punkte)
-        {
-            //zuerst die alte Anzeige überschreiben
-            pinsel.Color = spielfeld.BackColor;
-
-            zeichenflaeche.FillRectangle(pinsel, spielfeldMaxX - 50, spielfeldMinY + 40, 30, 20);
-            //in weißer Schrift
-            pinsel.Color = rahmenFarbe;
-            //die Einstellungen für die Schrift werden beim
-            //Erstellen des Spielfelds gesetzt
-            zeichenflaeche.DrawString(punkte, schrift, pinsel, new Point(spielfeldMaxX - 50, spielfeldMinY + 40));
         }
 
         private void beendenToolStripMenuItem_Click(object sender, EventArgs e)
