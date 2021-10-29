@@ -481,6 +481,8 @@ namespace Pong
             }
         }
 
+        
+
         internal bool NeuesSpiel()
         {
             bool ergebnis = false;
@@ -540,6 +542,45 @@ namespace Pong
             xmlSchreiben.Close();
         }
 
+        //liest die Einstellungen
+        void LeseEinstellungen()
+        {
+            //gibt es die Datei?
+            if (System.IO.File.Exists(xmlDateiname) == false)
+                return;
+            //eine Instanz von XmlReader erzeugen
+            XmlReader xmlLesen = XmlReader.Create(xmlDateiname);
+            //die Daten lesen und zuweisen
+            xmlLesen.ReadToFollowing("breite");
+            xmlBreite = Convert.ToInt32(xmlLesen.ReadElementString());
+            xmlLesen.ReadToFollowing("hoehe");
+            xmlHoehe = Convert.ToInt32(xmlLesen.ReadElementString());
+            xmlLesen.ReadToFollowing("wert");
+            xmlSchwierigkeit = Convert.ToInt32(xmlLesen.ReadElementString());
+            //die Datei wieder schließen
+            xmlLesen.Close();
+            //nach Schwierigkeitsgrad die Einstellungen setzen
+            //als Sender wird das Formular übergeben, das zweite Argument ist EventArgs.Empty
+            switch (xmlSchwierigkeit)
+            {
+                case 1:
+                    sehrEinfachToolStripMenuItem_Click(this, EventArgs.Empty);
+                    break;
+                case 2:
+                    einfachToolStripMenuItem_Click(this, EventArgs.Empty);
+                    break;
+                case 3:
+                    mittelToolStripMenuItem_Click(this, EventArgs.Empty);
+                    break;
+                case 4:
+                    schwerToolStripMenuItem_Click(this, EventArgs.Empty);
+                    break;
+                case 5:
+                    sehrSchwerToolStripMenuItem_Click(this, EventArgs.Empty);
+                    break;
+            }
+        }
+
         internal void ZeichnePunkte(string punkte)
         {
             //zuerst die alte Anzeige überschreiben
@@ -556,6 +597,11 @@ namespace Pong
         private void beendenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            SchreibeEinstellungen();
         }
     }
 }

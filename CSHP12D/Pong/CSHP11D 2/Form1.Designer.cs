@@ -76,21 +76,21 @@
             // pauseToolStripMenuItem
             // 
             this.pauseToolStripMenuItem.Name = "pauseToolStripMenuItem";
-            this.pauseToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.pauseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pauseToolStripMenuItem.Text = "&Pause";
             this.pauseToolStripMenuItem.Click += new System.EventHandler(this.pauseToolStripMenuItem_Click);
             // 
             // neuesSpielToolStripMenuItem
             // 
             this.neuesSpielToolStripMenuItem.Name = "neuesSpielToolStripMenuItem";
-            this.neuesSpielToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.neuesSpielToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.neuesSpielToolStripMenuItem.Text = "Neues Spiel";
             this.neuesSpielToolStripMenuItem.Click += new System.EventHandler(this.neuesSpielToolStripMenuItem_Click);
             // 
             // beendenToolStripMenuItem
             // 
             this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.beendenToolStripMenuItem.Text = "&Beenden";
             this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
             // 
@@ -112,7 +112,7 @@
             this.schwerToolStripMenuItem,
             this.sehrSchwerToolStripMenuItem});
             this.schwierigkeitsgradToolStripMenuItem.Name = "schwierigkeitsgradToolStripMenuItem";
-            this.schwierigkeitsgradToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.schwierigkeitsgradToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.schwierigkeitsgradToolStripMenuItem.Text = "Schwierigkeitsgrad";
             // 
             // sehrEinfachToolStripMenuItem
@@ -155,7 +155,7 @@
             // spielfeldToolStripMenuItem
             // 
             this.spielfeldToolStripMenuItem.Name = "spielfeldToolStripMenuItem";
-            this.spielfeldToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.spielfeldToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.spielfeldToolStripMenuItem.Text = "Spielfeld";
             this.spielfeldToolStripMenuItem.Click += new System.EventHandler(this.spielfeldToolStripMenuItem_Click);
             // 
@@ -215,6 +215,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " Pong";
             this.TopMost = true;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.spielfeld.ResumeLayout(false);
