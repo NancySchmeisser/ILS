@@ -59,6 +59,8 @@ namespace Pong
                 neuerName.Close();
                 bestenliste[anzahl - 1].SetzeEintrag(punkte, tempName);
                 Array.Sort(bestenliste);
+                //die Daten speichern
+                SchreibePunkte();
                 return true;
             }
             else
