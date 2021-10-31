@@ -14,6 +14,8 @@ namespace Pong
 
         internal Liste[] bestenliste;
 
+        string xmlDateiname;
+
         public Score()
         {
             punkte = 0;
@@ -24,6 +26,11 @@ namespace Pong
             {
                 bestenliste[i] = new Liste();
             }
+            //den Dateinamen aus dem Pfad zusammenbauen
+            xmlDateiname = System.Windows.Forms.Application.StartupPath + "\\score.xml";
+            //wenn es die Datei schon gibt, die Daten lesen
+            if (System.IO.File.Exists(xmlDateiname))
+                LesePunkte();
         }
 
         public int VeraenderePunkte(int anzahl)
