@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Xml;
 
 namespace Pong
 {
@@ -83,6 +84,56 @@ namespace Pong
                 zeichenflaeche.DrawString(Convert.ToString(bestenliste[i].GetPunkte()), tempSchrift, tempPinsel, punkteX, y);
                 zeichenflaeche.DrawString(bestenliste[i].GetName(), tempSchrift, tempPinsel, nameX, y);
             }
+        }
+
+        //zum Lesen aus der Datei
+        void LesePunkte()
+        {
+            //zum Zwischenspeichern der gelesenen Daten
+            int tempPunkte;
+            string tempName;
+            //eine Instanz von XmlReader erzeugen
+            XmlReader xmlLesen = XmlReader.Create(xmlDateiname);
+            //die Daten in einer Schleife lesen und zuweisen
+            for (int i = 0; i < anzahl; i++)
+            {
+                xmlLesen.ReadToFollowing("name");
+                tempName = xmlLesen.ReadElementString();
+                xmlLesen.ReadToFollowing("punkte");
+                tempPunkte = Convert.ToInt32(xmlLesen.ReadElementString());
+                bestenliste[i].SetzeEintrag(tempPunkte, tempName);
+            }
+            //die Datei wieder schließen
+            xmlLesen.Close();
+        }
+
+        //zum Schreiben in die Datei
+        void SchreibePunkte()
+        {
+            //die Einstellungen setzen
+            XmlWriterSettings einstellungen = new XmlWriterSettings();
+            einstellungen.Indent = true;
+            //eine Instanz für XmlWriter erzeugen
+            XmlWriter xmlSchreiben = XmlWriter.Create(xmlDateiname, einstellungen);
+            //die Deklaration schreiben
+            xmlSchreiben.WriteStartDocument();
+            //den Wurzelknoten bestenliste erzeugen
+            xmlSchreiben.WriteStartElement("bestenliste");
+            //die Daten in einer Schleife wegschreiben
+            for (int i = 0; i < anzahl; i++)
+            {
+                //den Knoten eintrag erzeugen
+                xmlSchreiben.WriteStartElement("eintrag");
+                //die Einträge schreiben
+                xmlSchreiben.WriteElementString("name", bestenliste[i].GetName());
+                xmlSchreiben.WriteElementString("punkte", Convert.ToString(bestenliste[i].GetPunkte()));
+                //den Knoten abschließen
+                xmlSchreiben.WriteEndElement();
+            }
+            //alle abschließen
+            xmlSchreiben.WriteEndDocument();
+            //Datei schließen
+            xmlSchreiben.Close();
         }
 
         public class Liste : IComparable
