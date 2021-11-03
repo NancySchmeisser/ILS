@@ -32,13 +32,14 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.listBox3 = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ButtonEinlesen
             // 
-            this.ButtonEinlesen.Location = new System.Drawing.Point(282, 243);
+            this.ButtonEinlesen.Location = new System.Drawing.Point(20, 186);
             this.ButtonEinlesen.Name = "ButtonEinlesen";
-            this.ButtonEinlesen.Size = new System.Drawing.Size(75, 23);
+            this.ButtonEinlesen.Size = new System.Drawing.Size(127, 23);
             this.ButtonEinlesen.TabIndex = 0;
             this.ButtonEinlesen.Text = "Einlesen";
             this.ButtonEinlesen.UseVisualStyleBackColor = true;
@@ -47,35 +48,47 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(138, 108);
+            this.listBox1.Location = new System.Drawing.Point(20, 28);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
+            this.listBox1.Size = new System.Drawing.Size(127, 95);
             this.listBox1.Sorted = true;
             this.listBox1.TabIndex = 1;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(282, 108);
+            this.listBox2.Location = new System.Drawing.Point(162, 28);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(120, 95);
+            this.listBox2.Size = new System.Drawing.Size(127, 95);
             this.listBox2.Sorted = true;
             this.listBox2.TabIndex = 2;
             // 
             // listBox3
             // 
             this.listBox3.FormattingEnabled = true;
-            this.listBox3.Location = new System.Drawing.Point(428, 108);
+            this.listBox3.Location = new System.Drawing.Point(310, 28);
             this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(120, 95);
+            this.listBox3.Size = new System.Drawing.Size(127, 95);
             this.listBox3.Sorted = true;
             this.listBox3.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(310, 186);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(127, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Beenden";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(483, 247);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.listBox3);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.listBox1);
@@ -92,6 +105,7 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.Button button1;
     }
 }
 
