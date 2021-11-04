@@ -63,6 +63,7 @@
             this.listBox2.Size = new System.Drawing.Size(127, 95);
             this.listBox2.Sorted = true;
             this.listBox2.TabIndex = 2;
+            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
             // 
             // listBox3
             // 

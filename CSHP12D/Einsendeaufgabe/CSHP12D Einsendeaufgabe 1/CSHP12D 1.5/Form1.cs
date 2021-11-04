@@ -41,6 +41,7 @@
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             listBox2.Items.Clear();
+            listBox3.Items.Clear();
             //den Schlüssel des ausgewählten Eintrag öffnen
             regSchluessel = Registry.CurrentUser.OpenSubKey(listBox1.SelectedItem.ToString());
             regSchluesselListe = regSchluessel.GetSubKeyNames();
@@ -69,7 +70,7 @@
                     }
                     else
 
-                        listBox3.Items.Add(eintrag + " = " + Convert.ToString(regSchluessel.GetValueKind(eintrag)));
+                        listBox3.Items.Add(eintrag + " = " + Convert.ToString(regSchluessel.GetValue(eintrag)));
             }
         }
 
