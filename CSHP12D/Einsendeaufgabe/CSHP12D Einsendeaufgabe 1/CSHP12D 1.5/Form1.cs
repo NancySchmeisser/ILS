@@ -70,7 +70,7 @@
                     }
                     else
 
-                        listBox3.Items.Add(eintrag + " = " + Convert.ToString(regSchluessel.GetValue(eintrag)));
+                        listBox3.Items.Add(eintrag + " = " + Convert.ToString(regSchluessel.GetValueKind(eintrag)));
             }
         }
 
