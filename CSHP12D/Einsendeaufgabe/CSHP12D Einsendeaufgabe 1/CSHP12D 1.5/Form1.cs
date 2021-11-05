@@ -62,15 +62,15 @@
             }
             else
             {
-                regEintragListe = regSchluessel.GetValueNames();
+             
+                regEintragListe = regSchluessel.GetSubKeyNames();
                 foreach (string eintrag in regEintragListe)
                     if (regEintragListe == null)
                     {
                         MessageBox.Show("Keine weiteren Schlüssel");
                     }
                     else
-
-                        listBox3.Items.Add(eintrag + " = " + Convert.ToString(regSchluessel.GetValueKind(eintrag)));
+                        listBox3.Items.Add(eintrag + " = " + Convert.ToString(regSchluessel.GetValueNames()));
             }
         }
 
