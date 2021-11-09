@@ -2,23 +2,10 @@
 {
     using Microsoft.Win32;
     using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.Data;
-    using System.Drawing;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using System.Windows.Forms;
 
     public partial class Form1 : Form
     {
-        internal RegistryKey regSchluessel;
-
-        internal string[] regSchluesselListe;
-
-        internal string[] regEintragListe;
-
         public Form1()
         {
             InitializeComponent();
@@ -32,7 +19,7 @@
             listBox3.Items.Clear();
 
             //die Schlüssel aus HKEY_CURRENT_USER holen
-            regSchluesselListe = Registry.CurrentUser.GetSubKeyNames();
+            string[] regSchluesselListe = Registry.CurrentUser.GetSubKeyNames();
             //und in das erste Listenfeld eintragen
             foreach (string eintrag in regSchluesselListe)
                 listBox1.Items.Add(eintrag);
@@ -43,8 +30,8 @@
             listBox2.Items.Clear();
             listBox3.Items.Clear();
             //den Schlüssel des ausgewählten Eintrag öffnen
-            regSchluessel = Registry.CurrentUser.OpenSubKey(listBox1.SelectedItem.ToString());
-            regSchluesselListe = regSchluessel.GetSubKeyNames();
+            RegistryKey regSchluessel = Registry.CurrentUser.OpenSubKey(listBox1.SelectedItem.ToString());
+            string[] regSchluesselListe = regSchluessel.GetSubKeyNames();
 
             //in das zweite Listenfeld eintragen
             foreach (string eintrag in regSchluesselListe)
@@ -55,22 +42,24 @@
         {
             listBox3.Items.Clear();
             string Schluessel = listBox1.SelectedItem.ToString() + "\\" + listBox2.SelectedItem.ToString();
-            regSchluessel = Registry.CurrentUser.OpenSubKey(Schluessel);
-            if (regSchluessel == null)
+            RegistryKey regSchluessel = Registry.CurrentUser.OpenSubKey(Schluessel);
+
+            string[] regEintragListe = regSchluessel.GetSubKeyNames();
+            foreach (string eintrag in regEintragListe)
             {
-                MessageBox.Show("Keine weiteren Schlüssel");
+                listBox3.Items.Add(eintrag);
             }
-            else
+
+            string[] regValueNames = regSchluessel.GetValueNames();
+            foreach (string valueName in regValueNames)
             {
-             
-                regEintragListe = regSchluessel.GetSubKeyNames();
-                foreach (string eintrag in regEintragListe)
-                    if (regEintragListe == null)
-                    {
-                        MessageBox.Show("Keine weiteren Schlüssel");
-                    }
-                    else
-                        listBox3.Items.Add(eintrag + " = " + Convert.ToString(regSchluessel.GetValueNames()));
+                object value = regSchluessel.GetValue(valueName);
+                listBox3.Items.Add(valueName + " = " + Convert.ToString(value));
+            }
+
+            if (listBox3.Items.Count == 0)
+            {
+                MessageBox.Show("Keine weiteren Schlüssel oder Werte");
             }
         }
 
