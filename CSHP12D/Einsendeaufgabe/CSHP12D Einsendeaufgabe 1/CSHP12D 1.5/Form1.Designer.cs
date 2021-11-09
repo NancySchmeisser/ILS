@@ -95,7 +95,9 @@
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.ButtonEinlesen);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.ShowInTaskbar = false;
+            this.Text = "Registry";
+            this.TopMost = true;
             this.ResumeLayout(false);
 
         }
