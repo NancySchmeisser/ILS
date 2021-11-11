@@ -1,10 +1,9 @@
 ﻿namespace Pong
 {
+    using Microsoft.Win32;
     using System;
     using System.Drawing;
     using System.Windows.Forms;
-    using System.Xml;
-    using Microsoft.Win32;
 
     public partial class Form1 : Form
     {
@@ -221,8 +220,7 @@
                 // var farbe = Color.FromArgb(farbeWert);
 
             }
-           
-        } 
+        }
 
         internal void LeseEinstellungen()
         {
@@ -245,12 +243,10 @@
                 val = regSchluessel.GetValue("Hoehe");
                 if (val != null)
                 {
-                    this.Height= (int)val;
+                    this.Height = (int)val;
                 }
 
             }
-
-            
         }
 
         public Form1()
