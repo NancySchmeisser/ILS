@@ -46,8 +46,6 @@
 
         public Color spielfeldFarbe = Color.Black;
 
-        internal string xmlDateiname;
-
         internal int xmlBreite, xmlHoehe;
 
         internal int schwierigkeit;
@@ -216,9 +214,6 @@
                 regSchluessel.SetValue("Breite", this.Width);
                 regSchluessel.SetValue("Hoehe", this.Height);
                 regSchluessel.SetValue("Schwierigkeit", this.schwierigkeit);
-                regSchluessel.SetValue("BackgroundColor", this.BackColor.ToArgb());
-                // var farbe = Color.FromArgb(farbeWert);
-
             }
         }
 
@@ -245,7 +240,11 @@
                 {
                     this.Height = (int)val;
                 }
-
+                val = regSchluessel.GetValue("Schwierigkeit");
+                if (val != null)
+                {
+                    this.schwierigkeit = (int)val;
+                }
             }
         }
 
@@ -262,13 +261,9 @@
             winkelZufall = 5;
             //die Standardschwierigkeit
             schwierigkeit = 2;
-            //den Dateinamen setzen
-            xmlDateiname = System.IO.Path.ChangeExtension(Application.ExecutablePath, ".xml");
             //Standardwert für die Größe
             xmlBreite = 640;
             xmlHoehe = 480;
-            //die Daten lesen
-            LeseEinstellungen();
             //die Größe des Formulars setzen
             this.Height = xmlHoehe;
             this.Width = xmlBreite;
@@ -299,6 +294,7 @@
 
         private void beendenToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            SchreibeEinstellungen();
             Close();
         }
 
