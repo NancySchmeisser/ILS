@@ -46,8 +46,6 @@
 
         public Color spielfeldFarbe = Color.Black;
 
-        internal int Breite, Hoehe;
-
         internal int schwierigkeit;
 
         internal void SetzeSpielfeld()
@@ -244,13 +242,30 @@
                 if (val != null)
                 {
                     this.schwierigkeit = (int)val;
+                    switch (this.schwierigkeit)
+                    {
+                        case 1:
+                            this.sehrEinfachToolStripMenuItem.Checked = true;
+                            break;
+                        case 2:
+                            this.einfachToolStripMenuItem.Checked = true;
+                            break;
+                        case 3:
+                            this.mittelToolStripMenuItem.Checked = true;
+                            break;
+                        case 4:
+                            this.schwerToolStripMenuItem.Checked = true;
+                            break;
+                        case 5:
+                            this.sehrSchwerToolStripMenuItem.Checked = true;
+                            break;
+                    }
                 }
+
+
             }
         }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            LeseEinstellungen();
-        }
+
         public Form1()
         {
             InitializeComponent();
@@ -266,11 +281,12 @@
             //die Standardschwierigkeit
             schwierigkeit = 2;
             //Standardwert für die Größe
-            Breite = 640;
-            Hoehe = 480;
+            Width = 640;
+            Height = 480;
+            LeseEinstellungen();
             //die Größe des Formulars setzen
-            this.Height = Hoehe;
-            this.Width = Breite;
+            this.Height = Height;
+            this.Width = Width;
             //erst einmal geht der Ball nach rechts und oben mit
             //dem Winkel 0
             ballPosition.richtungX = true;
@@ -278,13 +294,13 @@
             ballPosition.winkel = 0;
             //den Pinsel erzeugen
             pinsel = new SolidBrush(spielfeldFarbe);
-           
+
             //die Zeichenfläche beschaffen
             zeichenflaeche = spielfeld.CreateGraphics();
             //das Spielfeld bekommt eine Hintergrundfarbe
             spielfeld.BackColor = spielfeldFarbe;
             schrift = new Font("Arial", 12, FontStyle.Bold);
-          
+
             SetzeSpielfeld();
             NeuerBall();
             //erst einmal ist das Spiel angehalten
@@ -297,10 +313,6 @@
             timerSekunde.Enabled = false;
             pauseToolStripMenuItem.Enabled = false;
         }
-
-      
-
-
 
         private void beendenToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -517,8 +529,6 @@
                 ZeichneSpielfeld();
             }
         }
-
-     
 
         private void timerSpiel_Tick(object sender, EventArgs e)
         {

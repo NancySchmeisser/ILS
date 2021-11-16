@@ -125,8 +125,6 @@
             // 
             // einfachToolStripMenuItem
             // 
-            this.einfachToolStripMenuItem.Checked = true;
-            this.einfachToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.einfachToolStripMenuItem.Name = "einfachToolStripMenuItem";
             this.einfachToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.einfachToolStripMenuItem.Text = "Einfach";
@@ -227,7 +225,6 @@
             this.Text = " Pong";
             this.TopMost = true;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.spielfeld.ResumeLayout(false);
