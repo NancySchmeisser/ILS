@@ -46,7 +46,7 @@
 
         public Color spielfeldFarbe = Color.Black;
 
-        internal int xmlBreite, xmlHoehe;
+        internal int Breite, Hoehe;
 
         internal int schwierigkeit;
 
@@ -213,7 +213,7 @@
                 //den Wert aus dem Eingabefeld in den Eintrag schreiben
                 regSchluessel.SetValue("Breite", this.Width);
                 regSchluessel.SetValue("Hoehe", this.Height);
-                regSchluessel.SetValue("Schwierigkeit", this.schwierigkeit);
+                regSchluessel.SetValue("schwierigkeit", this.schwierigkeit);
             }
         }
 
@@ -240,17 +240,21 @@
                 {
                     this.Height = (int)val;
                 }
-                val = regSchluessel.GetValue("Schwierigkeit");
+                val = regSchluessel.GetValue("schwierigkeit");
                 if (val != null)
                 {
                     this.schwierigkeit = (int)val;
                 }
             }
         }
-
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            LeseEinstellungen();
+        }
         public Form1()
         {
             InitializeComponent();
+
             //die Breite der Linien
             spielfeldLinienbreite = 10;
             //die Größe des Schlägers
@@ -262,11 +266,11 @@
             //die Standardschwierigkeit
             schwierigkeit = 2;
             //Standardwert für die Größe
-            xmlBreite = 640;
-            xmlHoehe = 480;
+            Breite = 640;
+            Hoehe = 480;
             //die Größe des Formulars setzen
-            this.Height = xmlHoehe;
-            this.Width = xmlBreite;
+            this.Height = Hoehe;
+            this.Width = Breite;
             //erst einmal geht der Ball nach rechts und oben mit
             //dem Winkel 0
             ballPosition.richtungX = true;
@@ -274,17 +278,19 @@
             ballPosition.winkel = 0;
             //den Pinsel erzeugen
             pinsel = new SolidBrush(spielfeldFarbe);
+           
             //die Zeichenfläche beschaffen
             zeichenflaeche = spielfeld.CreateGraphics();
             //das Spielfeld bekommt eine Hintergrundfarbe
             spielfeld.BackColor = spielfeldFarbe;
             schrift = new Font("Arial", 12, FontStyle.Bold);
+          
             SetzeSpielfeld();
             NeuerBall();
             //erst einmal ist das Spiel angehalten
             spielPause = true;
             //die Spielzeit in Sekunden setzen
-            //  aktuelleSpielzeit = timerSpiel.Interval / 1000;
+            aktuelleSpielzeit = timerSpiel.Interval / 1000;
             //alle drei Timer sind zunächst angehalten
             timerBall.Enabled = false;
             timerSpiel.Enabled = false;
@@ -292,9 +298,12 @@
             pauseToolStripMenuItem.Enabled = false;
         }
 
+      
+
+
+
         private void beendenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SchreibeEinstellungen();
             Close();
         }
 
@@ -508,6 +517,8 @@
                 ZeichneSpielfeld();
             }
         }
+
+     
 
         private void timerSpiel_Tick(object sender, EventArgs e)
         {
