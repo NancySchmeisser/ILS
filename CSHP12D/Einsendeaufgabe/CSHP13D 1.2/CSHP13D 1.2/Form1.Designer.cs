@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.ÖffnenToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.SpeichernToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.OpenFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -65,12 +65,21 @@
             // 
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip1);
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(341, 190);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "";
+            // 
             // toolStrip1
             // 
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openToolStripButton,
-            this.saveToolStripButton,
+            this.ÖffnenToolStripButton,
+            this.SpeichernToolStripButton,
             this.toolStripSeparator,
             this.toolStripSeparator1});
             this.toolStrip1.Location = new System.Drawing.Point(13, 0);
@@ -79,23 +88,25 @@
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // openToolStripButton
+            // ÖffnenToolStripButton
             // 
-            this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.openToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripButton.Image")));
-            this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.openToolStripButton.Name = "openToolStripButton";
-            this.openToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.openToolStripButton.Text = "&Open";
+            this.ÖffnenToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ÖffnenToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("ÖffnenToolStripButton.Image")));
+            this.ÖffnenToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ÖffnenToolStripButton.Name = "ÖffnenToolStripButton";
+            this.ÖffnenToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.ÖffnenToolStripButton.Text = "&Open";
+            this.ÖffnenToolStripButton.Click += new System.EventHandler(this.ÖffnenToolStripButton_Click);
             // 
-            // saveToolStripButton
+            // SpeichernToolStripButton
             // 
-            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
-            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveToolStripButton.Name = "saveToolStripButton";
-            this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.saveToolStripButton.Text = "&Save";
+            this.SpeichernToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.SpeichernToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("SpeichernToolStripButton.Image")));
+            this.SpeichernToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.SpeichernToolStripButton.Name = "SpeichernToolStripButton";
+            this.SpeichernToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.SpeichernToolStripButton.Text = "&Save";
+            this.SpeichernToolStripButton.Click += new System.EventHandler(this.SpeichernToolStripButton_Click);
             // 
             // toolStripSeparator
             // 
@@ -107,22 +118,15 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // openFileDialog1
+            // OpenFileDialog1
             // 
-            this.openFileDialog1.Filter = "Textdateien|*.txt";
+            this.OpenFileDialog1.Filter = "Textdateien|*.txt";
+            this.OpenFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.OpenFileDialog1_FileOk);
             // 
             // saveFileDialog1
             // 
             this.saveFileDialog1.Filter = "Textdateien|*.txt";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(341, 190);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.SaveFileDialog1_FileOk);
             // 
             // Form1
             // 
@@ -147,11 +151,11 @@
 
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton openToolStripButton;
-        private System.Windows.Forms.ToolStripButton saveToolStripButton;
+        private System.Windows.Forms.ToolStripButton ÖffnenToolStripButton;
+        private System.Windows.Forms.ToolStripButton SpeichernToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.OpenFileDialog OpenFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.RichTextBox richTextBox1;
     }
