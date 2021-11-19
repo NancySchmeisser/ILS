@@ -49,6 +49,7 @@
             this.ButtonLaden.TabIndex = 1;
             this.ButtonLaden.Text = "Laden";
             this.ButtonLaden.UseVisualStyleBackColor = true;
+            this.ButtonLaden.Click += new System.EventHandler(this.ButtonLaden_Click);
             // 
             // ButtonSpeichern
             // 
@@ -58,6 +59,7 @@
             this.ButtonSpeichern.TabIndex = 2;
             this.ButtonSpeichern.Text = "Speichern";
             this.ButtonSpeichern.UseVisualStyleBackColor = true;
+            this.ButtonSpeichern.Click += new System.EventHandler(this.ButtonSpeichern_Click);
             // 
             // Form1
             // 
