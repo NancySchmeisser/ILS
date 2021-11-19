@@ -1,10 +1,10 @@
-﻿using System;
-using System.IO;
-using System.Windows.Forms;
-using System.Xml;
-
-namespace CSHP12D_Einsendeaufgabe_3
+﻿namespace CSHP12D_Einsendeaufgabe_3
 {
+    using System;
+    using System.IO;
+    using System.Windows.Forms;
+    using System.Xml;
+
     public partial class Form1 : Form
     {
         public Form1()
@@ -14,12 +14,12 @@ namespace CSHP12D_Einsendeaufgabe_3
 
         private void ButtonSpeichern_Click(object sender, EventArgs e)
         {
-            var directory =  Path.GetDirectoryName(Application.ExecutablePath);
+            var directory = Path.GetDirectoryName(Application.ExecutablePath);
             var fileName = Path.Combine(directory, "liste.xml");
             XmlWriter xmlSpeichern = XmlWriter.Create(fileName);
             xmlSpeichern.WriteStartDocument();
             xmlSpeichern.WriteStartElement("liste");
-            for(int i = 0; i< listBox1.Items.Count; i++)
+            for (int i = 0; i < listBox1.Items.Count; i++)
             {
                 xmlSpeichern.WriteElementString("Wert" + (i + 1), listBox1.Items[i].ToString());
             }
