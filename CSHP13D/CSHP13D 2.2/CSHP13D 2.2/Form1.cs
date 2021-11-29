@@ -33,9 +33,35 @@ namespace CSHP13D_2._2
 
         }
 
+        void Speichern(string name)
+        {
+            dateiname = name;
+            //den Text in der Titelleiste setzen
+            this.Text = dateiname;
+            //die Datei speichern
+            richTextBox1.SaveFile(dateiname);
+            //es sind keine Änderungen mehr vorhanden
+            richTextBox1.Modified = false;
+        }
+
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            NeuesDokument();
+        }
+
+        private void neuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NeuesDokument();
+        }
+
+        private void speichernToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Speichern();
         }
     }
 }
