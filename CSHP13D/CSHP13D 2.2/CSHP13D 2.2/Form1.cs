@@ -16,5 +16,10 @@ namespace CSHP13D_2._2
         {
             InitializeComponent();
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
