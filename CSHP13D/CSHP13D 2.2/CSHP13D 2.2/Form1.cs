@@ -18,6 +18,7 @@ namespace CSHP13D_2._2
         {
             InitializeComponent();
             zaehler = 1;
+            string dateiname;
         }
 
         void NeuesDokument()
@@ -61,7 +62,16 @@ namespace CSHP13D_2._2
 
         private void speichernToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Speichern();
+            Speichern(dateiname);
+        }
+
+        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+            string name;
+            //den Namen beschaffen
+            name = saveFileDialog1.FileName;
+            //und die Datei über die eigene Methode speichern
+            Speichern(name);
         }
     }
 }
