@@ -88,5 +88,10 @@ namespace CSHP13D_2._2
                 Speichern(dateiname);
             }
         }
+
+        private void SpeichernunterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.ShowDialog();
+        }
     }
 }
