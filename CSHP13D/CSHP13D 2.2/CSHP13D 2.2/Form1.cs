@@ -73,5 +73,20 @@ namespace CSHP13D_2._2
             //und die Datei über die eigene Methode speichern
             Speichern(name);
         }
+
+        private void DateiSpeichern(object sender, EventArgs e)
+        {
+            //wenn der Dateiname noch leer ist, den Dialog speichern
+            //unter aufrufen
+            if (dateiname == string.Empty)
+            {
+                saveFileDialog1.ShowDialog();
+            }
+            //sonst unter demselben Namen wieder speichern
+            else
+            {
+                Speichern(dateiname);
+            }
+        }
     }
 }
