@@ -106,5 +106,16 @@ namespace CSHP13D_2._2
             //den Öffnendialog anzeigen
             openFileDialog1.ShowDialog();
         }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+            //den Namen setzen
+            dateiname = openFileDialog1.FileName;
+            this.Text = dateiname;
+            //die Datei laden
+            richTextBox1.LoadFile(dateiname);
+            //die Eigenschaft Modified zur Sicherheit auf false setzen
+            richTextBox1.Modified = false;
+        }
     }
 }
