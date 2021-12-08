@@ -93,5 +93,18 @@ namespace CSHP13D_2._2
         {
             saveFileDialog1.ShowDialog();
         }
+
+        private void DateiLaden(object sender, EventArgs e)
+        {
+            //wenn nicht gespeicherte Änderungen vorliegen
+            if (richTextBox1.Modified == true)
+            {
+                //Meldung mit Ja und Nein erzeugen und überprüfen, ob Ja angeklickt wurde
+                if (MessageBox.Show("Wollen Sie die Änderungen speichern?", "Abfrage", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    DateiSpeichern(sender, e);
+            }
+            //den Öffnendialog anzeigen
+            openFileDialog1.ShowDialog();
+        }
     }
 }

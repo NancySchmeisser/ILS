@@ -275,6 +275,7 @@
             this.openToolStripButton.Name = "openToolStripButton";
             this.openToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.openToolStripButton.Text = "&Open";
+            this.openToolStripButton.Click += new System.EventHandler(this.DateiLaden);
             // 
             // saveToolStripButton
             // 
@@ -334,7 +335,7 @@
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "RTF-Dateien|*.rtf";
             // 
             // saveFileDialog1
             // 
