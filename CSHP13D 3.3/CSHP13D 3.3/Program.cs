@@ -23,4 +23,13 @@ namespace CSHP13D_3._3
 
         
     }
+
+    //eine Schleife über alle Steuerelemente im aktuellen Formular
+    foreach(Control element in this.Controls) 
+{
+    //ist element eine Textbox?
+    if (element.GetType() == typeof(Textbox))
+        //dann den Namen ausgeben
+        MessageBox.Show(element.Name);
+}
 }
