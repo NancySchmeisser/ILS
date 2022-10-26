@@ -101,19 +101,22 @@ namespace Pong
             //zum Zwischenspeichern der gelesenen Daten
             int tempPunkte;
             string tempName;
-            //eine Instanz von XmlReader erzeugen
-            XmlReader xmlLesen = XmlReader.Create(dateiname);
-            //die Daten in einer Schleife lesen und zuweisen
-            for (int i = 0; i < anzahl; i++)
+            //eine neue Instanz von FileStream erzeugen
+            //die Datei soll geöffnet werden
+            using (FileStream fStream = new FileStream(dateiname, FileMode.Open))
             {
-                xmlLesen.ReadToFollowing("name");
-                tempName = xmlLesen.ReadElementString();
-                xmlLesen.ReadToFollowing("punkte");
-                tempPunkte = Convert.ToInt32(xmlLesen.ReadElementString());
-                bestenliste[i].SetzeEintrag(tempPunkte, tempName);
+                //eine neue Instanz von BinaryReader auf der Basis von fStream erzeugen
+                using (BinaryReader binaerDatei = new BinaryReader(fStream))
+                {
+                    //die Punkte
+                    tempPunkte = binaerDatei.ReadInt32();
+                    //den Namen
+                    tempName = binaerDatei.ReadString();
+                    //und jetzt zuweisen
+                    bestenliste[1].SetzeEintrag(tempPunkte, tempName);
+                }
             }
-            //die Datei wieder schließen
-            xmlLesen.Close();
+               
         }
 
         //zum Schreiben in die Datei
