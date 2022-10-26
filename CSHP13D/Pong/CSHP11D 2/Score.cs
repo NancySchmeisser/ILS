@@ -27,7 +27,7 @@ namespace Pong
                 bestenliste[i] = new Liste();
             }
             //den Dateinamen aus dem Pfad zusammenbauen
-            dateiname = System.Windows.Forms.Application.StartupPath + "\\score.xml";
+            dateiname = System.Windows.Forms.Application.StartupPath + "\\score.dat";
             //wenn es die Datei schon gibt, die Daten lesen
             if (System.IO.File.Exists(dateiname))
                 LesePunkte();
@@ -119,30 +119,23 @@ namespace Pong
         //zum Schreiben in die Datei
         void SchreibePunkte()
         {
-            //die Einstellungen setzen
-            XmlWriterSettings einstellungen = new XmlWriterSettings();
-            einstellungen.Indent = true;
-            //eine Instanz für XmlWriter erzeugen
-            XmlWriter xmlSchreiben = XmlWriter.Create(dateiname, einstellungen);
-            //die Deklaration schreiben
-            xmlSchreiben.WriteStartDocument();
-            //den Wurzelknoten bestenliste erzeugen
-            xmlSchreiben.WriteStartElement("bestenliste");
-            //die Daten in einer Schleife wegschreiben
-            for (int i = 0; i < anzahl; i++)
+            //eine neue Instanz von FileStream erzeugen
+            //die Datei soll entweder geöffnet oder neu erzeugt werden
+            using (FileStream fStream = new FileStream(dateiname, FileMode.Create))
             {
-                //den Knoten eintrag erzeugen
-                xmlSchreiben.WriteStartElement("eintrag");
-                //die Einträge schreiben
-                xmlSchreiben.WriteElementString("name", bestenliste[i].GetName());
-                xmlSchreiben.WriteElementString("punkte", Convert.ToString(bestenliste[i].GetPunkte()));
-                //den Knoten abschließen
-                xmlSchreiben.WriteEndElement();
+                //eine neue Instanz von BinaryWriter auf der Basis von fStream erzeugen
+                using (BinaryWriter binaerDatei = new BinaryWriter(fStream))
+                {
+                    //die Einträge in die Datei schreiben
+                    for (int i = 0; i < anzahl; i++)
+                    {
+                        //die Punkte
+                        binaerDatei.Write(bestenliste[i].GetPunkte());
+                        //und dann den Namen
+                        binaerDatei.Write(bestenliste[i].GetName());
+                    }
+                }
             }
-            //alle abschließen
-            xmlSchreiben.WriteEndDocument();
-            //Datei schließen
-            xmlSchreiben.Close();
         }
 
         public class Liste : IComparable
