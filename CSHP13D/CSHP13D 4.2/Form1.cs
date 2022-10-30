@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace CSHP13D_4._2
 {
@@ -29,7 +30,57 @@ namespace CSHP13D_4._2
             //ist das Suchkriterium leer?
             if (textBox1.Text == string.Empty)
             {
-
+                MessageBox.Show("Bitte geben sie ein Suchkriterium ein.");
+                //den Fokus auf das Eingabefeld setzen
+                textBox1.Select();
+                return;
+            }
+            //den Namen für die Datei zusammenbauen
+            dateiname = Application.StartupPath + "\\score.dat";
+            //existiert die Datei?
+            if (File.Exists(dateiname) == false)
+            {
+                MessageBox.Show("Die Datei score.dat ist nicht vorhanden!");
+                return;
+            }
+            else
+            {
+                //die Datei öffnen
+                using(FileStream fStream = new FileStream(dateiname, FileMode.Open))
+                {
+                    using(BinaryReader binaerDatei = new BinaryReader(fStream))
+                    {
+                        //die gesamte Datei durchsuchen
+                        while (fStream.Position < fStream.Length)
+                        {
+                            //die erste Punktzahl lesen
+                            punkte = binaerDatei.ReadInt32();
+                            //stimmmt die Punktzahl mit dem Suchkriterium überein?
+                            if (punkte == Convert.ToInt32(textBox1.Text))
+                            {
+                                //den Wert für Treffer erhöhen
+                                treffer++;
+                                //den Namen lesen
+                                name = binaerDatei.ReadString();
+                                //und in die Liste ausgeben
+                                listBox1.Items.Add(name);
+                            }
+                            //stimmt das Suchkriterium nicht, dann den Namen überlesen
+                            else
+                            {
+                                //die Länge beschaffen
+                                neuePosition = binaerDatei.ReadByte();
+                                //und die neue Position ansteuern
+                                fStream.Position = fStream.Position + neuePosition;
+                            }
+                        }
+                    }
+                }
+                //wenn kein Treffer, eine Meldung in der Liste erzeugen
+                if (treffer == 0)
+                {
+                    listBox1.Items.Add("Kein Treffer gefunden");
+                }
             }
         }
     }
