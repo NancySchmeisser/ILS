@@ -548,6 +548,14 @@
             e.Graphics.DrawImage(pictureBox1.Image, new Point(20, 200));
         }
 
+        private void ButtonVorschau.Click(object sender, EventArgs e)
+        {
+            //das anzuzeigende Dokument setzen
+            printPreviewDialog1.Document = printDocument1;
+            //und den Dialog anzeigen
+            printPreviewDialog1.ShowDialog();
+        }
+
         private void timerSpiel_Tick(object sender, EventArgs e)
         {
             //das Spiel anhalten
