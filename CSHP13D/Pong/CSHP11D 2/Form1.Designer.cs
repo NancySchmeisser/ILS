@@ -48,6 +48,7 @@
             this.timerBall = new System.Windows.Forms.Timer(this.components);
             this.timerSpiel = new System.Windows.Forms.Timer(this.components);
             this.timerSekunde = new System.Windows.Forms.Timer(this.components);
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.menuStrip1.SuspendLayout();
             this.spielfeld.SuspendLayout();
             this.SuspendLayout();
@@ -76,21 +77,21 @@
             // pauseToolStripMenuItem
             // 
             this.pauseToolStripMenuItem.Name = "pauseToolStripMenuItem";
-            this.pauseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pauseToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.pauseToolStripMenuItem.Text = "&Pause";
             this.pauseToolStripMenuItem.Click += new System.EventHandler(this.pauseToolStripMenuItem_Click);
             // 
             // neuesSpielToolStripMenuItem
             // 
             this.neuesSpielToolStripMenuItem.Name = "neuesSpielToolStripMenuItem";
-            this.neuesSpielToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.neuesSpielToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.neuesSpielToolStripMenuItem.Text = "Neues Spiel";
             this.neuesSpielToolStripMenuItem.Click += new System.EventHandler(this.neuesSpielToolStripMenuItem_Click);
             // 
             // beendenToolStripMenuItem
             // 
             this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.beendenToolStripMenuItem.Text = "&Beenden";
             this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
             // 
@@ -200,6 +201,10 @@
             this.timerSekunde.Interval = 1000;
             this.timerSekunde.Tick += new System.EventHandler(this.timerSekunde_Tick);
             // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,6 +250,7 @@
         private System.Windows.Forms.ToolStripMenuItem mittelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem schwerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sehrSchwerToolStripMenuItem;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }
 
