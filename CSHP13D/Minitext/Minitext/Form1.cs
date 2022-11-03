@@ -5,6 +5,7 @@
     using System.ComponentModel;
     using System.Drawing;
     using System.Windows.Forms;
+    using System.IO;
 
     public partial class Form1 : Form
     {
@@ -100,10 +101,30 @@
             //den Namen setzen
             dateiname = openFileDialog1.FileName;
             this.Text = dateiname;
+            //Variable int für Länge des Namens von Backup Datei
+            int laenge;
             //die Datei laden
             richTextBox1.LoadFile(dateiname);
             //die Eigenschaft Modified zur Sicherheit auf false setzen
             richTextBox1.Modified = false;
+
+            //Name Backup vom Dateinamen
+            nameBackup = dateiname;
+            //existiert die Datei
+            if (File.Exists(nameBackup) == true || File.Exists(nameBackup) == false)
+            {
+                //Länge des Namens ermitteln
+                laenge = nameBackup.Length;
+                //Den TYP .rtf aus dem Namen entfernen
+                nameBackup = nameBackup.Remove(laenge - 4, 4);
+                //die Datei mit der Endung .bak abspeichern
+                using (FileStream fStream = new FileStream(nameBackup + ".bak", FileMode.Create))
+                {
+
+                    using (BinaryWriter sicherungsDatei = new BinaryWriter(fStream))
+                        sicherungsDatei.Write(nameBackup + ".bak");
+                }
+            }
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -271,6 +292,17 @@
         private void BeendenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void toolStripButtonBackup_Click(object sender, EventArgs e)
+        {
+            //Anzeigen von openfileDialog2
+            openFileDialog2.ShowDialog();
+        }
+
+        private void openFileDialog2_FileOk(object sender, CancelEventArgs e)
+        {
+
         }
     }
 }
