@@ -302,7 +302,16 @@
 
         private void openFileDialog2_FileOk(object sender, CancelEventArgs e)
         {
+            string name = openFileDialog2.FileName;
+            this.Text = name;
+            //die Datei öffnen
+            using (FileStream fStream = new FileStream(name, FileMode.Open))
+            {
+                using (BinaryReader bakDatei = new BinaryReader(fStream))
+                {
 
+                }
+            }
         }
     }
 }
