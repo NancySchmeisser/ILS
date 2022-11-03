@@ -1,22 +1,21 @@
-﻿using System;
-using System.ComponentModel;
-using System.Drawing;
-using System.Windows.Forms;
-using Microsoft.Win32;
-
-namespace Minitext
+﻿namespace Minitext
 {
+    using Microsoft.Win32;
+    using System;
+    using System.ComponentModel;
+    using System.Drawing;
+    using System.Windows.Forms;
+
     public partial class Form1 : Form
     {
-        //die eigenen Felder
-        //zum Mitzählen
-        int zaehler;
-        //für den Dateinamen
-        string dateiname;
+        internal int zaehler;
 
-        //die eigenen Methoden
-        //zum Erstellen eines neuen Dokuments
-        void NeuesDokument()
+        internal string dateiname;
+
+        //Variable für die Sicherungskopie
+        internal string nameBackup;
+
+        internal void NeuesDokument()
         {
             //den Text "löschen"
             richTextBox1.Clear();
@@ -28,8 +27,7 @@ namespace Minitext
             dateiname = string.Empty;
         }
 
-        //zum Speichern
-        void Speichern(string name)
+        internal void Speichern(string name)
         {
             dateiname = name;
             //den Text in der Titelleiste setzen
@@ -39,7 +37,6 @@ namespace Minitext
             //es sind keine Änderungen mehr vorhanden
             richTextBox1.Modified = false;
         }
-
 
         public Form1()
         {
